@@ -1,4 +1,4 @@
-# 9月22日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址  更新时间 2024-09-22 17:43:39
+# 9月22日→23M/S|2024年最新免费节点Clash for IOS订阅链接地址  更新时间 2024-09-22 17:48:33
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashforios.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
