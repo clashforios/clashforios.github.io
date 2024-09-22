@@ -1,0 +1,150 @@
+/*
+      ============================================================
+           Default Color Start
+      ============================================================
+*/
+/*.title:hover,*/
+.title:hover a
+{
+  color: #f3b007
+}
+/*
+      ============================================================
+           Default Background Color Start
+      ============================================================
+*/
+
+{
+    background-color: #f3b007 
+}
+/*
+      ============================================================
+           Default Border Color Start
+      ============================================================
+*/
+
+.simple-box-2:hover{
+    border-color: #f3b007
+}
+
+.btn{
+  --box-shadow-color: #f3b007;
+}
+
+/*
+      ============================================================
+           Default Transition Start
+      ============================================================
+*/
+a,
+label,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+input,
+.btn,
+.blog,
+figure,
+.title,
+.tags a,
+.title a,
+textarea,
+.slick-arrow,
+.navigation a,
+.social-list li a,
+.osr-srvices-thumb-1{
+  transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+/*
+      ============================================================
+           Second Background Color Start
+      ============================================================
+*/
+
+.gray-bg{
+    background-color:/*#F6F6F6  */#CED8CE;
+}
+
+{
+  border-color:#F6F6F6/* #ebebea */;
+}
+
+.thinn-event-thumb figure,
+.thinn-event-list figure,
+.th-gradient{
+  background: -webkit-linear-gradient(45deg, #ff89e9 0%, #f3b007 100%);
+  background: linear-gradient(45deg, #ff89e9 0%,#f3b007 100%);
+}
+/*
+      ============================================================
+           Social Icons Background Color Start
+      ============================================================
+*/
+.google-bg{
+	color: #fff !important;
+	border: none !important;
+	background-color: #f0042a;
+}
+.twitter-bg{
+	color: #fff !important;
+	border: none !important;
+	background-color: #55acee;	
+}
+.linkedin-bg{
+	color: #fff !important;
+	border: none !important;
+	background-color: #00598e;	
+}
+.facebook-bg{
+	color: #fff !important;
+	border: none !important;
+	background-color: #3b5998;	
+}
+.price-tag.red {
+    background: #ff0000;
+}
+.red{
+  background: #ff6363 !important;
+}
+.red-cl{
+  color: #ff6363;
+}
+
+.green{
+  background: #04ee7d !important;
+}
+
+.blue{
+  background: #04baee !important;
+}
+
+.yellow{
+  background: #ffd908 !important;
+}
+/*
+      ============================================================
+        Color 2 Strat
+      ============================================================
+*/
+.th-cl2{
+  color: #ff8a00 !important;
+}
+
+
+.search-icon a,
+.search-tab-nav li.active a,
+.search-tab-nav li:hover a,
+.header-3 .navigation li:hover > a,
+.header-3 .navigation li.active > a,
+.destination-tabs .tab-nav a:hover,
+.destination-tabs .tab-nav li.active a,
+.header-3 .navigation .children li:hover a,
+.th-bg .submit-btn.th-bg,
+.th-bg2{
+  background: #ff8a00 !important;
+}
