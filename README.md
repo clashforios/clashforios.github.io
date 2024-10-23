@@ -1,4 +1,4 @@
-# 10月20日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址  更新时间 2024-10-20 07:16:28
+# 10月23日→21.4M/S|2024年最新免费节点Clash for IOS订阅链接地址  更新时间 2024-10-23 06:49:23
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashforios.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://clashforios.github.io/uploads/2024/10/0-20241020.yaml
-- https://clashforios.github.io/uploads/2024/10/1-20241020.yaml
-- https://clashforios.github.io/uploads/2024/10/2-20241020.yaml
-- https://clashforios.github.io/uploads/2024/10/3-20241020.yaml
-- https://clashforios.github.io/uploads/2024/10/4-20241020.yml
+- https://clashforios.github.io/uploads/2024/10/0-20241023.yaml
+- https://clashforios.github.io/uploads/2024/10/1-20241023.yaml
+- https://clashforios.github.io/uploads/2024/10/2-20241023.yaml
+- https://clashforios.github.io/uploads/2024/10/3-20241023.yaml
+- https://clashforios.github.io/uploads/2024/10/4-20241023.yml
 
 ### V2ray订阅链接
 
-- https://clashforios.github.io/uploads/2024/10/0-20241020.txt
-- https://clashforios.github.io/uploads/2024/10/1-20241020.txt
-- https://clashforios.github.io/uploads/2024/10/2-20241020.txt
-- https://clashforios.github.io/uploads/2024/10/3-20241020.txt
-- https://clashforios.github.io/uploads/2024/10/4-20241020.txt
+- https://clashforios.github.io/uploads/2024/10/0-20241023.txt
+- https://clashforios.github.io/uploads/2024/10/1-20241023.txt
+- https://clashforios.github.io/uploads/2024/10/2-20241023.txt
+- https://clashforios.github.io/uploads/2024/10/3-20241023.txt
+- https://clashforios.github.io/uploads/2024/10/4-20241023.txt
 
 ## 更多clash节点订阅 ：
 
