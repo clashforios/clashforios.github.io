@@ -2,13 +2,12 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://clashforios.github.io" />
+        <link rel="canonical" href="https://clashforios.github.io/news/article-19780.htm" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>2024-10归档 - Clash for IOS免费机场订阅节点官网</title>
-        <meta name="keywords" content="2024-10归档" />
-        <meta name="description" content="2024-10归档" />
+    <title>Spring Profiles的几个小知识</title>
+        <meta name="description" content="1、我们在项目中的 application.properties 文件里直接进行配置即可 spring.profiles.active=dev  2、通过硬编码实现 WebApplicationIni" />
         <link rel="icon" href="__ADDON__/img/clashforios/favicon.ico" type="image/x-icon"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
@@ -41,7 +40,7 @@
     
 </head>
 
-<body data-page="category">
+<body data-page="detail">
     <!-- Main Wrapper Start -->
     <div class="main-wrapper">
                 <header id="header-1" class="header-2">
@@ -81,12 +80,13 @@
         <div class="sub-banner">
             <div class="container">
                 <div class="text text-right">
-                    <h1 class="title">2024-10 归档</h1>
+                    <h1 class="title">Spring Profiles的几个小知识</h1>
                 </div>
                 <nav class="breadcrumb-outer" aria-label="breadcrumb">
                     <ol class="breadcrumb d-inline-flex">
                         <li class="breadcrumb-item"><a href="/">首页</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">2024-10 归档</li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
                     </ol>
                 </nav>
             </div>
@@ -99,23 +99,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-9">
-                            <div class="xcblog-blog-list">
-                                                                <div class="row item xcblog-blog-item" data-date="2024-10-01">
-                                    <div class="col-md-3">
-                                        <a href="/free-nodes/2024-10-1-free-node-subscribe-links.htm" class="xcblog-blog-url">
-                                            <img src="/uploads/20240922-1/c875c402fd48d6a3ac3d1e0ee96b8029.webp" alt="10月1日→20.5M/S|2024年最新免费节点Clash for IOS订阅链接地址" style="width: 100%;">
-                                        </a>
+                                              				  				  				<div id="content_views" class="htmledit_views"> <p>1、我们在项目中的 application.properties 文件里直接进行配置即可</p> <pre><code>spring.profiles.active=dev </code></pre> <p>2、通过硬编码实现 WebApplicationInitializer 接口，配置 ServletContext 来激活配置</p> <pre><code>@Configuration public class MyWebApplicationInitializer    implements WebApplicationInitializer {      @Override     public void onStartup(ServletContext servletContext) throws ServletException {           servletContext.setInitParameter(           "spring.profiles.active", "dev");     } } </code></pre> <p>3、直接在 ConfigurableEnvironment 中实现设置，使用 spring boot 的朋友应该都知道，系统所有的配置项都是来自于 ConfigurableEnvironment 。</p> <pre><code>@Autowired private ConfigurableEnvironment env; ... env.setActiveProfiles("dev"); </code></pre> <p>4、命令行JVM启动参数</p> <pre><code>-Dspring.profiles.active=dev </code></pre> <p>5、通过 export 环境变量来实现</p> <pre><code>export spring_profiles_active=dev </code></pre> <p>嗯， 学会了这几种方法，你已经可以在绝大部分场景下，游刃有余地使用 profile 了。</p> <p>还有个问题，既然这样配置的话，那我项目里有多个profile， 万一我手抖，没有用你说的这几种配置好呢？那会怎么样？</p> <p>这个你放心，spring boot 有兜底方法，你想啊，你在一些项目没有用到 profile 的时候，spring boot 是怎么启动的呢？spring boot 项目会自动使用默认配置</p> <pre><code>spring.profiles.default=none </code></pre> <p>也就是说，spring boot 启动了，但是没有加载任何被@Profile 等标记的配置类。只会加载没有被标记的配置类。</p> <p>我们项目里，有很多类似 @Profile("db") @Profile("mysql") 之类的，那像这种多个的怎么使用的？</p> <p>我们项目中，不同的模块都分开配置了， 我给你举个例子怎么使用的。</p> <pre><code>-Dspring.profiles.active=dev,db,mysql </code></pre> <p>就像这样，直接逗号分割，拼接上去就行了。</p> <p>那这样好像比较麻烦啊，万一搞漏掉了就给自己挖坑了。</p> <p>这就是要仔细了，以前一直要靠自己的。现在就不会有这个问题了，spring boot 团队也意识到这个问题了，在 Spring boot 2.4 开始已经支持分组了。</p> <pre><code>spring.profiles.group.production[0]=proddb spring.profiles.group.production[1]=prodmq </code></pre> <p>我们平时启动的时候只要指定 spring.profiles.active=production 就行了， prodb 和 prodmq 同样就能成功配置进来。Spring Profiles 的相关内容差不多都讲完了，你还有什么疑问吗？</p> </h1> <p>本文讲述了 Spring Profiles 的配置使用，和如果在启动的时候，选择特定的 profile 。也讲述了一些使用过程中的一些小技巧，希望对你有帮助。</p> <h2></h2> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-19319.htm">猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）</a></p>
+                                        <p>下一个：<a href="/news/article-19781.htm">不能养的宠物猫有哪些（不能养的宠物猫有哪些呢）</a></p>
                                     </div>
-                                    <div class="col-md-9">
-                                        <a href="/free-nodes/2024-10-1-free-node-subscribe-links.htm" class="xcblog-blog-url">
-                                            <h3 class="xcblog-blog-title">10月1日→20.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</h3>
-                                        </a>
-                                        <p>这一次的节点更新覆盖了香港、加拿大、日本、欧洲、美国、韩国、新加坡等地区,最高速度可达20.5 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                                    </div>
-                                </div>
-                                
-                                <ul class="pagination"><li><a href="/date/2024-10/page-3.htm">&laquo;</a></li> <li><a href="/date/2024-10/">1</a></li><li><a href="/date/2024-10/page-2.htm">2</a></li><li><a href="/date/2024-10/page-3.htm">3</a></li><li class="active"><span>4</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                            </div>
-                        </div>
+                                        </div>
                         <div class="col-md-3">
                             <div class="panel panel-default">
     <div class="panel-heading">
@@ -123,16 +112,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-23-clash-node-daily-updates.htm" title="10月23日→18.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月23日→18.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-19-clash-node.htm" title="11月19日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月19日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-18-node-share.htm" title="11月18日→18.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月18日→18.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-4-clash-node-daily-updates.htm" title="11月4日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月4日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-20-free-subscribe-node.htm" title="11月20日→21.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月20日→21.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-1-node-share-links.htm" title="12月1日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月1日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-24-clash-node.htm" title="11月24日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月24日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-28-free-high-speed-nodes.htm" title="9月28日→22.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">9月28日→22.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-8-node-share-links.htm" title="11月8日→18.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月8日→18.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-node-share-links.htm" title="11月21日→22.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月21日→22.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-clash-node.htm" title="10月27日→22.4M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月27日→22.4M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19781.htm" title="不能养的宠物猫有哪些（不能养的宠物猫有哪些呢）">不能养的宠物猫有哪些（不能养的宠物猫有哪些呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-clash-node-daily-updates.htm" title="11月5日→21.3M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月5日→21.3M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-node-share-links.htm" title="11月22日→21M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月22日→21M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-clash-node.htm" title="11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-23-clash-node-github.htm" title="9月23日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">9月23日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-free-node-subscribe.htm" title="11月3日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月3日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-clash-node.htm" title="11月27日→21M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月27日→21M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-free-high-speed-nodes.htm" title="10月21日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月21日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-clash-node-github.htm" title="9月27日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">9月27日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
