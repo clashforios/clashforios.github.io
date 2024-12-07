@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-22060.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>vue的ESLint-使用及各种设置的配置</title>
+        <meta name="description" content="ESLint-基本介绍 目标 了解eslint的作用； 能判断eslint的错误； 什么是eslint ESLint 是一个代码检查工具，用来检查你的代码是否符合指定的规范（例如： = 的前后必须有一" />
+        <link rel="icon" href="__ADDON__/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">vue的ESLint-使用及各种设置的配置</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <h2>ESLint-基本介绍</h2> <h3>目标</h3> <p>了解eslint的作用；</p> <p>能判断eslint的错误；</p> <h3>什么是eslint</h3> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://eslint.cn/"  title="ESLint" rel="nofollow">ESLint</a> 是一个代码检查工具，用来检查你的代码是否符合指定的规范（例如： = 的前后必须有一个空格）。</p> <ul> <li> <p>规范</p> <ul> <li> <p>行业推荐的规范； 在创建项目时，我们使用的是 JavaScript<strong>Standard</strong> Style 代码风格的规则</p> </li> <li> <p>自定义的规范。你和你的团队可以自行约定一套规范</p> </li> </ul> </li> <li> <p>使用ESLint的好处在于：多人协作时代码风格统一</p> </li> </ul> <p><span style="color:#fe2c24;">&nbsp;eslint是法官，Standard 是法律</span></p> <p>vue-cli工具在创建项目时提供选项，我们前面在创建项目时选中了它，所以它在本项目中是直接生效的 。</p> <h3><strong>JavaScript Standard Style 规范说明</strong></h3> <p>在项目创建之初我们就选中了这个规范，也就是说，我们后续所有的代码都必须要遵守这个要求，否则ESLint就会报错。</p> <p>下面是这份规则中的一小部分：</p> <ul> <li> <p><em>字符串使用单引号</em> – 需要转义的地方除外</p> </li> <li> <p><em>关键字后加空格</em><code>if (condition) { ... }</code></p> </li> <li> <p><em>函数名后加空格</em><code>function name (arg) { ... }</code></p> </li> <li> <p>坚持使用全等<code>===</code> 摒弃<code>==</code> 一但在需要检查<code>null || undefined</code> 时可以使用<code>obj == null</code></p> </li> <li> <p>......</p> </li> </ul> <p>建议把<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md"  title="https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md" rel="nofollow">https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md</a> 看一遍，然后在写的时候遇到错误就可查询解决。如果找不到的规则 再看看这里:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.verydoc.net/eslint/00003312.html"  title="规则  |  Rules_Eslint_参考手册_非常教程" rel="nofollow">规则 | Rules_Eslint_参考手册_非常教程</a></p> <h3>代码规范错误</h3> <p>如果你的代码不符合standard的要求，eslint会跳出来<strong>刀子嘴，豆腐心</strong>地提示你。下面我们在main.js中随意做一些改动：添加一行<code>let a= 10;</code></p> <pre><code>import Vue from 'vue' import App from './App.vue' import router from './router'  Vue.config.productionTip = false let a = 10 // 这行代码是新添加的 new Vue({   router,   render: h =&gt; h(App) }).$mount('#app')</code></pre> <p>按下保存代码之后：将会看在控制台中输出如下错误：</p> <p><img fetchpriority="high" decoding="async" alt="" height="593" src="http://img.555519.xyz/uploads3/20220606/277a81ba343842a4d7ec81e8d0bb63dc.jpg"></p> <p>才写了一行代码，就报了两行错误： eslint 是来帮助你的，心态要好，有错，就改!</p> <p>去<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://standardjs.com/rules-zhcn.html%28"  title="https://standardjs.com/rules-zhcn.html(" rel="nofollow">https://standardjs.com/rules-zhcn.html(</a>或者上面2个网址里) 搜索上图第4步中的规则名字就知道错误原因了 (用前面网址多用ctrl F 搜索哦)</p> <h3>小结</h3> <p>ESLint是法官，它用我们约定的法律来检验我们的代码是否合法；</p> <p>它可以帮助我们养成良好的编码习惯；</p> <h2>ESLint-错误修正</h2> <h3>目标</h3> <p>能看懂eslint的错误，并改正</p> <h3>错误提示</h3> <p>出现了错误不要怕，其实提示已经很全面了，大家按提示来就行。</p> <p><img decoding="async" alt="" height="593" src="http://img.555519.xyz/uploads3/20220606/a5b7f3c1df6d7d0e00b47559fe3a52db.jpg"></p> <h3>改正错误的四种方式</h3> <p>有四种方法来修正错误：</p> <ul> <li> <p>手动修正: 人肉修改</p> </li> <li> <p>命令修正：npm run lint</p> </li> <li> <p>修改规则：让代码符合修改之后的规则，当然也就不报错了</p> </li> <li> <p>插件修正: 配合vscode 中的eslint插件</p> </li> </ul> <h3>手动修正</h3> <p>根据错误提示来一项一项手动修正。</p> <p>如果你不认识命令行中的语法报错是什么意思，你可以根据错误规则名字（func-call-spacing, space-in-parens,.....）去 ESLint 规则列表网站中查找其具体含义。</p> <p>建议大家手动去修改错误，帮助养成良好的编码习惯，更加专业</p> <h3>命令修正</h3> <p>vuecli创建项目时 提供了自动修复功能（有些复杂的错误还是要手动来改正），具体做法是运行：</p> <pre><code>npm run lint</code></pre> <h3>小结</h3> <p>eslint错误修正有四种方式： 我们这里介绍了前面两种，后面两种再来分别介绍。</p> <h2>ESLint-自定义规则</h2> <h3>目标</h3> <p>了解eslint的自定义规则，能看懂.eslintrc.js的配置</p> <h3>自定义校验</h3> <p>在项目根目录下面，有一个.eslintrc.js文件，它是对eslint进行配置的，其中有一个属性是专门用来设置自定义代码规则的：rules</p> <pre><code class="language-javascript">module.exports = {   root: true, // 当前项目使用这个配置文件, 不会往父级目录找.eslintrc.js文件   env: { // 指定eslint启动环境(vuecli底层是node支持), browser: true也可以在浏览器设置     node: true   },   extends: [ // 扩展配置     'plugin:vue/essential', // vue里必须的规则     '@vue/standard' // 使eslint继承@vue/cli脚手架里的 - standard标准   ],   parserOptions: { // 对新语法使用eslint     parser: 'babel-eslint' // 使用babel-eslint 来解析新语法ES6   },   // 这里可以进行自定义规则配置   // key：规则代号   // value：具体的限定方式   //   "off" or 0 - 关闭规则   //   "warn" or 1 - 将规则视为一个警告（不会影响退出码）,只警告，不会退出程序   //   "error" or 2 - 将规则视为一个错误 (退出码为1)，报错并退出程序   rules: { // 自定义规则 - 其实上面集成后有很多内置的规则, 这里可以进行规则的一些修改     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off', // 上线环境用打印就报警告, 开发环境关闭此规则     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off', // debugger可以终止代码执行     'no-multiple-empty-lines': 'off' // 不允许有连续多行空行(关闭规则)   } }</code></pre> <p>rules是一个对象，以键值对的格式来约定规则：</p> <ul> <li> <p>键名是规则名（可在报错信息和eslint官网查看）</p> </li> <li> <p>值是这条规则的具体说明， 最常见的有off,warn,error。</p> </li> </ul> <h3>示例 - 关闭多行空格</h3> <p>在配置文件中补充一条配置：</p> <pre><code>  rules: { // 自定义规则 - 其实上面集成后有很多内置的规则, 这里可以进行规则的一些修改     // 省略其他 +   'no-multiple-empty-lines': 'off' // 不允许有连续多行空行(关闭规则)   }</code></pre> <p>修改了配置文件，一定要重启项目，验收效果</p> <h2>ESLint-在vscode中使用插件</h2> <h3>目标</h3> <p>掌握配合vscode中的eslint插件一起工作的方法：</p> <ol> <li> <p>有错误立即提示（显示波浪线）</p> </li> <li> <p>ctrl+s保存时立即自动修正错误</p> </li> </ol> <h3>改正错误的方式</h3> <p>有三种方法来修正错误：</p> <ul> <li> <p>手动修正: 人肉修改</p> </li> <li> <p>命令修正：npm run lint</p> </li> <li> <p><strong>插件修正: 配合vscode 中的eslint插件</strong></p> </li> </ul> <h3>安装eslint插件</h3> <p>我们还可以安装eslint插件, 让vscode实时告诉我, 我哪里错了<img decoding="async" alt="" height="88" src="http://img.555519.xyz/uploads3/20220606/0dda58cf7848a271ee95f7f94dcb1380.jpg"></p> <p><span style="color:#fe2c24;">非常非常非常重要</span>： 用vscode打开项目时，将脚手架工程作为vscode根目录, 因为eslint要使用配置文件.eslintrc</p> <h3>eslint自动格式化修正代码</h3> <p>按如下五个步骤：<img loading="lazy" decoding="async" alt="" height="684" src="http://img.555519.xyz/uploads3/20220606/4001f860fe47b55a1af73aeacef320a0.jpg"></p> <pre><code>{   "eslint.enable": true,   "eslint.run": "onType",   "eslint.options": {       "extensions": [           ".js",           ".vue",           ".jsx",           ".tsx"       ]   },   "editor.codeActionsOnSave": {       "source.fixAll.eslint": true   } }</code></pre> <p>eslint.run - 运行eslint检验的时刻 (onSave保存) (onType输入时)</p> <p>editor.codeActionsOnSave - 控制在保存时运行代码操作时修复哪些问题</p> <ul> <li> <p>source.fixAll.eslint - 自所有插件的所有可自动修复的ESLint错误都将在保存时修复</p> </li> </ul> <p>更多的规则可以看<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/jiaoshou/p/12218642.html"  title="这里" rel="nofollow">这里</a></p> <h3><span style="color:#fe2c24;">备注：可能遇到的问题</span></h3> <p><strong><span style="color:#fe2c24;">ctrl+s保存不自动格式化</span></strong></p> <p>打开一个代码文件, 右下角有个ESLint, 如果是图示这样, 点击一下然后弹出来的对话框选择AnyWhere 在任意处生效(启动vscode中的eslint)</p> <p>变成v就代表启动着呢</p> <p><img loading="lazy" decoding="async" alt="" height="139" src="http://img.555519.xyz/uploads3/20220606/0a0a7d234e04952b1bb72ff20613cf11.jpg"></p> <p><strong><span style="color:#fe2c24;">自动缩进1</span></strong></p> <p>试着把Beautify插件卸载 - eslint也能美化代码哦</p> <p><img loading="lazy" decoding="async" alt="" height="105" src="http://img.555519.xyz/uploads3/20220606/1678035ffc33c3172f0db1a057736c9a.jpg"></p> <p><span style="color:#ff9900;">可能还有JS/CSS Format插件/其他美化插件</span></p> <p>不想卸载可以禁用</p> <p>如果你的vscode中用其它扩展 启用 自动格式化功能，则有可能与eslint的规则冲突！</p> <p><img loading="lazy" decoding="async" alt="" height="397" src="http://img.555519.xyz/uploads3/20220606/0ac9978e398daf330d484254c9d6cb13.jpg"></p> <p>解决方案：关闭vscode中的自动格式化</p> <p><span style="color:#fe2c24;"><strong>自动缩进2</strong></span></p> <p>如果上面不行, 就修改vscode的配置</p> <p>文件&gt;设置里, 搜索这个, 把下面的勾去掉<img loading="lazy" decoding="async" alt="" height="468" src="http://img.555519.xyz/uploads3/20220606/790b6a98a2ff3ea685578b16ec4e85c3.jpg"></p> <p><strong><span style="color:#fe2c24;">一保存, 单引变双引</span></strong></p> <p>原因：vetur插件和eslint冲突, 修改eslint插件配置, 把这里代码覆盖进去</p> <pre><code>{     "eslint.run": "onType",     "editor.codeActionsOnSave": {         "source.fixAll.eslint": true     },     "vetur.validation.template": false, // 把 vetur 扩展的 template 格式化去掉 	"editor.formatOnSave": false, // 去掉 vscode 自带的自动保存 ，vscode 默认也是 false的，如果要用 eslint 格式化，默认的格式化就不能开启     "eslint.enable": true, // eslint 格式化的配置     "eslint.autoFixOnSave": true, // eslint保存时候自动解决语法错误     "eslint.options": { // eslint选项-格式化js和vue文件         "extensions": [             ".js",             ".vue"         ]     },     "eslint.validate": [         "javascript",         {             "language": "vue",             "autoFix": true,         },         "html",         "vue"     ], }</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-21619.htm">开宠物店利润大吗知乎（开宠物店利润大吗知乎）</a></p>
+                                        <p>下一个：<a href="/news/article-22062.htm">k8s入门之Service</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-clash-node-github.htm" title="9月27日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">9月27日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-1-free-node-subscribe-links.htm" title="10月1日→20.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月1日→20.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-node-share-links.htm" title="10月24日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月24日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-11-free-high-speed-nodes.htm" title="10月11日→21.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月11日→21.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-node-subscribe.htm" title="10月12日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月12日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19319.htm" title="猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）">猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-node-share.htm" title="11月18日→18.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月18日→18.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-20239.htm" title="动物医院医疗废物管理制度范本（动物医疗废弃物管理制度）">动物医院医疗废物管理制度范本（动物医疗废弃物管理制度）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-29-clash-node-daily-updates.htm" title="10月29日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月29日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-clash-node-github.htm" title="10月20日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月20日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-22526.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shell基础Bash基本功能（多命令顺序执行）</title>
+        <meta name="description" content="目录  1、多命令执行符； 2、多命令执行符&amp;&amp; 3、多命令执行符|| 4、&amp;&amp;和||联合应用   Linux系统支持多条命令顺序执行，就是我可以依次输入多条命令后，统" />
+        <link rel="icon" href="__ADDON__/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Shell基础Bash基本功能（多命令顺序执行）</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                              				  				  				<div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#1%E5%A4%9A%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%AC%A6" rel="nofollow">1、多命令执行符<code>；</code></a></li> <li><a href="#2%E5%A4%9A%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%AC%A6" rel="nofollow">2、多命令执行符<code>&amp;&amp;</code></a></li> <li><a href="#3%E5%A4%9A%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%AC%A6" rel="nofollow">3、多命令执行符<code>||</code></a></li> <li><a href="#4%E5%92%8C%E8%81%94%E5%90%88%E5%BA%94%E7%94%A8" rel="nofollow">4、<code>&amp;&amp;</code>和<code>||</code>联合应用</a></li> </ul> </div> <p>Linux系统支持多条命令顺序执行，就是我可以依次输入多条命令后，统一按Enter键，顺序执行。</p> <h2 id="1多命令执行符">1、多命令执行符<code>；</code></h2> <p>在多个命令之间加<code>;</code>即可多命令顺序执行。</p> <p>命令格式：<code>命令1 ; 命令2</code></p> <p>说明：</p> <ul> <li>多个命令顺序执行，命令之间可以没有任何逻辑联系。 <pre><code class="language-shell">[root@localhost ~]# ls ; date ; cd /etc/ anaconda-ks.cfg	 install.log  install.log.syslog 2020 03月 29日 星期日 05:08:28 CST [root@localhost etc]#</code></pre> </li> <li>不管前面的命令是否正确执行，后面的命令都会执行。 <pre><code class="language-shell">[root@localhost ~]# lswrqwr ; date ; cd /etc/ -bash: lswrqwr: command not found 2020 03月 29日 星期日 05:08:28 CST [root@localhost etc]#</code></pre> </li> </ul> <h2 id="2多命令执行符">2、多命令执行符<code>&amp;&amp;</code></h2> <p><code>&amp;&amp;</code>又叫逻辑与执行符。</p> <p>命令格式：<code>命令1 &amp;&amp; 命令2</code></p> <blockquote> <p>说明：</p> <ul> <li>当命令1正确执行（$？=0），则命令2才会执行。</li> <li>当命令1执行不正确（$？≠0），则命令2不会执行。</li> <li>命令1和命令2之间可以没有任何逻辑联系。</li> </ul> </blockquote> <ul> <li>练习1：命令1正确执行。 <pre><code class="language-shell">[root@localhost ~]# ls &amp;&amp; echo yes anaconda-ks.cfg	 install.log  install.log.syslog yes</code></pre> </li> <li>练习2：命令1不正确执行。 <pre><code class="language-shell">[root@localhost ~]# lsfgdf &amp;&amp; echo yes -bash: lsfgdf: command not found</code></pre> </li> </ul> <blockquote> <p>说明：<code>（$？=0）</code>这里先不说什么意思，后边预定义变量在讲。</p> </blockquote> <h2 id="3多命令执行符">3、多命令执行符<code>||</code></h2> <p><code>||</code>又叫逻辑或执行符。</p> <p>命令格式：<code>命令1 || 命令2</code></p> <blockquote> <p>说明：</p> <ul> <li>当命令1执行不正确（$？≠0），则命令2才会执行。</li> <li>当命令1正确执行（$？=0），则命令2不会执行。</li> <li>命令1和命令2之间可以没有任何逻辑联系。</li> </ul> </blockquote> <ul> <li>练习1：命令1正确执行。 <pre><code class="language-shell">[root@localhost ~]# ls &amp;&amp; echo no anaconda-ks.cfg	 install.log  install.log.syslog</code></pre> </li> <li>练习2：命令1不正确执行。 <pre><code class="language-shell">[root@localhost ~]# lsfgdfgg &amp;&amp; echo no -bash: lsfgdfgg: command not found no</code></pre> </li> </ul> <h2 id="4和联合应用">4、<code>&amp;&amp;</code>和<code>||</code>联合应用</h2> <p><code>&amp;&amp;</code>和<code>||</code>两个执行符可以联合应用，来判断命令是否正确执行。</p> <p>执行语句：</p> <pre><code class="language-shell">[root@localhost ~]# ls  &amp;&amp; echo yes || echo no</code></pre> <p>如果<code>ls</code>命令正确执行了，则<code>echo yes</code>命令就会执行，会输出一个<code>yes</code>。<code>echo no</code>命令判断前边<code>echo yes</code>命令执行了，则<code>echo no</code>命令则不会执行。</p> <p>如果<code>ls</code>命令报错了，则<code>echo yes</code>命令就不会被执行，<code>echo no</code>命令需要判断前边的命令是否执行错误，因为<code>echo yes</code>命令没有执行，被跳过了，所以是判断<code>ls</code>命令是否报错，而<code>ls</code>命令报错了，则执行<code>echo no</code>命令，输出<code>no</code>。</p> <p>换句话说，<code>ls</code>位置的命令，如果正确执行，则输出<code>yes</code>，如果错误执行，则输出<code>no</code>。<br /> （所以需要注意的是，需要判断命令执行是否出错，而不是命令是否执行。不执行的命令就被挖掉，不予判断。）</p> <p>练习：</p> <pre><code class="language-shell">[root@localhost ~]# ls &amp;&amp; echo yes || echo no anaconda-ks.cfg	 install.log  install.log.syslog yes  [root@localhost ~]# lsfgjhg &amp;&amp; echo yes || echo no -bash: lsfgjhg: command not found no</code></pre> <blockquote> <p>提出一个问题：</p> <p>我能不能把上边命令中的<code>&amp;&amp;</code>和<code>||</code>的位置互换？</p> <p>答案是不能。</p> <p>直接看例子，自己推导：</p> <pre><code class="language-shell">[root@localhost ~]# ls || echo yes &amp;&amp; echo no anaconda-ks.cfg	 install.log  install.log.syslog no  [root@localhost ~]# lsfgjhg || echo yes &amp;&amp; echo no -bash: lsfgjhg: command not found yes no</code></pre> <p>结论：这是一个固定格式。</p> </blockquote> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-22062.htm">k8s入门之Service</a></p>
+                                        <p>下一个：<a href="/news/article-22528.htm">新手养猫适合养什么猫?（新手养猫适合养什么猫便宜）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-19781.htm" title="不能养的宠物猫有哪些（不能养的宠物猫有哪些呢）">不能养的宠物猫有哪些（不能养的宠物猫有哪些呢）</a></li>
+                        <li class="py-2"><a href="/news/article-20239.htm" title="动物医院医疗废物管理制度范本（动物医疗废弃物管理制度）">动物医院医疗废物管理制度范本（动物医疗废弃物管理制度）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-node-share-links.htm" title="10月24日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月24日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-node-share.htm" title="10月16日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月16日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-clash-node-github.htm" title="11月7日→18.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月7日→18.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-clash-node-github.htm" title="9月27日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">9月27日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-node-share-links.htm" title="10月8日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月8日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-clash-node-daily-updates.htm" title="12月7日→19.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月7日→19.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-26-clash-node-github.htm" title="9月26日→21.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">9月26日→21.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share-links.htm" title="11月29日→19.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月29日→19.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
