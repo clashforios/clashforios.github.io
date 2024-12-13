@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-24833.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>netty依赖精简</title>
+        <meta name="description" content="通常情况下为了方便我们在使用netty时会使用以下的maven依赖声明 &lt;!-- https://mvnrepository.com/artifact/io.netty/netty-all --" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">netty依赖精简</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                              				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>通常情况下为了方便我们在使用netty时会使用以下的maven依赖声明</p> <pre><code>&lt;!-- https://mvnrepository.com/artifact/io.netty/netty-all --&gt; &lt;dependency&gt;     &lt;groupId&gt;io.netty&lt;/groupId&gt;     &lt;artifactId&gt;netty-all&lt;/artifactId&gt;     &lt;version&gt;4.1.66.Final&lt;/version&gt; &lt;/dependency&gt;</code></pre> <p>这样引入的jar包netty-all（约4M）体积是比较大的<br /> netty-all提供了丰富的功能,如流量整形，native传输，各种应用层协议的codec，在开发过程中有时可能不需要用到全部的高级特性，只需要最基本的NIO传输功能，这时只需要引入依赖</p> <pre><code>        &lt;dependency&gt;             &lt;groupId&gt;io.netty&lt;/groupId&gt;             &lt;artifactId&gt;netty-transport&lt;/artifactId&gt;             &lt;version&gt;4.1.66.Final&lt;/version&gt;         &lt;/dependency&gt;</code></pre> <p>此依赖会通过传递依赖的形式自动引入<br /> netty-buffer,netty-common,netty-resolver,netty-transport这四个库(合约1.39M)，这样就比直接引入整个依赖在小很多。对于服务器应用来说jar的体积对内存占用影响不显著，但对于资源受限的场景，如移动端，精简依赖还是很有必要的。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-24349.htm">中国兽药厂家二十强企业 中国兽药厂家二十强企业有哪些</a></p>
+                                        <p>下一个：<a href="/news/article-24835.htm">宠物粮行业发展趋势分析报告（宠物粮行业发展趋势分析报告范文）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-21153.htm" title="瑞鹏宠物医院在线咨询（瑞鹏宠物医院在线咨询免费）">瑞鹏宠物医院在线咨询（瑞鹏宠物医院在线咨询免费）</a></li>
+                        <li class="py-2"><a href="/news/article-22528.htm" title="新手养猫适合养什么猫?（新手养猫适合养什么猫便宜）">新手养猫适合养什么猫?（新手养猫适合养什么猫便宜）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-4-clash-node-daily-updates.htm" title="11月4日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月4日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-node-share-links.htm" title="11月22日→21M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月22日→21M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21619.htm" title="开宠物店利润大吗知乎（开宠物店利润大吗知乎）">开宠物店利润大吗知乎（开宠物店利润大吗知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-23-clash-node-daily-updates.htm" title="10月23日→18.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月23日→18.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-clash-node.htm" title="11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-clash-node-daily-updates.htm" title="11月23日→18.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月23日→18.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-17-free-subscribe-node.htm" title="10月17日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月17日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25301.htm" title="Citus 分布式 PostgreSQL 集群 &#8211; SQL Reference(查询处理)">Citus 分布式 PostgreSQL 集群 &#8211; SQL Reference(查询处理)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
