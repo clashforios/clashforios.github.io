@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Spring Profiles的几个小知识</title>
         <meta name="description" content="1、我们在项目中的 application.properties 文件里直接进行配置即可 spring.profiles.active=dev  2、通过硬编码实现 WebApplicationIni" />
-        <link rel="icon" href="__ADDON__/img/clashforios/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
     <!-- Slick Silder CSS -->
@@ -25,8 +25,7 @@
     <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
-    
-<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -99,7 +98,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-9">
-                                              				  				  				<div id="content_views" class="htmledit_views"> <p>1、我们在项目中的 application.properties 文件里直接进行配置即可</p> <pre><code>spring.profiles.active=dev </code></pre> <p>2、通过硬编码实现 WebApplicationInitializer 接口，配置 ServletContext 来激活配置</p> <pre><code>@Configuration public class MyWebApplicationInitializer    implements WebApplicationInitializer {      @Override     public void onStartup(ServletContext servletContext) throws ServletException {           servletContext.setInitParameter(           "spring.profiles.active", "dev");     } } </code></pre> <p>3、直接在 ConfigurableEnvironment 中实现设置，使用 spring boot 的朋友应该都知道，系统所有的配置项都是来自于 ConfigurableEnvironment 。</p> <pre><code>@Autowired private ConfigurableEnvironment env; ... env.setActiveProfiles("dev"); </code></pre> <p>4、命令行JVM启动参数</p> <pre><code>-Dspring.profiles.active=dev </code></pre> <p>5、通过 export 环境变量来实现</p> <pre><code>export spring_profiles_active=dev </code></pre> <p>嗯， 学会了这几种方法，你已经可以在绝大部分场景下，游刃有余地使用 profile 了。</p> <p>还有个问题，既然这样配置的话，那我项目里有多个profile， 万一我手抖，没有用你说的这几种配置好呢？那会怎么样？</p> <p>这个你放心，spring boot 有兜底方法，你想啊，你在一些项目没有用到 profile 的时候，spring boot 是怎么启动的呢？spring boot 项目会自动使用默认配置</p> <pre><code>spring.profiles.default=none </code></pre> <p>也就是说，spring boot 启动了，但是没有加载任何被@Profile 等标记的配置类。只会加载没有被标记的配置类。</p> <p>我们项目里，有很多类似 @Profile("db") @Profile("mysql") 之类的，那像这种多个的怎么使用的？</p> <p>我们项目中，不同的模块都分开配置了， 我给你举个例子怎么使用的。</p> <pre><code>-Dspring.profiles.active=dev,db,mysql </code></pre> <p>就像这样，直接逗号分割，拼接上去就行了。</p> <p>那这样好像比较麻烦啊，万一搞漏掉了就给自己挖坑了。</p> <p>这就是要仔细了，以前一直要靠自己的。现在就不会有这个问题了，spring boot 团队也意识到这个问题了，在 Spring boot 2.4 开始已经支持分组了。</p> <pre><code>spring.profiles.group.production[0]=proddb spring.profiles.group.production[1]=prodmq </code></pre> <p>我们平时启动的时候只要指定 spring.profiles.active=production 就行了， prodb 和 prodmq 同样就能成功配置进来。Spring Profiles 的相关内容差不多都讲完了，你还有什么疑问吗？</p> </h1> <p>本文讲述了 Spring Profiles 的配置使用，和如果在启动的时候，选择特定的 profile 。也讲述了一些使用过程中的一些小技巧，希望对你有帮助。</p> <h2></h2> </p></div> 			                <div class="clearfix"></div>
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>1、我们在项目中的 application.properties 文件里直接进行配置即可</p> <pre><code>spring.profiles.active=dev </code></pre> <p>2、通过硬编码实现 WebApplicationInitializer 接口，配置 ServletContext 来激活配置</p> <pre><code>@Configuration public class MyWebApplicationInitializer    implements WebApplicationInitializer {      @Override     public void onStartup(ServletContext servletContext) throws ServletException {           servletContext.setInitParameter(           "spring.profiles.active", "dev");     } } </code></pre> <p>3、直接在 ConfigurableEnvironment 中实现设置，使用 spring boot 的朋友应该都知道，系统所有的配置项都是来自于 ConfigurableEnvironment 。</p> <pre><code>@Autowired private ConfigurableEnvironment env; ... env.setActiveProfiles("dev"); </code></pre> <p>4、命令行JVM启动参数</p> <pre><code>-Dspring.profiles.active=dev </code></pre> <p>5、通过 export 环境变量来实现</p> <pre><code>export spring_profiles_active=dev </code></pre> <p>嗯， 学会了这几种方法，你已经可以在绝大部分场景下，游刃有余地使用 profile 了。</p> <p>还有个问题，既然这样配置的话，那我项目里有多个profile， 万一我手抖，没有用你说的这几种配置好呢？那会怎么样？</p> <p>这个你放心，spring boot 有兜底方法，你想啊，你在一些项目没有用到 profile 的时候，spring boot 是怎么启动的呢？spring boot 项目会自动使用默认配置</p> <pre><code>spring.profiles.default=none </code></pre> <p>也就是说，spring boot 启动了，但是没有加载任何被@Profile 等标记的配置类。只会加载没有被标记的配置类。</p> <p>我们项目里，有很多类似 @Profile("db") @Profile("mysql") 之类的，那像这种多个的怎么使用的？</p> <p>我们项目中，不同的模块都分开配置了， 我给你举个例子怎么使用的。</p> <pre><code>-Dspring.profiles.active=dev,db,mysql </code></pre> <p>就像这样，直接逗号分割，拼接上去就行了。</p> <p>那这样好像比较麻烦啊，万一搞漏掉了就给自己挖坑了。</p> <p>这就是要仔细了，以前一直要靠自己的。现在就不会有这个问题了，spring boot 团队也意识到这个问题了，在 Spring boot 2.4 开始已经支持分组了。</p> <pre><code>spring.profiles.group.production[0]=proddb spring.profiles.group.production[1]=prodmq </code></pre> <p>我们平时启动的时候只要指定 spring.profiles.active=production 就行了， prodb 和 prodmq 同样就能成功配置进来。Spring Profiles 的相关内容差不多都讲完了，你还有什么疑问吗？</p> </h1> <p>本文讲述了 Spring Profiles 的配置使用，和如果在启动的时候，选择特定的 profile 。也讲述了一些使用过程中的一些小技巧，希望对你有帮助。</p> <h2></h2> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-19319.htm">猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）</a></p>
                                         <p>下一个：<a href="/news/article-19781.htm">不能养的宠物猫有哪些（不能养的宠物猫有哪些呢）</a></p>
@@ -112,16 +112,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe.htm" title="11月26日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月26日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share-links.htm" title="11月29日→19.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月29日→19.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25764.htm" title="ASP.NET Core 在 IIS 下的两种部署模式详解">ASP.NET Core 在 IIS 下的两种部署模式详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27621.htm" title="人和动物打的狂犬疫苗一样吗多少钱 人和动物打的狂犬疫苗一样吗多少钱一针">人和动物打的狂犬疫苗一样吗多少钱 人和动物打的狂犬疫苗一样吗多少钱一针</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-node-subscribe.htm" title="10月12日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月12日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-12-1-node-share-links.htm" title="12月1日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月1日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-16-clash-node.htm" title="11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-4-clash-node-daily-updates.htm" title="11月4日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月4日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-13-clash-node-github.htm" title="11月13日→19.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月13日→19.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-17-free-subscribe-node.htm" title="10月17日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月17日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-19319.htm" title="猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）">猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-node-subscribe-links.htm" title="11月2日→21.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月2日→21.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-10-clash-node-daily-updates.htm" title="10月10日→22.4M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月10日→22.4M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-18867.htm" title="Spring JDBC-NamedParameterJdbcTemplate模板类">Spring JDBC-NamedParameterJdbcTemplate模板类</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-clash-node-daily-updates.htm" title="11月10日→20.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月10日→20.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-clash-node.htm" title="11月24日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月24日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-node-subscribe.htm" title="12月14日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月14日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24349.htm" title="中国兽药厂家二十强企业 中国兽药厂家二十强企业有哪些">中国兽药厂家二十强企业 中国兽药厂家二十强企业有哪些</a></li>
                     </ul>
     </div>
 </div>
@@ -133,7 +133,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -157,6 +157,15 @@
         <!-- Main Content End -->
                 <!-- Copyright Start -->
         <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
             <p>
                 <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
             </p>

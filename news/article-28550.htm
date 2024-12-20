@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-28550.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>vue中watch监听器的触发时机(watch的坑及解决)_vue.js_</title>
+        <meta name="description" content="目录  watch监听器的触发时机  起因 代码 watch 控制台 说明  vue watch的理解小记     watch监听器的触发时机  起因 我需要在页面created时获得商家的类型id值" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">vue中watch监听器的触发时机(watch的坑及解决)_vue.js_</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">watch监听器的触发时机</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">起因</a></li> <li><a href="#_lab2_0_1" rel="nofollow">代码</a></li> <li><a href="#_lab2_0_2" rel="nofollow">watch</a></li> <li><a href="#_lab2_0_3" rel="nofollow">控制台</a></li> <li><a href="#_lab2_0_4" rel="nofollow">说明</a></li> </ul> <li><a href="#_label1" rel="nofollow">vue watch的理解小记</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>watch监听器的触发时机</h2> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>起因</h3> <p>我需要在页面created时获得商家的类型id值，然后监听id值，动态的改变请求接口的地址。请求接口的函数在mounted中执行。业务逻辑写完后发现，页面在第一次加载时，接口没有数据，原因接口地址为空，即接口地址没有改变。</p> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3>代码</h3> <div class="ay1code"> <pre class="brush:js;"> created() {      this.typeId = this.$route.params.id;      console.log("this.typeId的值发生改变，触发watch");    },    mounted() {      console.log(this.typeUrl, "mounted中的typeUrl的值");      //访问接口的函数      this.getData();    },  </pre> </div> <p class="maodian"><a name="_lab2_0_2" rel="nofollow"></a></p> <h3>watch</h3> <div class="ay1code"> <pre class="brush:js;">  watch: {    // 监听订单类型 给出对应面包屑    typeId: function (val) {      if (val == 1) {        console.log("watch触发了");        this.selfBreadcrumb[1].name = "核销订单";        this.typeUrl = "settlements";        console.log(this.typeUrl, "这里是watch");      } else if (val == 2) {        this.selfBreadcrumb[1].name = "物流订单";        this.typeUrl = "logistics-orders";      } else if (val == 4) {        this.selfBreadcrumb[1].name = "外卖订单";        this.typeUrl = "takeout-orders";      }    },  </pre> </div> <p class="maodian"><a name="_lab2_0_3" rel="nofollow"></a></p> <h3>控制台</h3> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220413/5fd96ffd2a7879ca8d8193b636129fc5.jpg"></p> <p class="maodian"><a name="_lab2_0_4" rel="nofollow"></a></p> <h3>说明</h3> <p>watch的触发会在created和mounted结束后。</p> <p>先占个坑，具体原理如何只有等我项目完成了再来康康。</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>vue watch的理解小记</h2> <p>刚开始学时，感觉自己懂了。可是到用时才发现自己是渣渣中的渣渣。。。</p> <p>想通过路由id的变化来改变组件的加载数据时，遇到了一个问题，就是，组件不会重新渲染。一脸懵逼了，，，</p> <p>找到了watch的监控方法时，又用不好。扣扣会用了一些，赶紧记下来。</p> <p>首先确认 watch是一个对象，一定要当成对象来用。</p> <p>对象就有键，有值。</p> <ul> <li> <strong>键：</strong>就是你要监控的那个家伙，比如说$route，这个就是要监控路由的变化。或者是data中的某个变量。</li> <li> <strong>值可以是函数：</strong>就是当你监控的家伙变化时，需要执行的函数，这个函数有两个形参，第一个是当前值，第二个是变化后的值。</li> <li> <strong>值也可以是函数名：</strong>不过这个函数名要用单引号来包裹。</li> </ul> <p>第三种情况厉害了。</p> <p><strong>值是包括选项的对象：选项包括有三个。</strong></p> <ul> <li>第一个handler：其值是一个回调函数。即监听到变化时应该执行的函数。</li> <li>第二个是deep：其值是true或false；确认是否深入监听。（一般监听时是不能监听到对象属性值的变化的，数组的值变化可以听到。）</li> <li>第三个是immediate：其值是true或false；确认是否以当前的初始值执行handler的函数。</li> </ul> <div class="ay1code"> <pre class="brush:js;">var vm = new Vue({    data: {      a: 1,      b: 2    },    watch: {      a: function (val, oldVal) {        console.log('new: %s, old: %s', val, oldVal)      },      // 方法名      b: 'someMethod',      // 选项的对象      c: {        handler: function (val, oldVal) { /* ... */ },        deep: true，        immediate: true      }    }  })</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-28549.htm">Kotlin新手入坑：构造函数，静态方法，顶层方法.._.ST</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-clash-node-daily-updates.htm" title="11月5日→21.3M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月5日→21.3M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-node-subscribe-links.htm" title="12月10日→19.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月10日→19.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-node-share-links.htm" title="10月22日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月22日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-free-node-subscribe.htm" title="11月3日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月3日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22526.htm" title="Shell基础Bash基本功能（多命令顺序执行）">Shell基础Bash基本功能（多命令顺序执行）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-node-subscribe-links.htm" title="11月11日→19.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月11日→19.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-20698.htm" title="哪些属相不能养狗狗（什么属相不适合养狗狗）">哪些属相不能养狗狗（什么属相不适合养狗狗）</a></li>
+                        <li class="py-2"><a href="/news/article-28088.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
+                        <li class="py-2"><a href="/news/article-23898.htm" title="is not eligible for getting processed by all BeanPostProcessors 导致找不到路径报404">is not eligible for getting processed by all BeanPostProcessors 导致找不到路径报404</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
