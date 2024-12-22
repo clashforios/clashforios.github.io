@@ -102,6 +102,7 @@
                   				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">watch监听器的触发时机</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">起因</a></li> <li><a href="#_lab2_0_1" rel="nofollow">代码</a></li> <li><a href="#_lab2_0_2" rel="nofollow">watch</a></li> <li><a href="#_lab2_0_3" rel="nofollow">控制台</a></li> <li><a href="#_lab2_0_4" rel="nofollow">说明</a></li> </ul> <li><a href="#_label1" rel="nofollow">vue watch的理解小记</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>watch监听器的触发时机</h2> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>起因</h3> <p>我需要在页面created时获得商家的类型id值，然后监听id值，动态的改变请求接口的地址。请求接口的函数在mounted中执行。业务逻辑写完后发现，页面在第一次加载时，接口没有数据，原因接口地址为空，即接口地址没有改变。</p> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3>代码</h3> <div class="ay1code"> <pre class="brush:js;"> created() {      this.typeId = this.$route.params.id;      console.log("this.typeId的值发生改变，触发watch");    },    mounted() {      console.log(this.typeUrl, "mounted中的typeUrl的值");      //访问接口的函数      this.getData();    },  </pre> </div> <p class="maodian"><a name="_lab2_0_2" rel="nofollow"></a></p> <h3>watch</h3> <div class="ay1code"> <pre class="brush:js;">  watch: {    // 监听订单类型 给出对应面包屑    typeId: function (val) {      if (val == 1) {        console.log("watch触发了");        this.selfBreadcrumb[1].name = "核销订单";        this.typeUrl = "settlements";        console.log(this.typeUrl, "这里是watch");      } else if (val == 2) {        this.selfBreadcrumb[1].name = "物流订单";        this.typeUrl = "logistics-orders";      } else if (val == 4) {        this.selfBreadcrumb[1].name = "外卖订单";        this.typeUrl = "takeout-orders";      }    },  </pre> </div> <p class="maodian"><a name="_lab2_0_3" rel="nofollow"></a></p> <h3>控制台</h3> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220413/5fd96ffd2a7879ca8d8193b636129fc5.jpg"></p> <p class="maodian"><a name="_lab2_0_4" rel="nofollow"></a></p> <h3>说明</h3> <p>watch的触发会在created和mounted结束后。</p> <p>先占个坑，具体原理如何只有等我项目完成了再来康康。</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>vue watch的理解小记</h2> <p>刚开始学时，感觉自己懂了。可是到用时才发现自己是渣渣中的渣渣。。。</p> <p>想通过路由id的变化来改变组件的加载数据时，遇到了一个问题，就是，组件不会重新渲染。一脸懵逼了，，，</p> <p>找到了watch的监控方法时，又用不好。扣扣会用了一些，赶紧记下来。</p> <p>首先确认 watch是一个对象，一定要当成对象来用。</p> <p>对象就有键，有值。</p> <ul> <li> <strong>键：</strong>就是你要监控的那个家伙，比如说$route，这个就是要监控路由的变化。或者是data中的某个变量。</li> <li> <strong>值可以是函数：</strong>就是当你监控的家伙变化时，需要执行的函数，这个函数有两个形参，第一个是当前值，第二个是变化后的值。</li> <li> <strong>值也可以是函数名：</strong>不过这个函数名要用单引号来包裹。</li> </ul> <p>第三种情况厉害了。</p> <p><strong>值是包括选项的对象：选项包括有三个。</strong></p> <ul> <li>第一个handler：其值是一个回调函数。即监听到变化时应该执行的函数。</li> <li>第二个是deep：其值是true或false；确认是否深入监听。（一般监听时是不能监听到对象属性值的变化的，数组的值变化可以听到。）</li> <li>第三个是immediate：其值是true或false；确认是否以当前的初始值执行handler的函数。</li> </ul> <div class="ay1code"> <pre class="brush:js;">var vm = new Vue({    data: {      a: 1,      b: 2    },    watch: {      a: function (val, oldVal) {        console.log('new: %s, old: %s', val, oldVal)      },      // 方法名      b: 'someMethod',      // 选项的对象      c: {        handler: function (val, oldVal) { /* ... */ },        deep: true，        immediate: true      }    }  })</pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-28549.htm">Kotlin新手入坑：构造函数，静态方法，顶层方法.._.ST</a></p>
+                                        <p>下一个：<a href="/news/article-29018.htm">MVVM中的数据的刷新</a></p>
                                     </div>
                                         </div>
                         <div class="col-md-3">
@@ -111,16 +112,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-5-clash-node-daily-updates.htm" title="11月5日→21.3M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月5日→21.3M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24835.htm" title="宠物粮行业发展趋势分析报告（宠物粮行业发展趋势分析报告范文）">宠物粮行业发展趋势分析报告（宠物粮行业发展趋势分析报告范文）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-clash-node-github.htm" title="10月18日→20.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月18日→20.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-free-high-speed-nodes.htm" title="10月21日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月21日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-29018.htm" title="MVVM中的数据的刷新">MVVM中的数据的刷新</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-12-10-free-node-subscribe-links.htm" title="12月10日→19.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月10日→19.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-22-node-share-links.htm" title="10月22日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月22日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-3-free-node-subscribe.htm" title="11月3日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月3日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-22526.htm" title="Shell基础Bash基本功能（多命令顺序执行）">Shell基础Bash基本功能（多命令顺序执行）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-node-subscribe.htm" title="12月16日→18.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月16日→18.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-node-share-links.htm" title="10月24日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月24日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-11-free-high-speed-nodes.htm" title="10月11日→21.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月11日→21.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-28549.htm" title="Kotlin新手入坑：构造函数，静态方法，顶层方法.._.ST">Kotlin新手入坑：构造函数，静态方法，顶层方法.._.ST</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-11-11-free-node-subscribe-links.htm" title="11月11日→19.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月11日→19.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-20698.htm" title="哪些属相不能养狗狗（什么属相不适合养狗狗）">哪些属相不能养狗狗（什么属相不适合养狗狗）</a></li>
-                        <li class="py-2"><a href="/news/article-28088.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
-                        <li class="py-2"><a href="/news/article-23898.htm" title="is not eligible for getting processed by all BeanPostProcessors 导致找不到路径报404">is not eligible for getting processed by all BeanPostProcessors 导致找不到路径报404</a></li>
                     </ul>
     </div>
 </div>
@@ -132,7 +133,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>

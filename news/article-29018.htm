@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-29018.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MVVM中的数据的刷新</title>
+        <meta name="description" content="在我们用MVVM框架做项目，在做到新增、删除等功能的时候，新增和删除成功后就会遇到一个问题，那就是数据的刷新。 怎样做到刷新的呢，其实刷新说白了就是重新查询下数据，只要我们调用一下查询的方法 就可以了" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">MVVM中的数据的刷新</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>在我们用MVVM框架做项目，在做到新增、删除等功能的时候，新增和删除成功后就会遇到一个问题，那就是数据的刷新。<br /> 怎样做到刷新的呢，其实刷新说白了就是重新查询下数据，只要我们调用一下查询的方法<br /> 就可以了。<br /> 当我删除数据时，因为删除操作和数据查询操作可以在同一个ViewModel中，所以我们在写删除的时候可以直接调用查询方法。<br /> 这是我写的查询方法：</p> <pre><code class="prism language-csharp"><span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">GetAllCommodityBy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token class-name"><span class="token keyword">var</span></span> list <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">from</span> tbCommodity <span class="token keyword">in</span> myModel<span class="token punctuation">.</span>PW_Commodity                 <span class="token keyword">join</span> tbCommodtyType <span class="token keyword">in</span> myModel<span class="token punctuation">.</span>PW_CommodityType <span class="token keyword">on</span> tbCommodity<span class="token punctuation">.</span>CommodityTypeID equals tbCommodtyType<span class="token punctuation">.</span>CommodityTypeID                 <span class="token keyword">join</span> tbUnit <span class="token keyword">in</span> myModel<span class="token punctuation">.</span>PW_Unit <span class="token keyword">on</span> tbCommodity<span class="token punctuation">.</span>UnitID equals tbUnit<span class="token punctuation">.</span>UnitID                 <span class="token keyword">join</span> tbInventory <span class="token keyword">in</span> myModel<span class="token punctuation">.</span>PW_Inventory <span class="token keyword">on</span> tbCommodity<span class="token punctuation">.</span>InventoryID equals tbInventory<span class="token punctuation">.</span>InventoryID                 <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">CommodityVos</span>                 <span class="token punctuation">{<!-- --></span>                      CommodityID<span class="token operator">=</span>tbCommodity<span class="token punctuation">.</span>CommodityID<span class="token punctuation">,</span>                      InventoryID<span class="token operator">=</span>tbInventory<span class="token punctuation">.</span>InventoryID<span class="token punctuation">,</span>                      CommodityNumber<span class="token operator">=</span>tbCommodity<span class="token punctuation">.</span>CommodityNumber<span class="token punctuation">,</span>                      CommodityName<span class="token operator">=</span>tbCommodity<span class="token punctuation">.</span>CommodityName<span class="token punctuation">,</span>                      CommodityTypeName<span class="token operator">=</span>tbCommodtyType<span class="token punctuation">.</span>CommodityTypeName<span class="token punctuation">,</span>                      UnitName<span class="token operator">=</span>tbUnit<span class="token punctuation">.</span>UnitName<span class="token punctuation">,</span>                      Specification<span class="token operator">=</span>tbCommodity<span class="token punctuation">.</span>Specification<span class="token punctuation">,</span>                      InventoryFloor<span class="token operator">=</span>tbInventory<span class="token punctuation">.</span>InventoryFloor<span class="token punctuation">,</span>                      TheCurrentInventory<span class="token operator">=</span>tbInventory<span class="token punctuation">.</span>TheCurrentInventory<span class="token punctuation">,</span>                      WhetherGive<span class="token operator">=</span>tbCommodity<span class="token punctuation">.</span>WhetherGive<span class="token punctuation">,</span>                      WhetherForbidden<span class="token operator">=</span>tbCommodity<span class="token punctuation">.</span>WhetherForbidden<span class="token punctuation">,</span>                      TheDefaultSetting<span class="token operator">=</span>tbCommodity<span class="token punctuation">.</span>TheDefaultSetting<span class="token punctuation">,</span>                      BarCode<span class="token operator">=</span>tbCommodity<span class="token punctuation">.</span>BarCode<span class="token punctuation">,</span>                      Remark<span class="token operator">=</span>tbCommodity<span class="token punctuation">.</span>Remark     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     Commodity <span class="token operator">=</span> list<span class="token punctuation">;</span>             <span class="token punctuation">}</span> </code></pre> <p>这是删除后调用查询方法：</p> <pre><code class="prism language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span>myModel<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token punctuation">{<!-- --></span>       MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token string">"删除成功"</span><span class="token punctuation">,</span> <span class="token string">"系统提示"</span><span class="token punctuation">,</span> MessageBoxButton<span class="token punctuation">.</span>OK<span class="token punctuation">,</span> MessageBoxImage<span class="token punctuation">.</span>Information<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token function">GetAllCommodityBy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token punctuation">}</span> </code></pre> <p>这是删除前的表格：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230110/8eeaae9eb291b3c3c5fc4ac00f925b83.jpg" alt="MVVM中的数据的刷新"><br /> 我选择最后一条数据删除<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230110/32f69dbdf7f94ead5f401c416f9329c4.jpg" alt="MVVM中的数据的刷新"><br /> 当删除成功后点击确定，表格就会刷新了：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230110/e141a19483a301d92d1a3d57e892bf27.jpg" alt="MVVM中的数据的刷新"><br /> 而新增操作和查询操作不在一个ViewModel怎么办呢，这时候我们就要用到委托了。<br /> 我们在新增的ViewModel中声明一个委托：</p> <pre><code class="prism language-csharp"><span class="token comment">//委托</span>  <span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">LodedSelect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token keyword">public</span> <span class="token keyword">event</span> <span class="token class-name">LodedSelect</span> LodedCommodity<span class="token punctuation">;</span> </code></pre> <p>然后我们在查询的ViewModel中把查询方法赋值给这个委托：</p> <pre><code class="prism language-csharp"><span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">AddCommodity</span><span class="token punctuation">(</span><span class="token class-name">Window</span> window<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>                  <span class="token class-name">CommodityAdd</span> addOrCommodityWindow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">CommodityAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token class-name"><span class="token keyword">var</span></span> Commoditys <span class="token operator">=</span> <span class="token punctuation">(</span>addOrCommodityWindow<span class="token punctuation">.</span>DataContext <span class="token keyword">as</span> 			   <span class="token class-name">CommodityAddViewModel</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      Commoditys<span class="token punctuation">.</span>LodedCommodity <span class="token operator">+=</span> GetAllCommodityBy<span class="token punctuation">;</span>      addOrCommodityWindow<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token punctuation">}</span> </code></pre> <p>再然后我们在新增操作中用上这个委托就可以了。</p> <pre><code class="prism language-csharp"><span class="token keyword">if</span> <span class="token punctuation">(</span>myModel<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token punctuation">{<!-- --></span>       MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token string">"新增成功"</span><span class="token punctuation">,</span> <span class="token string">"系统提示"</span><span class="token punctuation">,</span> MessageBoxButton<span class="token punctuation">.</span>OK<span class="token punctuation">,</span> MessageBoxImage<span class="token punctuation">.</span>Information<span class="token punctuation">)</span><span class="token punctuation">;</span>       window1<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       LodedCommodity<span class="token punctuation">?.</span><span class="token function">Invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token punctuation">}</span> </code></pre> <p>在我刚才删除数据的表格上新增一条“榴莲”的数据,<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230110/8862b5bad96a64da5bb6b0f4446eaccd.jpg" alt="MVVM中的数据的刷新"><br /> 当我点击“确定”后，新增页面关闭并表格刷新：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230110/591cb832f565510976377b4d41c9bb4c.jpg" alt="MVVM中的数据的刷新"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-28550.htm">vue中watch监听器的触发时机(watch的坑及解决)_vue.js_</a></p>
+                                        <p>下一个：<a href="/news/article-29019.htm">1、Springboot 注入装配到IOC容器方式</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-27622.htm" title="养猫的人是不是有病了（养猫咪的人会得什么病）">养猫的人是不是有病了（养猫咪的人会得什么病）</a></li>
+                        <li class="py-2"><a href="/news/article-22528.htm" title="新手养猫适合养什么猫?（新手养猫适合养什么猫便宜）">新手养猫适合养什么猫?（新手养猫适合养什么猫便宜）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-subscribe-node.htm" title="12月21日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月21日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-node-share-links.htm" title="10月15日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月15日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-clash-node-daily-updates.htm" title="11月30日→23M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月30日→23M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-node-subscribe-links.htm" title="12月3日→19.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月3日→19.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25765.htm" title="动物疫苗生产厂家排名榜单图片 动物疫苗生产厂家排名榜单图片大全">动物疫苗生产厂家排名榜单图片 动物疫苗生产厂家排名榜单图片大全</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-free-node-subscribe.htm" title="11月3日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月3日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-free-high-speed-nodes.htm" title="10月26日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月26日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19319.htm" title="猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）">猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-29019.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>1、Springboot 注入装配到IOC容器方式</title>
+        <meta name="description" content="1、通过bean注解装配到IOC容器 &nbsp; &nbsp; &nbsp;创建装配的类，如下 package com.sboot.pr.bean; /**  * @author ygb  * @M" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">1、Springboot 注入装配到IOC容器方式</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>1、通过bean注解装配到IOC容器</strong><br /> &nbsp; &nbsp; &nbsp;创建装配的类，如下</p> <pre><code>package com.sboot.pr.bean; /**  * @author ygb  * @Mailbox 941201063@qq.com  * @date 2021年10月28日  * 通过bean注解装配到IOC容器  */ public class BeanPOJO {  	private int id; 	 	private String name; 	 	private int age;  	public int getId() { 		return id; 	}  	public void setId(int id) { 		this.id = id; 	}  	public String getName() { 		return name; 	}  	public void setName(String name) { 		this.name = name; 	}  	public int getAge() { 		return age; 	}  	public void setAge(int age) { 		this.age = age; 	} 	 	 } </code></pre> <p>通过bean注解装配BeanPOJO到IOC容器</p> <pre><code>package com.sboot.pr.config;  import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  import com.sboot.pr.bean.BeanPOJO;   /**  * @author ygb  * @Mailbox 941201063@qq.com  * @date 2021年10月28日  * 配置类文件  */ @Configuration public class BeanConfig {  	/** 	 * 通过bean注解装配BeanPOJO到IOC容器 	 * @return 	 */ 	@Bean(name = "beanPOJO") 	public BeanPOJO initBeanPOJO() { 		BeanPOJO pojo = new BeanPOJO(); 		pojo.setId(1); 		pojo.setName("BeanPOJO"); 		pojo.setAge(29); 		return pojo; 	} }</code></pre> <p>把装配的BeanPOJO 注入</p> <pre><code>package com.sboot.pr.controller;  import org.springframework.beans.factory.annotation.Autowired; import org.springframework.context.ApplicationContext; import org.springframework.context.annotation.AnnotationConfigApplicationContext; import org.springframework.web.bind.annotation.GetMapping; import org.springframework.web.bind.annotation.RestController;  import com.sboot.pr.bean.BeanPOJO; import com.sboot.pr.bean.ComponentPOJO; import com.sboot.pr.bean.ComponentScanPOJO;   /**  * @author ygb  * @Mailbox 941201063@qq.com  * @date 2021年10月28日  */ @RestController public class TestController { 	 	@Autowired 	private BeanPOJO beanPoJO;  	/** 	 * 获取通过Bean注解装配到IOC容器的对象 	 * @return 	 */ 	@GetMapping("/boot/getBeanPOJO") 	public BeanPOJO getBeanPOJO() { 		return beanPoJO; 	} } </code></pre> <p>访问注入的BeanPOJO信息</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:1111/boot/getBeanPOJO"  title="http://localhost:1111/boot/getBeanPOJO" rel="nofollow">http://localhost:1111/boot/getBeanPOJO</a></p> <p><img fetchpriority="high" decoding="async" alt="" height="155" src="http://img.555519.xyz/uploads/20230108/2674f5a8fc6d16e62554944f643918f9.jpg"></p> <p><strong>2、通过Component注解扫描装配bean到IOC容器</strong></p> <p>创建装配的类，如下</p> <pre><code>package com.sboot.pr.bean;  import org.springframework.beans.factory.annotation.Value; import org.springframework.context.annotation.ComponentScan; import org.springframework.stereotype.Component;  /**  * @author ygb  * @Mailbox 941201063@qq.com  * @date 2021年10月28日  * 通过Component注解扫描注入bean到IOC容器  * 指定bean名称，默认首个字母小写  */ @Component("componentPOJO") public class ComponentPOJO {  	@Value("2") 	private int id; 	 	@Value("ComponentPOJO") 	private String name; 	 	@Value("29") 	private int age;  	public int getId() { 		return id; 	}  	public void setId(int id) { 		this.id = id; 	}  	public String getName() { 		return name; 	}  	public void setName(String name) { 		this.name = name; 	}  	public int getAge() { 		return age; 	}  	public void setAge(int age) { 		this.age = age; 	} 	 	 } </code></pre> <p>把装配的ComponentPOJO&nbsp; 注入</p> <pre><code>package com.sboot.pr.controller;  import org.springframework.beans.factory.annotation.Autowired; import org.springframework.context.ApplicationContext; import org.springframework.context.annotation.AnnotationConfigApplicationContext; import org.springframework.web.bind.annotation.GetMapping; import org.springframework.web.bind.annotation.RestController;  import com.sboot.pr.bean.BeanPOJO; import com.sboot.pr.bean.ComponentPOJO; import com.sboot.pr.bean.ComponentScanPOJO;   /**  * @author ygb  * @Mailbox 941201063@qq.com  * @date 2021年10月28日  */ @RestController public class TestController { 	 	 	@Autowired 	private ComponentPOJO componentPOJO;      /** 	 * 获取通过Component注解装配到IOC容器的对象 	 * @return 	 */ 	@GetMapping("/boot/getComponentPOJO") 	public ComponentPOJO getComponentPOJO() { 		return componentPOJO; 	}  }</code></pre> <p>&nbsp;访问注入的ComponentPOJO&nbsp;信息</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:1111/boot/getComponentPOJO"  title="http://localhost:1111/boot/getComponentPOJO" rel="nofollow">http://localhost:1111/boot/getComponentPOJO</a></p> <p>&nbsp;<img decoding="async" alt="" height="138" src="http://img.555519.xyz/uploads/20230108/76598eb2c3a997fa0337d8128ac126df.jpg"></p> <p><strong>&nbsp;3、通过ComponentScan注解扫描装配bean到IOC容器</strong></p> <p>创建装配的类，如下</p> <pre><code>package com.sboot.pr.bean;  import org.springframework.beans.factory.annotation.Value; import org.springframework.context.annotation.ComponentScan; import org.springframework.context.annotation.Configuration;  /**  * @author ygb  * @Mailbox 941201063@qq.com  * @date 2021年10月28日  * 通过ComponentScan注解扫描注入bean到IOC容器  * 可以指定策列，比如哪些包需要扫描、排除哪些bean被扫描  */ @Configuration @ComponentScan public class ComponentScanPOJO {  	@Value("3") 	private int id; 	 	@Value("ComponentScanPOJO") 	private String name; 	 	@Value("29") 	private int age;  	public int getId() { 		return id; 	}  	public void setId(int id) { 		this.id = id; 	}  	public String getName() { 		return name; 	}  	public void setName(String name) { 		this.name = name; 	}  	public int getAge() { 		return age; 	}  	public void setAge(int age) { 		this.age = age; 	} 	 	 } </code></pre> <p>把装配的ComponentScanPOJO&nbsp; 注入</p> <pre><code>package com.sboot.pr.controller;  import org.springframework.beans.factory.annotation.Autowired; import org.springframework.context.ApplicationContext; import org.springframework.context.annotation.AnnotationConfigApplicationContext; import org.springframework.web.bind.annotation.GetMapping; import org.springframework.web.bind.annotation.RestController;  import com.sboot.pr.bean.BeanPOJO; import com.sboot.pr.bean.ComponentPOJO; import com.sboot.pr.bean.ComponentScanPOJO;   /**  * @author ygb  * @Mailbox 941201063@qq.com  * @date 2021年10月28日  */ @RestController public class TestController { 	  	@Autowired 	private ComponentScanPOJO componentScanPOJO;  	/** 	 * 获取通过Component注解装配到IOC容器的对象 	 * @return 	 */ 	@GetMapping("/boot/getComponentScanPOJO") 	public ComponentScanPOJO getComponentScanPOJO() { 		return componentScanPOJO; 	} 	 	 }</code></pre> <p>&nbsp;</p> <p>&nbsp;访问注入的ComponentScanPOJO信息</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:1111/boot/getComponentScanPOJO"  title="http://localhost:1111/boot/getComponentScanPOJO" rel="nofollow">http://localhost:1111/boot/getComponentScanPOJO</a></p> <p><img decoding="async" alt="" height="94" src="http://img.555519.xyz/uploads/20230108/9704d2eb0a052bf3d50759339956d5ef.jpg">&nbsp;</p> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-29018.htm">MVVM中的数据的刷新</a></p>
+                                        <p>下一个：<a href="/news/article-29490.htm">猫体内驱虫断食几小时（猫体内驱虫断食几小时有反应）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-23-clash-node-daily-updates.htm" title="10月23日→18.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月23日→18.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-node-share-links.htm" title="10月15日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月15日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-4-clash-node-daily-updates.htm" title="11月4日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月4日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-subscribe-node.htm" title="11月1日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月1日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-clash-node.htm" title="11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-clash-node-daily-updates.htm" title="11月9日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月9日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-28-free-high-speed-nodes.htm" title="9月28日→22.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">9月28日→22.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-node-subscribe.htm" title="12月16日→18.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月16日→18.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-free-high-speed-nodes.htm" title="12月13日→19.4M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月13日→19.4M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27160.htm" title="延吉市安泰宠物医院电话多少（延吉 宠物医院）">延吉市安泰宠物医院电话多少（延吉 宠物医院）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
