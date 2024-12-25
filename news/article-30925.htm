@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-30925.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tensorflow中张量（Tensor）打印信息中shape字段的理解方式</title>
+        <meta name="description" content="关于一个张量的shape的理解，可以参考《tensorflow中张量维度—Shape参数理解》这篇博文，该博文讲的已经比较全面。 我在这里补充一下：  一个Tensor的打印信息中shape=()表示" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Tensorflow中张量（Tensor）打印信息中shape字段的理解方式</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>关于一个张量的shape的理解，可以参考《<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/qq_35632833/article/details/103649578"  rel="nofollow">tensorflow中张量维度—Shape参数理解</a>》这篇博文，该博文讲的已经比较全面。<br /> 我在这里补充一下：</p> <ol> <li>一个Tensor的打印信息中<code>shape=()</code>表示该张量是标量（scalar）</li> <li>一个Tensor的打印信息中<code>shape=(n,)</code>表示该张量是一个<code>1</code>维张量（如：<code>tf.constant([1, 2, 3, …, n])</code>），即该张量只有<code>1</code>对<code>[]</code>，访问其中的某个单个数字，需要<code>1</code>个索引，<code>dim=1</code>,<code>rank=1</code>。并且注意<code>shape=(n,)</code>中一定会有一个<code>,</code>不会写作<code>shape=(n)</code> 。</li> <li>一个类Tensor（如TensorSpec）的打印信息中<code>shape=(None, n)</code>或<code>shape=(None,)</code>，其中<code>None</code>表示该维度存在，但是长度（或<code>sizes</code>）未知。如<code>shape=(None, n)</code>的张量有两个维度（也就是两对<code>[]</code>），其中第一个维度<code>sizes</code>未知。</li> </ol> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30924.htm">springboot post接口接受json时，转换为对象时，属性都为null</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-clash-node-daily-updates.htm" title="11月10日→20.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月10日→20.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-node-subscribe.htm" title="12月16日→18.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月16日→18.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24833.htm" title="netty依赖精简">netty依赖精简</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-node-share-links.htm" title="12月19日→18.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月19日→18.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-28089.htm" title="宠福鑫动物医院怎么样知乎 宠福鑫动物医院怎么样知乎">宠福鑫动物医院怎么样知乎 宠福鑫动物医院怎么样知乎</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-node-share-links.htm" title="11月8日→18.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月8日→18.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-18868.htm" title="猫咪体外驱虫哪个牌子好（猫咪体外驱虫什么牌子）">猫咪体外驱虫哪个牌子好（猫咪体外驱虫什么牌子）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-3-free-node-subscribe.htm" title="10月3日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月3日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-node-share-links.htm" title="10月15日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月15日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-node-share.htm" title="10月16日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月16日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>

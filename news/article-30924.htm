@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-30924.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>springboot post接口接受json时，转换为对象时，属性都为null</title>
+        <meta name="description" content="在接口请求过程中，传递json对象，springboot转换为实体VO对象后，所有属性都为null。 post请求： 后台接收请求： 当时就懵逼了…   查看springboot默认的HttpMess" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">springboot post接口接受json时，转换为对象时，属性都为null</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p>在接口请求过程中，传递json对象，springboot转换为实体VO对象后，所有属性都为null。</p> <p>post请求：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230217/906be7b7a573b39f3666d7a9db51040e.jpg" alt="springboot post接口接受json时，转换为对象时，属性都为null"></p> <p>后台接收请求：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230217/05ddf2c0b90f32735d17f86db29e93d2.jpg" alt="springboot post接口接受json时，转换为对象时，属性都为null"></p> <p>当时就懵逼了…</p> </h1> <h2> <a id="springbootHttpMessageConverter_14" rel="nofollow"></a>查看springboot默认的HttpMessageConverter</h2> <pre><code>@Configuration @Component public class AppWebConfiguration implements WebMvcConfigurer {  	/** 	 * 重写添加拦截器方法并添加配置拦截器 	 *  	 * @param registry 	 */ 	@Override 	public void addInterceptors(InterceptorRegistry registry) { 	}  	@Override 	public void extendMessageConverters(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters) { 		for (HttpMessageConverter&lt;?&gt; messageConverter : converters) { 			System.out.println(messageConverter);  		} 	}  } </code></pre> <p>默认的HttpMessageConverter如下：</p> <pre><code>org.springframework.http.converter.ByteArrayHttpMessageConverter@4ee488a7 org.springframework.http.converter.StringHttpMessageConverter@7c556701 org.springframework.http.converter.StringHttpMessageConverter@1650e1e1 org.springframework.http.converter.ResourceHttpMessageConverter@ffa6a44 org.springframework.http.converter.ResourceRegionHttpMessageConverter@65317aac org.springframework.http.converter.xml.SourceHttpMessageConverter@328b7464 org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter@2345d43d org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7f31325b org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter@113bd30b </code></pre> <p>所以解析jason时，用的转换器应该是MappingJackson2HttpMessageConverter。进入MappingJackson2HttpMessageConverter进行debug调试，发现，最后转换结果还真是null！<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230217/22e48516499729afa1af7041f55c91da.jpg" alt="springboot post接口接受json时，转换为对象时，属性都为null"></p> <h2> <a id="objectMapper_55" rel="nofollow"></a>尝试直接用objectMapper转换对象看一下结果</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230217/db2115423176c8beb5c210dc38a712b6.jpg" alt="springboot post接口接受json时，转换为对象时，属性都为null"><br /> 结果惊不惊喜，意不意外~。objectMapper把对象转为json时，属性变为<strong>下划线+小写</strong>风格了。<br /><strong>难怪对象的属性都为null，压根属性都不是同一个了</strong></p> <h2> <a id="jackson_60" rel="nofollow"></a>看看jackson配置能不能配置转换为驼峰</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230217/bf2c048cd54cb520e81c0ada59a14a40.jpg" alt="springboot post接口接受json时，转换为对象时，属性都为null"><br /> 将命名策略修改为LOWER_CAMEL_CASE。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230217/b708831da249b856a64d07afd10f2ce3.jpg" alt="springboot post接口接受json时，转换为对象时，属性都为null"><br /> 再看看转换结果：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230217/b5dca579b0c4fffe97e827e31d7b1191.jpg" alt="springboot post接口接受json时，转换为对象时，属性都为null"><br /> 成功转换为驼峰，对象属性也完美赋值！</p> <h2> <a id="springbootHttpMessageConverterFastJsonMappingJackson2HttpMessageConverter_71" rel="nofollow"></a>将springboot默认的HttpMessageConverter替换为阿里的FastJson转换器MappingJackson2HttpMessageConverter看看效果</h2> <pre><code>@Configuration public class FastJsonConfiguration {      @Bean     public HttpMessageConverters fastJsonHttpMessageConverters() {         FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();         FastJsonConfig fastJsonConfig = new FastJsonConfig();          List&lt;MediaType&gt; fastMediaTypes = new ArrayList&lt;&gt;();          // 处理中文乱码问题         fastJsonConfig.setCharset(Charset.forName("UTF-8"));         fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);         // 设置时间格式         fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");          fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);         fastJsonHttpMessageConverter.setSupportedMediaTypes(fastMediaTypes);          // 在转换器中添加配置信息         fastJsonHttpMessageConverter.setFastJsonConfig(fastJsonConfig);         HttpMessageConverter converter = fastJsonHttpMessageConverter;          StringHttpMessageConverter stringConverter = new StringHttpMessageConverter();         stringConverter.setDefaultCharset(Charset.forName("UTF-8"));         stringConverter.setSupportedMediaTypes(fastMediaTypes);          return new HttpMessageConverters(stringConverter, converter);     } } </code></pre> <h3> <a id="HttpMessageConverter_105" rel="nofollow"></a>再次查看HttpMessageConverter如下：</h3> <pre><code>com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter@15219255 org.springframework.http.converter.ByteArrayHttpMessageConverter@4ee488a7 org.springframework.http.converter.StringHttpMessageConverter@7c556701 org.springframework.http.converter.StringHttpMessageConverter@1650e1e1 org.springframework.http.converter.ResourceHttpMessageConverter@ffa6a44 org.springframework.http.converter.ResourceRegionHttpMessageConverter@65317aac org.springframework.http.converter.xml.SourceHttpMessageConverter@328b7464 org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter@2345d43d org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7f31325b org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter@113bd30b </code></pre> <p>发现FastJsonHttpMessageConverter已经在MappingJackson2HttpMessageConverter之前，springboot序列化会优先采用FastJsonHttpMessageConverter。<br /> 再次查看接口解析，发现直接转换到了对象属性中。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30439.htm">nohup: redirecting stderr to stdout的解决办法</a></p>
+                                        <p>下一个：<a href="/news/article-30925.htm">Tensorflow中张量（Tensor）打印信息中shape字段的理解方式</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-19318.htm" title="布偶猫的价格多少什么品种的猫最贵（布偶猫价格最便宜多少）">布偶猫的价格多少什么品种的猫最贵（布偶猫价格最便宜多少）</a></li>
+                        <li class="py-2"><a href="/news/article-29018.htm" title="MVVM中的数据的刷新">MVVM中的数据的刷新</a></li>
+                        <li class="py-2"><a href="/news/article-21616.htm" title="vue 实现简单表格分页功能">vue 实现简单表格分页功能</a></li>
+                        <li class="py-2"><a href="/news/article-25764.htm" title="ASP.NET Core 在 IIS 下的两种部署模式详解">ASP.NET Core 在 IIS 下的两种部署模式详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-clash-node.htm" title="10月27日→22.4M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月27日→22.4M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-30438.htm" title="promise 和 async/await的区别">promise 和 async/await的区别</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-node-subscribe.htm" title="10月12日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月12日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-clash-node-github.htm" title="10月18日→20.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月18日→20.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24835.htm" title="宠物粮行业发展趋势分析报告（宠物粮行业发展趋势分析报告范文）">宠物粮行业发展趋势分析报告（宠物粮行业发展趋势分析报告范文）</a></li>
+                        <li class="py-2"><a href="/news/article-27621.htm" title="人和动物打的狂犬疫苗一样吗多少钱 人和动物打的狂犬疫苗一样吗多少钱一针">人和动物打的狂犬疫苗一样吗多少钱 人和动物打的狂犬疫苗一样吗多少钱一针</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
