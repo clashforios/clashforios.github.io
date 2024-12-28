@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-31864.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Flutter实现心动的动画特效_Android</title>
+        <meta name="description" content="目录  实现动画  混入 SingleTickerProviderStateMixin 创建动画  抽离成小组件  完整代码    为了追求更好的用户体验，有时候我们需要一个类似心跳一样跳动着的控件来" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Flutter实现心动的动画特效_Android</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">实现动画</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">混入 SingleTickerProviderStateMixin</a></li> <li><a href="#_lab2_0_1" rel="nofollow">创建动画</a></li> </ul> <li><a href="#_label1" rel="nofollow">抽离成小组件</a></li> <ul class="second_class_ul"></ul> <li><a href="#_label2" rel="nofollow">完整代码</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p>为了追求更好的用户体验，有时候我们需要一个类似心跳一样跳动着的控件来吸引用户的注意力，这是一个小小的优化需求，但是在 Flutter 里动画两件套就像裹脚布一样臭长，所以需要像封装一个 AnimatedWidget，解放生产力。</p> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>实现动画</h2> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>混入 SingleTickerProviderStateMixin</h3> <p>当创建一个 AnimationController 时，需要传递一个<code>vsync</code>参数，存在<code>vsync</code>时会防止动画的UI不在当前屏幕时消耗不必要的资源。 通过混入 SingleTickerProviderStateMixin 。</p> <div class="ay1code"> <pre class="brush:java;">class _MyHomePageState extends State&lt;MyHomePage&gt;  with SingleTickerProviderStateMixin{}</pre> </div> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3>创建动画</h3> <p>创建一个间隔将近一秒钟的动画控制器：</p> <div class="ay1code"> <pre class="brush:java;">  late final AnimationController animController;      @override    void initState() {      super.initState();      animController = AnimationController(        duration: const Duration(milliseconds: 800),        vsync: this,      );      }</pre> </div> <p>心跳动画是从小变大，再变小，所以需要一个值大小变化的动画：</p> <div class="ay1code"> <pre class="brush:java;">  late final Animation&lt;double&gt; animation;      @override    void initState() {      super.initState();      animController = AnimationController(        duration: const Duration(milliseconds: 800),        vsync: this,      );       animation = Tween&lt;double&gt;(        begin: 0.9,        end: 1.05,      );      }</pre> </div> <p>心跳是不间断的，所以需要监听动画完成时恢复动画，再继续开始动画：</p> <div class="ay1code"> <pre class="brush:java;">    animation = Tween&lt;double&gt;(        begin: 0.9,        end: 1.05,      ).animate(animController)        ..addListener(() {          setState(() {});        })        ..addStatusListener((status) {          if (status == AnimationStatus.completed) {            animController.reverse();          } else if (status == AnimationStatus.dismissed) {            animController.forward();          }        });</pre> </div> <p>使用缩放控件：</p> <div class="ay1code"> <pre class="brush:java;">Transform.scale(                  scale: animation.value,                  child: const FlutterLogo(                    size: 80,                  ),                ),</pre> </div> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220424/9716bcbd9721fdd223eec8edba916681.jpg"></p> <p>为了跳动效果，突出跳动动画，把缩回去的时间改短：</p> <div class="ay1code"> <pre class="brush:java;">   animController = AnimationController(        reverseDuration: const Duration(milliseconds: 700),        duration: const Duration(milliseconds: 800),        vsync: this,      );</pre> </div> <p>最后别忘了释放资源：</p> <div class="ay1code"> <pre class="brush:java;">  @override    void dispose() {      animController.dispose();      super.dispose();    }</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>抽离成小组件</h2> <p>为了每次用到类似的动画只需引入即可，需要分离动画和显示的组件。新建一个<code>BounceWidget</code>，包含动画，然后可以传入UI组件：</p> <div class="ay1code"> <pre class="brush:java;">class BounceWidget extends StatefulWidget {    final Widget child;      const BounceWidget({      Key? key,      required this.child,    }) : super(key: key);      @override    State&lt;BounceWidget&gt; createState() =&gt; _BounceWidgetState();  }</pre> </div> <p>继续实现动画：</p> <div class="ay1code"> <pre class="brush:java;">class _BounceWidgetState extends State&lt;BounceWidget&gt;      with SingleTickerProviderStateMixin {    late Animation&lt;double&gt; animation;    late AnimationController animController;      @override    void initState() {      super.initState();      animController = AnimationController(        reverseDuration: const Duration(milliseconds: 700),        duration: const Duration(milliseconds: 800),        vsync: this,      );      animation = Tween&lt;double&gt;(        begin: 0.9,        end: 1.05,      ).animate(animController)        ..addListener(() {          setState(() {});        })        ..addStatusListener((status) {          if (status == AnimationStatus.completed) {            animController.reverse();          } else if (status == AnimationStatus.dismissed) {            animController.forward();          }        });      animController.forward();    }      @override    Widget build(BuildContext context) {      return Transform.scale(        scale: animation.value,        child: widget.child,      );    }      @override    void dispose() {      animController.dispose();      super.dispose();    }  }</pre> </div> <p>去引入动画：</p> <div class="ay1code"> <pre class="brush:java;">  Center(                child: BounceWidget(                  child: FlutterLogo(                    size: 80,                  ),                ),</pre> </div> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>完整代码</h2> <div class="ay1code"> <pre class="brush:java;">void main() {    runApp(const MyApp());  }    class MyApp extends StatelessWidget {    const MyApp({Key? key}) : super(key: key);      @override    Widget build(BuildContext context) {      return MaterialApp(        title: 'Flutter Demo',        theme: ThemeData(          primarySwatch: Colors.blue,        ),        home: const MyHomePage(title: 'Flutter Demo Home Page'),      );    }  }    class MyHomePage extends StatefulWidget {    const MyHomePage({Key? key, required this.title}) : super(key: key);      final String title;      @override    State&lt;MyHomePage&gt; createState() =&gt; _MyHomePageState();  }    class _MyHomePageState extends State&lt;MyHomePage&gt; {    @override    Widget build(BuildContext context) {      return Scaffold(        appBar: AppBar(          title: Text(widget.title),        ),        body: Padding(          padding: const EdgeInsets.only(top: 80, left: 16),          child: Column(            crossAxisAlignment: CrossAxisAlignment.start,            children: const &lt;Widget&gt;[              Text(                "心动的",                style: TextStyle(                  fontSize: 28,                  color: Colors.black,                ),              ),              Text(                "感觉",                style: TextStyle(                  fontSize: 48,                  color: Colors.black,                ),              ),              Center(                child: BounceWidget(                  child: FlutterLogo(                    size: 80,                  ),                ),              ),            ],          ),        ),      );    }  }  </pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-31295.htm">宠物用品批发平台哪个好（宠物用品批发网站大全最便宜卖）</a></p>
+                                        <p>下一个：<a href="/news/article-31865.htm">宠物领养平台app推荐哪个最好 宠物领养平台app推荐哪个最好用</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-node-subscribe.htm" title="10月12日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月12日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-clash-node-github.htm" title="9月27日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">9月27日→21.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26694.htm" title="打过疫苗的猫抓伤出血（打过疫苗的猫抓伤出血要***吗）">打过疫苗的猫抓伤出血（打过疫苗的猫抓伤出血要***吗）</a></li>
+                        <li class="py-2"><a href="/news/article-28088.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
+                        <li class="py-2"><a href="/news/article-22062.htm" title="k8s入门之Service">k8s入门之Service</a></li>
+                        <li class="py-2"><a href="/news/article-26245.htm" title="动物疫苗能放冰箱吗多久 动物疫苗能放冰箱吗多久打一次">动物疫苗能放冰箱吗多久 动物疫苗能放冰箱吗多久打一次</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-1-free-node-subscribe-links.htm" title="10月1日→20.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月1日→20.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-23900.htm" title="被猫咬出血了一定要***吗3天了（被猫咬出血了要马上***吗）">被猫咬出血了一定要***吗3天了（被猫咬出血了要马上***吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-high-speed-nodes.htm" title="10月30日→18M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月30日→18M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe.htm" title="11月26日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月26日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
