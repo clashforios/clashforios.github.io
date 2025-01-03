@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-35189.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Python数据展示 &#8211; 生成表格图片</title>
+        <meta name="description" content="前言 前一篇文章介绍了推送信息到企业微信群里，其中一个项目推送的信息是使用Python自动生成的表格，本文来讲讲如何用Python生成表格图片。 选一个合适库 Python最大的优点就是第三方库丰富，" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Python数据展示 &#8211; 生成表格图片</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<h2 id="前言">前言</h2> <p>前一篇文章介绍了推送信息到企业微信群里，其中一个项目推送的信息是使用Python自动生成的表格，本文来讲讲如何用Python生成表格图片。</p> <h2 id="选一个合适库">选一个合适库</h2> <p>Python最大的优点就是第三方库丰富，基本你要什么功能，都能找到别人实现好的库，几行代码一调用就完事了。</p> <h3 id="pytable">Pytable</h3> <p>项目地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/HiroshiARAKI/pytable"  target="_blank" rel="nofollow">https://github.com/HiroshiARAKI/pytable</a></p> <p>最先找到的是日本人开发的pytab库，它是基于<code>matplotlib</code>来画图的，默认参数下生成的表格外观一般般，而且显示不了中文字符，字体也很小，效果不理想。</p> <p>我一开始还抱着死磕的心态，把这个库的源码下载下来魔改，改了字体和大小，生成的表格终于能看了，但排版还是会出各种奇奇怪怪的问题，比如文字溢出单元格之类的，心累……</p> <h3 id="plotly">Plotly</h3> <p>官网地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://plotly.com/"  target="_blank" rel="nofollow">https://plotly.com/</a></p> <p>后面找到了一个新的库：plotly，官网的介绍是：</p> <blockquote> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://plotly.com/"  target="_blank" rel="nofollow">The front end for ML and data science models</a></p> </blockquote> <p>专门为机器学习和数据科学设计的前端展示工具，单纯拿来画表格还算大材小用了~ 它是用网页来渲染的，看例子效果还可以，我就换成这个plotly试试，嗯，真的可以，那就这个了。</p> <p>本文会分别介绍这两个库的使用，包括我魔改了pytab的地方。</p> <p>（不过还是推荐plotly，网页渲染就是好）</p> <h2 id="pytab">pytab</h2> <p>首先安装</p> <pre><code class="language-bash">pip install pytab</code></pre> <p>然后我把画表格的代码封装成一个函数</p> <pre><code class="language-python">import uuid from typing import List, Dict, Optional, Tuple  import pytab  def draw_table(data: Dict[str, list]):     """     画表格      :param data: 数据格式 {         'a': [1.0, 2.1, 3.5, 4.0, 2.0, 1.0, 2.1, 3.5, 4.0, 2.0, ],         'b': [5.7, 6.1, 7.2, 8.3, 1.2, 5.7, 6.1, 7.2, 8.3, 1.2, ],         }     :return:     """     # 设置字体，不然显示不了中文     pytab.plt.rcParams["font.sans-serif"] = ["SimHei"]     pytab.table(          data=data,         data_loc='center',         # th_type='dark',         th_c='#aaaaee',  # 设置表头背景颜色         td_c='gray',  # 设置数据行背景颜色         table_type='striped',         figsize=(len(data.keys()), int(len(data.values()) / len(data.keys()) + 1)),         # fontsize=18,     )      # pytab.show()     temp_file = os.path.join(tempfile.gettempdir(), f'{uuid.uuid4().hex}.jpg')     print(temp_file)     pytab.save(temp_file)     return temp_file</code></pre> <p>按照注释的这个数据格式，a和b是表头列名，后面的数组是每一列的数据，很好理解</p> <pre><code class="language-python">{     'a': [1.0, 2.1, 3.5, 4.0, 2.0, 1.0, 2.1, 3.5, 4.0, 2.0, ],     'b': [5.7, 6.1, 7.2, 8.3, 1.2, 5.7, 6.1, 7.2, 8.3, 1.2, ], }</code></pre> <p>画出来的表格是这样的</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e6ddcb3776e959f3903c820f57922fb2.jpg" alt="Python数据展示 - 生成表格图片"></p> <p>再来试试中文显示会怎么样</p> <pre><code class="language-python">{     '列1': [1.0, 2.1, 3.5, 4.0, 2.0, 1.0, 2.1, 3.5, 4.0, 2.0, ],     '列2': [5.7, 6.1, 7.2, 8.3, 1.2, 5.7, 6.1, 7.2, 8.3, 1.2, ], }</code></pre> <p>画出来是这样</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/ced963170a82d9bb4be7aa8f830c913a.jpg" alt="Python数据展示 - 生成表格图片"></p> <p>有点丑吧，勉强能看</p> <p>OK~ 关于pytab的就不多折腾了，毕竟上限就在这了</p> <p>接下来看看plotly</p> <h2 id="plotly-1">plotly</h2> <p>首先安装</p> <pre><code class="language-bash">pip install plotly</code></pre> <p>话不多说，老规矩，我又是写成一个函数</p> <pre><code class="language-python">import uuid from typing import List, Dict, Optional, Tuple  import plotly.graph_objects as go import plotly.io as pio  def draw_table(headers: List[str], cells: List[list]):     """     画表      :param headers: header=dict(values=['A Scores', 'B Scores'])     :param cells: cells=dict(values=[[100, 90, 80, 90], [95, 85, 75, 95]])     :return:     """     pio.kaleido.scope.default_width = len(','.join(headers)) * 20     pio.kaleido.scope.default_height = 250 + len(cells[0]) * 20     fig = go.Figure(data=[go.Table(header=dict(values=headers), cells=dict(values=cells))])     # fig.show()     image_file = os.path.join(tempfile.gettempdir(), f'{uuid.uuid4().hex}.jpg')     print('write image to', image_file)     fig.write_image(image_file)     return image_file</code></pre> <p>这次的参数格式更前面的pytab不一样，要传两个参数，都是数组类型</p> <p>第一个是表头，第二个数组是单元格</p> <p>先来个例子试试</p> <pre><code class="language-python">draw_table(['列A', '列B'], [[100, 90, 80, 90], [95, 85, 75, 95]])</code></pre> <p>然后把上面函数代码里的<code>fig.show()</code>注释去掉，可以看到生成的表格图片效果</p> <p>运行后可以发现自动打开了浏览器，因为这个库是使用网页来渲染表格的，效果如下</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/0de0e20de61732f42bd46c10d3604233.jpg" alt="Python数据展示 - 生成表格图片"></p> <p>效果比前面那个pytab好一些，哈哈~</p> <p>OK，就这样啦。</p> <p>下次分享一些关于最近用Django开发后台的。</p> <h2 id="参考资料">参考资料</h2> <ul> <li>python用prettytable输出漂亮的表格：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://linuxops.org/blog/python/prettytable.html"  target="_blank" rel="nofollow">https://linuxops.org/blog/python/prettytable.html</a></li> <li>Plotly关于表格的文档：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://plotly.com/python/table/"  target="_blank" rel="nofollow">https://plotly.com/python/table/</a></li> <li>Plotly关于导出图片的文档：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://plotly.com/python/static-image-export/"  target="_blank" rel="nofollow">https://plotly.com/python/static-image-export/</a></li> <li>python将表格展示的数据生成图片：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/3bfbf1bf0699"  target="_blank" rel="nofollow">https://www.jianshu.com/p/3bfbf1bf0699</a></li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-34723.htm">湖州宠物领养在哪里（湖州动物领养）</a></p>
+                                        <p>下一个：<a href="/news/article-35190.htm">动物疫苗行业排名前十名有哪些 动物疫苗行业排名前十名有哪些品牌</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-30439.htm" title="nohup: redirecting stderr to stdout的解决办法">nohup: redirecting stderr to stdout的解决办法</a></li>
+                        <li class="py-2"><a href="/news/article-25765.htm" title="动物疫苗生产厂家排名榜单图片 动物疫苗生产厂家排名榜单图片大全">动物疫苗生产厂家排名榜单图片 动物疫苗生产厂家排名榜单图片大全</a></li>
+                        <li class="py-2"><a href="/news/article-35189.htm" title="Python数据展示 &#8211; 生成表格图片">Python数据展示 &#8211; 生成表格图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-clash-node.htm" title="11月6日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月6日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-1-free-node-subscribe-links.htm" title="10月1日→20.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月1日→20.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22985.htm" title="和田宠物店联系方式电话（和田宠物医院在哪儿）">和田宠物店联系方式电话（和田宠物医院在哪儿）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-free-high-speed-nodes.htm" title="10月21日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月21日→18.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-node-subscribe.htm" title="12月14日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月14日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-node-share-links.htm" title="12月2日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月2日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
