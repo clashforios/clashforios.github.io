@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-41073.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Python 替换.txt文件中的字符</title>
+        <meta name="description" content="需求：.txt文件中存在空格，将其每个数字后面加上一个“,” 要处理的文件格式：此时每行后面已加入“，”，使用的方法:在notepad++中替换，将"$"替换为",",选择正则表达式，全部替换，此时每" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Python 替换.txt文件中的字符</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><em><strong>需求</strong></em>：<strong>.txt文件中存在空格，将其每个数字后面加上一个“,”</strong></p> <p>要处理的文件格式：此时每行后面已加入“，”，使用的方法:在notepad++中替换，将"$"替换为",",选择正则表达式，全部替换，此时每行数字后面都有“，”。但每行数字之间不存在“，”，使用替换命令，参考后面代码。</p> <p>源.txt</p> <pre class="has"><code>4&nbsp;&nbsp; &nbsp;4, 4&nbsp;&nbsp; &nbsp;4, -4&nbsp;&nbsp; &nbsp;-4, 5&nbsp;&nbsp; &nbsp;5, 1&nbsp;&nbsp; &nbsp;1, 11&nbsp;&nbsp; &nbsp;11, 5&nbsp;&nbsp; &nbsp;5, 9&nbsp;&nbsp; &nbsp;9, 3&nbsp;&nbsp; &nbsp;3, 7&nbsp;&nbsp; &nbsp;7, -11&nbsp;&nbsp; &nbsp;-11, 11&nbsp;&nbsp; &nbsp;11, 54&nbsp;&nbsp; &nbsp;54, 275&nbsp;&nbsp; &nbsp;275, 324&nbsp;&nbsp; &nbsp;324, -354&nbsp;&nbsp; &nbsp;-354,</code></pre> <p>目的效果类似于.txt</p> <pre class="has"><code>0, 0, 0, 0, 2, 2, 0, 0, 0, 0, -1, -1, 0, 0, 0, 0, -1, -1, 0, 0, -1, -1, 1, 1, 0, 0, 0, 0, -1, -1,</code></pre> <p>python代码：</p> <pre class="has"><code class="language-python">#encoding=utf-8 import re import os import sys   file_open=open(sys.argv[1])  filewritepath=os.path.dirname(sys.argv[1])+"\\Result.txt"  file_write=open(filewritepath,'w')   listfile=file_open.read() listf=re.split('[ \n\r]',listfile) i=0   while i&lt;len(listf)-2: 	listt=listf[i].replace("\t",", "); 	file_write.write(listt); 	i=i+1; 	file_write.write("\n");   file_open.close() file_write.close() print "Finish " print filewritepath</code></pre> <p>使用方法：打开cmd,输入python,拖入此文件和要处理的txt，生成对应：文件Result.txt。。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-40574.htm">开宠物食品厂需要什么手续和证件 开宠物食品厂需要什么手续和证件呢</a></p>
+                                        <p>下一个：<a href="/news/article-41074.htm">合肥市宠物收容中心（合肥市宠物收容中心地址）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-subscribe-node.htm" title="12月21日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月21日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-clash-node-github.htm" title="10月18日→20.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月18日→20.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-node-share-links.htm" title="10月15日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月15日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-38601.htm" title="考宠物医师需要什么条件（考宠物医师资格证需要什么学历）">考宠物医师需要什么条件（考宠物医师资格证需要什么学历）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-node-share-links.htm" title="11月8日→18.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月8日→18.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe.htm" title="11月26日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月26日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-39606.htm" title="kafka启动后一段时间自动退出的解决方案">kafka启动后一段时间自动退出的解决方案</a></li>
+                        <li class="py-2"><a href="/news/article-35737.htm" title="被猫抓破了最薄的一层皮需要***吗（被猫抓破一点点薄皮有问题吗）">被猫抓破了最薄的一层皮需要***吗（被猫抓破一点点薄皮有问题吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-node-share.htm" title="1月8日→21.6M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月8日→21.6M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-34723.htm" title="湖州宠物领养在哪里（湖州动物领养）">湖州宠物领养在哪里（湖州动物领养）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
