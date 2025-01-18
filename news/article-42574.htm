@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-42574.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pandas——基础操作汇总</title>
+        <meta name="description" content="数据结构&amp;Series： ''' series {索引 + 数据} 形式 索引是自动生成的 '''  #通过 list 创建 s1 = pd.Series([1, 2, 3, 4, 5])  " />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-42574.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="Pandas——基础操作汇总" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/3a9aa17cef90880053cf7eaaa374654e.webp" />
+        <meta property="og:release_date" content="2025-01-18T07:15:24" />
+    <meta property="og:updated_time" content="2025-01-18T07:15:24" />
+        <meta property="og:description" content="数据结构&amp;Series： ''' series {索引 + 数据} 形式 索引是自动生成的 '''  #通过 list 创建 s1 = pd.Series([1, 2, 3, 4, 5])  " />
+        
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Pandas——基础操作汇总</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h3>数据结构&amp;Series：</h3> <pre><code>''' series {索引 + 数据} 形式 索引是自动生成的 '''  #通过 list 创建 s1 = pd.Series([1, 2, 3, 4, 5])  #通过np数组创建 arr1 = np.arange(10) s2 = pd.Series(arr1)  #自定义索引 s2 = pd.Series(arr1, index=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'])  #单独查看值或索引 print(s1.values) print(s1.index)  #字典索引超出 会显示nan 值 不会像数组创建series一样报错 #通过字典来创建series  由于字典无序 所以每次打印顺序可能不同, 所以可以添加索引 保证顺序 dict1 = {'姓名': '李宁', '班级': '三班', '年龄': '22'} print(dict1) s3 = pd.Series(dict1, index=['姓名', '班级', '年龄', '性别'])  #判断values是否为空nan print(s3.isnull())  #判断values是否不为空 print(s3.notnull())  #通过下标取数据 print(s3[1])  #通过标签名取数字 print(s3['姓名'])  #选取多个 print(s2[[1, 5]])  #切片取值 print(s2[1:4])              #索引切边 是 左闭右开 print(s2['b':'h'])          #标签切片可以包含末端数据 如h  #bool索引取值 print(s2[s2&gt;5])  #索引与数据的对应关系 不被 运算所影响   #name 属性 s2.name = '佳林'          #数组对象名---values标题 s2.index.name = '字母表'   #索引名  ---- index标题  #查看前三行 print(s2.head(3))  #查看后两行 print(s2.tail(2))  </code></pre> <h3>DataFrame的构建：&nbsp;</h3> <pre><code>#构造多类型字典 data = {     'a': [1, 2, 3, 4],     'b': (5, 6, 7, 8),     'c': np.arange(9, 13)  }  frame = pd.DataFrame(data)  #查看行索引 print(frame.index)  #查看列索引 print(frame.columns)  #查看values print(frame.values)                        #返回nparray类型的二维数组  #指定行索引 frame = pd.DataFrame(data, index=['A', 'B', 'C', 'D'])  #指定列行索引 frame = pd.DataFrame(data, index=['A', 'B', 'C', 'D'], columns=['a', 'b', 'c', 'd'])  #series构成的字典构造dataframe pd1 = pd.DataFrame({'a': pd.Series(np.arange(5)),                     'b': pd.Series(np.arange(3, 5))                     })  #dataframe的每列元素类型必须统一  #通过字典构造的字典来构造dataframe（嵌套） data1 = {     'a': {         'apple': '3.6',         'banan': '3.5'     },     'b': {         'apple': '3.6',         'banan': '3.5',         'red': '3.7',         'yellow': '3.8'     } }  #最内层字典的key是index #外层字典的key是columns  #通过二位数组来构造dataframe----默认columns和index都是0-n arr1 = np.arange(12).reshape(3, 4) print(arr1) frame1 = pd.DataFrame(arr1)   #字典构造的列表 构造 dataframe li = [{'apple': '3.6', 'orange': '2.5'}, {'apple': '4.8', 'orange': '2.8'}, {'apple': '2.4'}] li_data = pd.DataFrame(li)  #Series构成的列表 构成dataframe l2 = [pd.Series(np.random.rand(3)), pd.Series(np.random.rand(3))] l2_data = pd.DataFrame(l2)</code></pre> <h3>索引操作：&nbsp;</h3> <pre><code>ps = pd.Series(range(5))  pd1 = pd.DataFrame(np.arange(9).reshape(3, 3),                    index=['a', 'b', 'c'], columns=['A', 'B', 'C'])  #重新索引 reindex 创建一个符合新索引的新对象 ps2 = ps.reindex(['a', 'b', 'c', 'd', 'e']) print(ps2)           #因为新索引与之前的索引没有对应关系 所以values全为空！！！！   #dataframe行索引重建顺序调整 pd2 = pd1.reindex(['a', 'b', 'c', 'd']) pd3 = pd1.reindex(columns= ['B', 'C', 'A', 'B']) </code></pre> <h3>&nbsp;DataFrame基本操作：</h3> <pre><code>np.random.seed(1) pd1 = pd.DataFrame(np.random.randint(0, 10, size=(3, 5)), columns=['a', 'b', 'c', 'd', 'e'], index=['A', 'B', 'C']) print(pd1)  #和numpy一样 进行转至 切片提取 # print(pd1.T) print(pd1[:'B']['e'])          #第一个或只有一个[]默认是行索引index 第二个[]是columns  #增加列 pd1['f'] = [5, 5, 5] print(pd1)  #删除列 del(pd1['d']) print(pd1)  #修改行索引名----只能赋值 1\直接赋值法 pd1.index = ['a', 'b'........] 2\自定义函数法 def test_map(x):     return x+'_ABC' pd1.rename(index=test_map,inplace=True)  #修改列索引名 1\直接赋值 pd1.columns = [] 2\用str进行广播操作 如整体去掉某符号 pd1.columns = pd1.columns.str.strip('$') 3\函数法 pd1.columns = pd1.columns.map(lambda x:x[1:]) 4\rename属性 # 直接法（好处：也可只修改特定的列）----字典values替代key df.rename(columns=('$a': 'a', '$b': 'b', '$c': 'c', '$d': 'd', '$e': 'e'}, inplace=True)  # 函数法 df.rename(columns=lambda x:x.replace('$',''), inplace=True)  #提取行、列的loc和iloc #iloc是按索引位置提取 #loc是按标签提取 df.loc[:, 'a']                    #提取a列 df.loc[:, ['a', 'c']]             #提取ac列 df.loc[1]                         #提取行标签为1的行 df.iloc[1]                        #提取行位置为1的行也就是第二行 df.loc[:2]                        #提取多行 #loc没有左闭右开 df.loc[0:1, 'b']                  #提取行索引0-1包括1 的‘b’列 df1.loc['a':'B', 'c':'d']         #按标签提取某范围的行列  #多条件 df[(df['a']&lt;=2) &amp; (df['b']&gt;=5)] df.loc[(df['a']&lt;=2) &amp; (df['b']&gt;=5)] # 或 条件 不能使用 or df[(df['a']&lt;=2) | (df['b']&gt;=5)] df.loc[(df['a']&lt;=2) | (df['b']&gt;=5)]  </code></pre> <h3>广播运算：&nbsp;</h3> <pre><code>arr = np.arange(12).reshape(3, 4) print(arr) #广播 每一行都减去第一行 print(arr-arr[0])  #默认series的行索引 匹配的是dataframe的列索引 df1 = pd.DataFrame(np.arange(12).reshape(4, 3), index=['a', 'b', 'c', 'd'], columns=list('ABC')) s3 = df1.iloc[0]        #取第一行 print(s3) print(df1 - s3)  #沿着列运算 print(df1.sub(s4, axis= 0))          </code></pre> <h3>&nbsp;索引增删改查：</h3> <pre><code>#增 ##series ps[4] = 9 print(ps)  ps1 = pd.Series({'v': 's', 'f': 's'}) pss = ps.append(ps1)                 #append拼接 这个方法不会影响原有数据   ##dataframe ###增加列 df['d'] = [9, 8, 9] ###插入 df.insert(0, 'M', 1)            #在第0列插入M全为1  ##高级标签索引--增加行loc df.loc['q'] = 1  row = {'M': 's', 'a': 'b', 'b': 'w', 'c': 'w', 'd': 8} dfnew = df.append(row, ignore_index=True)     #ignore_index：如果设置为true，则无视表的index，直接合并，合并后生成新的index。   #删  del ps[0]  #del只能删除dataframe的列 del df['M']   #*******drop******删除轴上的数据 #dataframe删除行 print(df.drop(['S', 'W']))  #指定轴删除列 print(df.drop(['a', 'c'], axis=1))  ps = pd.Series(range(1, 5))   #改 ps[0] = 888 print(ps)  df.a = 6  #修改行数据 df.loc['S'] = 888  #修改单个元素 df.loc['D', 'b'] = 8848  </code></pre> <h3>字符串元素处理：</h3> <p>in：</p> <pre><code>data = {'a': 'aeac@qq.com', 'b': 'stevan@famil.com', 'c': 'asda@asd.com', 'd': np.nan} data = pd.Series(data) print(data)  print(data.isnull())  #字符串查找 print(data.str.contains('qq'))  #分割 print(data.str.split(r'@'))  print(data.str.findall(r'@'))  #切片 print(data.str[:5])</code></pre> <p>out：&nbsp;</p> <pre><code>a         aeac@qq.com b    stevan@famil.com c        asda@asd.com d                 NaN dtype: object   a    False b    False c    False d     True dtype: bool   a     True b    False c    False d      NaN dtype: object   a         [aeac, qq.com] b    [stevan, famil.com] c        [asda, asd.com] d                    NaN dtype: object   a    [@] b    [@] c    [@] d    NaN dtype: object   a    aeac@ b    steva c    asda@ d      NaN dtype: object </code></pre> <h3>数据规整：&nbsp;</h3> <pre><code>pd.merge（data1, data2, on= '按照哪一行合并', how = 'left或right或outer或inner'） pd.merge(df_obj5, df_obj6, how='outer', left_index=True, right_index=True) pd.merge(df_obj3, df_obj4, left_on='key', right_index=True) pd.concat([df1, df2], join='inner\outer', axis=1   stack 列索引在最外层 columns在内层 变成series 外层索引为index内层索引变成columns--unstack()    g = df1.groupby(by='fruit') for name,group in g:     print(name)     print('-'*30)     print(group)  apple ------------------------------    fruit color  price 0  apple   red    8.5 3  apple  cyan    7.8 banana ------------------------------     fruit   color  price 1  banana  yellow    6.8 4  banana    cyan    6.4 orange ------------------------------     fruit   color  price 2  orange  yellow    5.6   #利用字典来获取具体分组名的dataframe s = dict(list(df1.groupby(by='fruit'))) s['apple']  def diff(arr):     return arr.max() - arr.min() df1.groupby(by='fruit')['price'].agg(diff)</code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-42068.htm">宠物主粮上市公司名单 宠物主粮上市公司名单公布</a></p>
+                                        <p>下一个：<a href="/news/article-42575.htm">动物防疫站给猫打疫苗贵吗现在能打吗（动物防疫站给猫***免费吗）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-29490.htm" title="猫体内驱虫断食几小时（猫体内驱虫断食几小时有反应）">猫体内驱虫断食几小时（猫体内驱虫断食几小时有反应）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-clash-node-github.htm" title="1月7日→21.9M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月7日→21.9M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-1-free-node-subscribe-links.htm" title="1月1日→19.7M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月1日→19.7M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24833.htm" title="netty依赖精简">netty依赖精简</a></li>
+                        <li class="py-2"><a href="/news/article-40086.htm" title="给宠物医院的好评怎么写简短 给宠物医院的好评怎么写简短一点">给宠物医院的好评怎么写简短 给宠物医院的好评怎么写简短一点</a></li>
+                        <li class="py-2"><a href="/news/article-29018.htm" title="MVVM中的数据的刷新">MVVM中的数据的刷新</a></li>
+                        <li class="py-2"><a href="/news/article-42067.htm" title="宠物零食加工设备批发 宠物零食加工设备批发厂家">宠物零食加工设备批发 宠物零食加工设备批发厂家</a></li>
+                        <li class="py-2"><a href="/news/article-28089.htm" title="宠福鑫动物医院怎么样知乎 宠福鑫动物医院怎么样知乎">宠福鑫动物医院怎么样知乎 宠福鑫动物医院怎么样知乎</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-node-share.htm" title="1月8日→21.6M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月8日→21.6M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-35190.htm" title="动物疫苗行业排名前十名有哪些 动物疫苗行业排名前十名有哪些品牌">动物疫苗行业排名前十名有哪些 动物疫苗行业排名前十名有哪些品牌</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">53</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
