@@ -1,0 +1,216 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-45049.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>vue-cli中devServer.proxy相关配置项的使用_vue.js</title>
+        <meta name="description" content="目录  devServer.proxy相关配置项的说明  devServer.proxy中的 changeOrigin 参数 devServer.proxy中的 pathRewrite 参数  dev" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-45049.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="vue-cli中devServer.proxy相关配置项的使用_vue.js" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/f0146261c92882776ab6bb31fd02013b.webp" />
+        <meta property="og:release_date" content="2025-01-23T10:41:19" />
+    <meta property="og:updated_time" content="2025-01-23T10:41:19" />
+        <meta property="og:description" content="目录  devServer.proxy相关配置项的说明  devServer.proxy中的 changeOrigin 参数 devServer.proxy中的 pathRewrite 参数  dev" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue-cli中devServer.proxy相关配置项的使用_vue.js">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS
+                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">vue-cli中devServer.proxy相关配置项的使用_vue.js</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">devServer.proxy相关配置项的说明</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">devServer.proxy中的 changeOrigin 参数</a></li> <li><a href="#_lab2_0_1" rel="nofollow">devServer.proxy中的 pathRewrite 参数</a></li> </ul> <li><a href="#_label1" rel="nofollow">devServer.proxy代理配置详解</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_2" rel="nofollow">.config.js文件中引入依赖项</a></li> <li><a href="#_lab2_1_3" rel="nofollow">更多的代理控制行为</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>devServer.proxy相关配置项的说明</h2> <p>如图：</p> <p style="text-align:center"><img fetchpriority="high" decoding="async" alt="" height="468" src="http://img.555519.xyz/uploads3/20220419/c654dd8247e19c678eadded88b38f3d4.jpg"></p> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>devServer.proxy中的 changeOrigin 参数</h3> <p>changeOrigin 为false时，请求头中host仍然是浏览器发送过来的host;如果设置成true：发送请求头中host会设置成target的值。</p> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3>devServer.proxy中的 pathRewrite 参数</h3> <p>本示例中，pathRewrite设置了<strong> '^/lr': ''</strong> ，作用如下:</p> <p>使用代理，首先需要有一个标识，告诉程序这个连接要使用代理，不然的话，可能你的html、css、js、矢量图等静态资源都跑去代理。所以我们要通过一个唯一标识，让接口使用代理，静态资源文件使用本地。</p> <p>proxy中的 <strong>'/lr':{······}</strong>，就是告诉node，我的接口是要以 <strong>/lr</strong> 开头的才使用代理。所有的接口都要写成 <strong>/lr/xx/xx</strong> ，以 <strong>/lr</strong> 开头，最后代理的接口路径路径就是 http://localhost:8080/lirong/lr/xx/xx</p> <p>但是例子中真实的后台数据接口里没有<strong> /lr</strong>，直接就是 http://localhost:8080/lirong/xx/xx ，所以就需要配置 pathRewrite，用<strong>'^/lr': ''</strong> 将<strong> /lr</strong> 去掉，这样既有正确的标识，又能在真实请求接口的时候去掉 <strong>/lr</strong> 。</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>devServer.proxy代理配置详解</h2> <p>如果你的前端应用和后端 API 服务器没有运行在同一个主机上，你需要在开发环境下将 API 请求代理到 API 服务器。可以通过 *.config.js 中的 devServer.proxy 选项来配置。</p> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>.config.js文件中引入依赖项</h3> <div class="ay1code"> <pre class="brush:js;">const proxy = require('http-proxy-middleware');</pre> </div> <p>devServer.proxy 可以是一个指向开发环境 API 服务器的字符串</p> <p>//服务器会将任何未知请求 (没有匹配到静态文件的请求) 代理到http://localhost:4000上</p> <div class="ay1code"> <pre class="brush:js;">module.exports = {    devServer: {      proxy: 'http://localhost:4000'    }  }</pre> </div> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>更多的代理控制行为</h3> <div class="ay1code"> <pre class="brush:js;">const proxy = require('http-proxy-middleware');  module.exports = {     devServer:{      host: 'localhost',//target host      port: 8080,      //proxy:{'/api':{}},代理器中设置/api,项目中请求路径为/api的替换为target      proxy:{          '/api':{              target: 'http://192.168.1.30:8085',//代理地址，这里设置的地址会代替axios中设置的baseURL              changeOrigin: true,// 如果接口跨域，需要进行这个参数配置              //ws: true, // proxy websockets              //pathRewrite方法重写url              pathRewrite: {                  '^/api': '/'                   //pathRewrite: {'^/api': '/'} 重写之后url为 http://192.168.1.16:8085/xxxx                  //pathRewrite: {'^/api': '/api'} 重写之后url为 http://192.168.1.16:8085/api/xxxx             }      }}  },  //...  }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-44547.htm">弓形虫感染的症状（宠物弓形虫感染的症状）</a></p>
+                                        <p>下一个：<a href="/news/article-45050.htm">宠物狗领养免费领养宠物的网站叫什么来着（宠物狗领养平台）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-21154.htm" title="制作狗粮机器多少钱一套（自制狗粮机）">制作狗粮机器多少钱一套（自制狗粮机）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-clash-node.htm" title="11月27日→21M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月27日→21M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-free-high-speed-nodes.htm" title="10月26日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">10月26日→20.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26692.htm" title="详解盒子模型和div布局">详解盒子模型和div布局</a></li>
+                        <li class="py-2"><a href="/news/article-34243.htm" title="动物疫苗接种时间表图片大全高清版（动物疫苗种类及类型）">动物疫苗接种时间表图片大全高清版（动物疫苗种类及类型）</a></li>
+                        <li class="py-2"><a href="/news/article-21153.htm" title="瑞鹏宠物医院在线咨询（瑞鹏宠物医院在线咨询免费）">瑞鹏宠物医院在线咨询（瑞鹏宠物医院在线咨询免费）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-subscribe-node.htm" title="11月1日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月1日→22.8M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24349.htm" title="中国兽药厂家二十强企业 中国兽药厂家二十强企业有哪些">中国兽药厂家二十强企业 中国兽药厂家二十强企业有哪些</a></li>
+                        <li class="py-2"><a href="/news/article-39083.htm" title="免费领养宠物的软件有哪些（免费领养宠物的小程序）">免费领养宠物的软件有哪些（免费领养宠物的小程序）</a></li>
+                        <li class="py-2"><a href="/news/article-40084.htm" title="PHP goto声明详解">PHP goto声明详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">71</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
