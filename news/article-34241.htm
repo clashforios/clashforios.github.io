@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://clashforios.github.io/news/article-34241.htm" />
@@ -9,6 +9,34 @@
     <title>Redis(六) 数据库和缓存的一致性问题</title>
         <meta name="description" content="文章目录    一 先上结论 二 四种常用的缓存更新策略： 三 写操作的缓存更新策略分析   一 双更策略： 二 删除策略： 三 延时双删策略：   四 失败重试   同步重试： 异步重试： 借助消息" />
         <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-34241.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="Redis(六) 数据库和缓存的一致性问题" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/08b23ed63c524bdfee2572515b8b88ad.webp" />
+        <meta property="og:release_date" content="2025-01-01T06:39:59" />
+    <meta property="og:updated_time" content="2025-01-01T06:39:59" />
+        <meta property="og:description" content="文章目录    一 先上结论 二 四种常用的缓存更新策略： 三 写操作的缓存更新策略分析   一 双更策略： 二 删除策略： 三 延时双删策略：   四 失败重试   同步重试： 异步重试： 借助消息" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Redis(六) 数据库和缓存的一致性问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
     <!-- Slick Silder CSS -->
@@ -112,16 +140,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-22985.htm" title="和田宠物店联系方式电话（和田宠物医院在哪儿）">和田宠物店联系方式电话（和田宠物医院在哪儿）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-11-clash-node.htm" title="12月11日→21.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月11日→21.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-22983.htm" title="成都市宠物狗领养平台官网电话（成都宠物狗领养吧）">成都市宠物狗领养平台官网电话（成都宠物狗领养吧）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-1-free-node-subscribe-links.htm" title="1月1日→19.7M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月1日→19.7M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-19-node-share-links.htm" title="12月19日→18.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月19日→18.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-25-node-share-links.htm" title="12月25日→20.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月25日→20.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-29954.htm" title="Android开发基础——Fragment">Android开发基础——Fragment</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-25-free-node-subscribe.htm" title="11月25日→22.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月25日→22.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="11月14日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月14日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-28089.htm" title="宠福鑫动物医院怎么样知乎 宠福鑫动物医院怎么样知乎">宠福鑫动物医院怎么样知乎 宠福鑫动物医院怎么样知乎</a></li>
+                        <li class="py-2"><a href="/news/article-33773.htm" title="领养宠物中心（领养宠物网）">领养宠物中心（领养宠物网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-node-subscribe-links.htm" title="1月25日→20.5M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月25日→20.5M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-34241.htm" title="Redis(六) 数据库和缓存的一致性问题">Redis(六) 数据库和缓存的一致性问题</a></li>
+                        <li class="py-2"><a href="/news/article-37612.htm" title="兽用疫苗常温下能放多久 兽用疫苗保存的适宜温度">兽用疫苗常温下能放多久 兽用疫苗保存的适宜温度</a></li>
+                        <li class="py-2"><a href="/news/article-44547.htm" title="弓形虫感染的症状（宠物弓形虫感染的症状）">弓形虫感染的症状（宠物弓形虫感染的症状）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-clash-node-daily-updates.htm" title="11月23日→18.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月23日→18.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-free-high-speed-nodes.htm" title="1月2日→19.7M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月2日→19.7M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-48003.htm" title="动物疫苗的正确使用方法有哪些呢 动物疫苗的正确使用方法有哪些呢图片">动物疫苗的正确使用方法有哪些呢 动物疫苗的正确使用方法有哪些呢图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-free-node-subscribe-links.htm" title="1月6日→18.7M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月6日→18.7M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-50039.htm" title="参观动物医院实验报告模板 参观动物园兽医心得">参观动物医院实验报告模板 参观动物园兽医心得</a></li>
                     </ul>
     </div>
 </div>
@@ -133,19 +161,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">91</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

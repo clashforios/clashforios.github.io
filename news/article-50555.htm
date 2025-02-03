@@ -1,0 +1,215 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-50555.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>vuex数据共享与多模块化</title>
+        <meta name="description" content="数据共享 数据共享：相同数据在多组件中使用 vuex模块化 模块化+命名空间 目的： 让代码更好维护，让多种数据分类更加明确 修改store/index.js // 该文件是准备vuex的核心 ==&" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-50555.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="vuex数据共享与多模块化" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/f0146261c92882776ab6bb31fd02013b.webp" />
+        <meta property="og:release_date" content="2025-02-03T09:27:29" />
+    <meta property="og:updated_time" content="2025-02-03T09:27:29" />
+        <meta property="og:description" content="数据共享 数据共享：相同数据在多组件中使用 vuex模块化 模块化+命名空间 目的： 让代码更好维护，让多种数据分类更加明确 修改store/index.js // 该文件是准备vuex的核心 ==&" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vuex数据共享与多模块化">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">vuex数据共享与多模块化</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h4><a id="_0" rel="nofollow"></a>数据共享</h4> <p>数据共享：相同数据在多组件中使用<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/5e3a90d5f5183b94567ad47345a7ce25.jpg" alt="vuex数据共享与多模块化"></p> <h4><a id="vuex_3" rel="nofollow"></a>vuex模块化</h4> <h5><a id="_4" rel="nofollow"></a>模块化+命名空间</h5> <p><strong>目的：</strong> 让代码更好维护，让多种数据分类更加明确</p> <p>修改<code>store/index.js</code></p> <pre><code class="prism language-javascript"><span class="token comment">// 该文件是准备vuex的核心 ==&gt; store</span><span class="token comment">// 引入Vue核心库</span><span class="token keyword">import</span> Vue<span class="token keyword">from</span><span class="token string">"vue"</span><span class="token comment">// 引入Vuex</span><span class="token keyword">import</span> Vuex<span class="token keyword">from</span><span class="token string">'vuex'</span><span class="token comment">// 使用Vuex插件</span> Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span><span class="token comment">//count模块</span><span class="token keyword">const</span> countOptions<span class="token operator">=</span><span class="token punctuation">{<!-- --></span> 	namespaced<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token comment">// 开启命名空间</span> 	actions<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">,</span> 	mutations<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">,</span> 	state<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">,</span> 	getters<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token comment">//person模块</span><span class="token keyword">const</span> personOptions<span class="token operator">=</span><span class="token punctuation">{<!-- --></span> 	namespaced<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token comment">// 开启命名空间</span> 	actions<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">,</span> 	mutations<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">,</span> 	state<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">,</span> 	getters<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token comment">// 创建并暴露store</span><span class="token keyword">export</span><span class="token keyword">default</span><span class="token keyword">new</span><span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span> 	modules<span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 声明模块</span> 		countAbout<span class="token operator">:</span>countOptions<span class="token punctuation">,</span> 		personAbout<span class="token operator">:</span>personOptions<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> <p>1）开启命名空间后，组件中读取<code>state</code>数据</p> <pre><code class="prism language-javascript"><span class="token comment">//方式一： 自己直接读取</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>personAbout<span class="token punctuation">.</span>personList<span class="token comment">//方式二：借助mapState读取</span><span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token string">'countAbout'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'sum'</span><span class="token punctuation">,</span><span class="token string">'school'</span><span class="token punctuation">,</span><span class="token string">'subject'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre> <p>2）开启命名空间后，组件中读取<code>getters</code>数据</p> <pre><code class="prism language-javascript"><span class="token comment">//方式一： 自己直接读取</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>getters<span class="token punctuation">[</span><span class="token string">'personAbout/firstPersonName'</span><span class="token punctuation">]</span><span class="token comment">//方式二：借助mapGetters读取</span><span class="token operator">...</span><span class="token function">mapGetters</span><span class="token punctuation">(</span><span class="token string">'countAbout'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'bigSum'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre> <p>3）开启命名空间后，组件中调用<code>dispatch</code></p> <pre><code class="prism language-javascript"><span class="token comment">//方式一： 自己直接dispatch</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'personAbout/addPersonWang'</span><span class="token punctuation">,</span>person<span class="token punctuation">)</span><span class="token comment">//方式二：借助mapActions</span><span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token string">'countAbout'</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span>incrementOdd<span class="token operator">:</span><span class="token string">'plusOdd'</span><span class="token punctuation">,</span>incrementWait<span class="token operator">:</span><span class="token string">'plusWait'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> <p>4）开启命名空间后，组件中调用<code>commit</code></p> <pre><code class="prism language-javascript"><span class="token comment">//方式一： 自己直接commit</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'personAbout/ADD_PERSON'</span><span class="token punctuation">,</span>person<span class="token punctuation">)</span><span class="token comment">//方式二：借助mapMutations</span><span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token string">'countAbout'</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span>increment<span class="token operator">:</span><span class="token string">'PLUS'</span><span class="token punctuation">,</span>decrement<span class="token operator">:</span><span class="token string">'MINUS'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-50039.htm">参观动物医院实验报告模板 参观动物园兽医心得</a></p>
+                                        <p>下一个：<a href="/news/article-50557.htm">被猫抓伤出血要吃消炎药吗（被猫抓伤出血吃药可以吗）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-free-subscribe-node.htm" title="1月20日→21.1M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月20日→21.1M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36253.htm" title="北京宠物免费领养中心在哪里（北京宠物免费领养中心在哪里啊）">北京宠物免费领养中心在哪里（北京宠物免费领养中心在哪里啊）</a></li>
+                        <li class="py-2"><a href="/news/article-43063.htm" title="瑞派宠物诊所电话（瑞派宠物医院天眼查）">瑞派宠物诊所电话（瑞派宠物医院天眼查）</a></li>
+                        <li class="py-2"><a href="/news/article-31294.htm" title=".NET混合开发解决方案4 WebView2的线程模型">.NET混合开发解决方案4 WebView2的线程模型</a></li>
+                        <li class="py-2"><a href="/news/article-43062.htm" title="如何解决sass-loader和node-sass版本冲突的问题_vue.js_">如何解决sass-loader和node-sass版本冲突的问题_vue.js_</a></li>
+                        <li class="py-2"><a href="/news/article-33773.htm" title="领养宠物中心（领养宠物网）">领养宠物中心（领养宠物网）</a></li>
+                        <li class="py-2"><a href="/news/article-31864.htm" title="Flutter实现心动的动画特效_Android">Flutter实现心动的动画特效_Android</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-node-share.htm" title="1月19日→19.6M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月19日→19.6M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-50555.htm" title="vuex数据共享与多模块化">vuex数据共享与多模块化</a></li>
+                        <li class="py-2"><a href="/news/article-28088.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">91</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>

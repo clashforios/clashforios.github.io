@@ -1,0 +1,215 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-49505.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>C语言程序设计——用户密码输入与判断</title>
+        <meta name="description" content="今天给大家分享的是前几天写的一个程序，功能是输入用户名和密码，输入的密码用字符’ * '代替，并且用户名与密码无固定长度，并且判断用户名与密码是否正确。 #include&lt;stdio.h&gt;" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-49505.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="C语言程序设计——用户密码输入与判断" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/00185899b2187070469714b47e3ff255.webp" />
+        <meta property="og:release_date" content="2025-02-01T07:14:30" />
+    <meta property="og:updated_time" content="2025-02-01T07:14:30" />
+        <meta property="og:description" content="今天给大家分享的是前几天写的一个程序，功能是输入用户名和密码，输入的密码用字符’ * '代替，并且用户名与密码无固定长度，并且判断用户名与密码是否正确。 #include&lt;stdio.h&gt;" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C语言程序设计——用户密码输入与判断">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">C语言程序设计——用户密码输入与判断</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>今天给大家分享的是前几天写的一个程序，功能是输入用户名和密码，输入的密码用字符’ * '代替，并且用户名与密码无固定长度，并且判断用户名与密码是否正确。</p> <pre><code class="prism language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span> <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h&gt;</span></span> <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;conio.h&gt;</span></span> <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h&gt;</span></span> <span class="token keyword">char</span> user<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">char</span> USER<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"123456"</span><span class="token punctuation">;</span> <span class="token keyword">char</span> passed<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">char</span> PASSED<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"147258369"</span><span class="token punctuation">;</span> <span class="token keyword">void</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>	<span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> 	<span class="token keyword">char</span> c<span class="token punctuation">;</span> loop<span class="token punctuation">:</span>	 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"User:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span>USER<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span> <span class="token punctuation">)</span> 	<span class="token punctuation">{<!-- --></span> 		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Passed:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 		<span class="token punctuation">{<!-- --></span>	 			c<span class="token operator">=</span><span class="token function">getch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 			<span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">!=</span><span class="token string">'\r'</span><span class="token operator">&amp;&amp;</span> c<span class="token operator">!=</span><span class="token string">'\b'</span><span class="token punctuation">)</span> 			<span class="token punctuation">{<!-- --></span> 				<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 				passed<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>c<span class="token punctuation">;</span> 			<span class="token punctuation">}</span> 			<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token string">'\b'</span> <span class="token operator">&amp;&amp;</span> i<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span> 			<span class="token punctuation">{<!-- --></span> 				<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\b \b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 				i<span class="token operator">--</span><span class="token punctuation">;</span> 				<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> 				<span class="token punctuation">{<!-- --></span> 					<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"密码不能为空"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 					<span class="token function">getch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 					<span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"cls"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 				<span class="token punctuation">}</span> 			<span class="token punctuation">}</span> 			<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token string">'\r'</span><span class="token punctuation">)</span> 			<span class="token punctuation">{<!-- --></span> 				passed<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'\0'</span><span class="token punctuation">;</span> 				<span class="token keyword">break</span><span class="token punctuation">;</span> 			<span class="token punctuation">}</span>	 		<span class="token punctuation">}</span> 		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>passed<span class="token punctuation">,</span>PASSED<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span> <span class="token punctuation">)</span> 		<span class="token punctuation">{<!-- --></span> 			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n登陆成功\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token punctuation">}</span> 		<span class="token keyword">else</span> 		<span class="token punctuation">{<!-- --></span> 			 			<span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"cls"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"密码错误,请重新输入!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 			i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> 			<span class="token keyword">goto</span> loop<span class="token punctuation">;</span> 		<span class="token punctuation">}</span> 	<span class="token punctuation">}</span> 	<span class="token keyword">else</span> 	<span class="token punctuation">{<!-- --></span>	<span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"cls"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"用户名不存在,请重新输入!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token keyword">goto</span> loop<span class="token punctuation">;</span>  	<span class="token punctuation">}</span> 	 <span class="token punctuation">}</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	 <span class="token punctuation">}</span> </code></pre> <p>希望对大家有所帮助，喜欢的朋友不要忘了点赞哟！！！</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-48988.htm">卖宠物粮需要许可证吗（卖宠物粮需要许可证吗现在）</a></p>
+                                        <p>下一个：<a href="/news/article-49506.htm">pycharm对SQLite的可视化操作</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-35736.htm" title="PowerShell中的复制项目用于什么？">PowerShell中的复制项目用于什么？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe.htm" title="11月26日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月26日→21.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-node-subscribe.htm" title="12月16日→18.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月16日→18.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19780.htm" title="Spring Profiles的几个小知识">Spring Profiles的几个小知识</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-clash-node-daily-updates.htm" title="12月7日→19.7M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月7日→19.7M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-clash-node.htm" title="11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月16日→21.1M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-34241.htm" title="Redis(六) 数据库和缓存的一致性问题">Redis(六) 数据库和缓存的一致性问题</a></li>
+                        <li class="py-2"><a href="/news/article-25302.htm" title="襄阳17家符合条件的宠物医院（襄阳哪家宠物医院口碑好）">襄阳17家符合条件的宠物医院（襄阳哪家宠物医院口碑好）</a></li>
+                        <li class="py-2"><a href="/news/article-19319.htm" title="猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）">猫三针疫苗每针间隔时间（猫咪三针疫苗间隔多久打）</a></li>
+                        <li class="py-2"><a href="/news/article-35190.htm" title="动物疫苗行业排名前十名有哪些 动物疫苗行业排名前十名有哪些品牌">动物疫苗行业排名前十名有哪些 动物疫苗行业排名前十名有哪些品牌</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">91</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
