@@ -1,0 +1,215 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-51624.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Python 操作HDFS</title>
+        <meta name="description" content="Python 操作HDFS模块  python HDFS模块   实例化客户端 读写文件   读取文件至内存 结合以下write() 方法将文件写入HDFS   Kerberos认证访问 列出目录 创" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-51624.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="Python 操作HDFS" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/c875c402fd48d6a3ac3d1e0ee96b8029.webp" />
+        <meta property="og:release_date" content="2025-02-05T08:20:54" />
+    <meta property="og:updated_time" content="2025-02-05T08:20:54" />
+        <meta property="og:description" content="Python 操作HDFS模块  python HDFS模块   实例化客户端 读写文件   读取文件至内存 结合以下write() 方法将文件写入HDFS   Kerberos认证访问 列出目录 创" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Python 操作HDFS">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Python 操作HDFS</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <div class="toc"> <h3>Python 操作HDFS模块</h3> <ul> <li><a href="#python_HDFS_2" rel="nofollow">python HDFS模块</a></li> <li> <ul> <li><a href="#_7" rel="nofollow">实例化客户端</a></li> <li><a href="#_16" rel="nofollow">读写文件</a></li> <li> <ul> <li><a href="#_17" rel="nofollow">读取文件至内存</a></li> <li><a href="#write_HDFS_21" rel="nofollow">结合以下write() 方法将文件写入HDFS</a></li> </ul> </li> <li><a href="#Kerberos_37" rel="nofollow">Kerberos认证访问</a></li> <li><a href="#_40" rel="nofollow">列出目录</a></li> <li><a href="#write_44" rel="nofollow">创建目录（如要写入，建议使用write方法，没有会自动创建）</a></li> <li><a href="#_47" rel="nofollow">删除</a></li> <li><a href="#_52" rel="nofollow">检查文件是否存在</a></li> <li><a href="#HDFS_57" rel="nofollow">获取HDFS上文件或者目录(可用于判断是否存在)</a></li> <li><a href="#_61" rel="nofollow">移动文件或文件夹</a></li> </ul> </li> <li><a href="#_67" rel="nofollow">参考文献</a></li> </ul> </div> </h1> <p>安装：pip install hdfs<br /> 介绍：该模块用于python与HDFS的namenode建立链接从而获取到datanode进行操作<br /> 链接方式：webHDFS</p> <h2> <a id="_7" rel="nofollow"></a>实例化客户端</h2> <p>from hdfs import InsecureClient<br /> client = InsecureClient(‘http://host:port’, user=‘ann’)</p> <p><strong>insecureClient 可以添加用户参数、或者安全认证</strong></p> <p>from hdfs import Config<br /> client = Config().get_client(‘dev’)</p> <h2> <a id="_16" rel="nofollow"></a>读写文件</h2> <h3> <a id="_17" rel="nofollow"></a>读取文件至内存</h3> <p>with client.read(‘features’) as reader:<br /> features = reader.read()</p> <h3> <a id="write_HDFS_21" rel="nofollow"></a>结合以下write() 方法将文件写入HDFS</h3> <p>client.write(‘data/records.jsonl’, data=features, encoding=‘utf-8’)</p> <p><strong>相关参数</strong>：<br /> write（hdfs_path，data = None，overwrite = False，permission= None，blocksize = None，replication= None，buffersize = None，append = False，encoding = None ）</p> <p>[hdfs_path]：写入路径，没有会自动创建<br /> [data]：本地数据,可以为变量<br /> [overwrite]：是否允许覆盖<br /> [permission]：权限<br /> [blocksize]：文件大小<br /> [replication]：文件复制数量<br /> [buffersize]：上传区域大小，类似缓冲区<br /> [append]：附加到文件而不是创建一个新文件。<br /> [encoding]：用于对写入的数据进行序列化的编码。</p> <h2> <a id="Kerberos_37" rel="nofollow"></a>Kerberos认证访问</h2> <p>client = KerberosClient(‘http://host:port’)</p> <h2> <a id="_40" rel="nofollow"></a>列出目录</h2> <p>list(hdfs_path, status=False)<br /> [status]：返回每个文件的对应FileStatus。</p> <h2> <a id="write_44" rel="nofollow"></a>创建目录（如要写入，建议使用write方法，没有会自动创建）</h2> <p>makedirs(hdfs_path, permission=None)</p> <h2> <a id="_47" rel="nofollow"></a>删除</h2> <p>delete(hdfs_path, recursive=False, skip_trash=True)<br /> [recursive]：默认情况下，如果尝试刪除非空目录，此方法将引发hdfs error。<br /> [skip_trash]：跳过垃圾回收</p> <h2> <a id="_52" rel="nofollow"></a>检查文件是否存在</h2> <p>checksum（hdfs_path ）</p> <p>必须指向一个文件</p> <h2> <a id="HDFS_57" rel="nofollow"></a>获取HDFS上文件或者目录(可用于判断是否存在)</h2> <p>content（hdfs_path，strict = True ）<br /> [strict]：如果为False，则返回，None而不是在路径不存在的情況下引发异常。</p> <h2> <a id="_61" rel="nofollow"></a>移动文件或文件夹</h2> <p>rename（hdfs_src_path，hdfs_dst_path ）<br /> [hdfs_src_path]：源路径<br /> [hdfs_dst_path]：目标路径，存在移入，不存在引发hfds error异常</p> </h1> <p>[HDFS官方API文档]：https://hdfscli.readthedocs.io/en/latest/</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-51091.htm">青岛宠物医生培训学校（青岛宠物医生培训学校哪家好）</a></p>
+                                        <p>下一个：<a href="/news/article-51625.htm">从多线程的基础，到JDK8的异步编程，再到异步框架的选择</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-50555.htm" title="vuex数据共享与多模块化">vuex数据共享与多模块化</a></li>
+                        <li class="py-2"><a href="/news/article-48988.htm" title="卖宠物粮需要许可证吗（卖宠物粮需要许可证吗现在）">卖宠物粮需要许可证吗（卖宠物粮需要许可证吗现在）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-free-node-subscribe-links.htm" title="1月29日→18.7M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月29日→18.7M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27621.htm" title="人和动物打的狂犬疫苗一样吗多少钱 人和动物打的狂犬疫苗一样吗多少钱一针">人和动物打的狂犬疫苗一样吗多少钱 人和动物打的狂犬疫苗一样吗多少钱一针</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33287.htm" title="宠物粮食成本价多少（宠物粮食原材料）">宠物粮食成本价多少（宠物粮食原材料）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-node-subscribe.htm" title="12月18日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月18日→22.5M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-clash-node.htm" title="11月19日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月19日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-20-free-subscribe-node.htm" title="12月20日→18.4M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月20日→18.4M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-node-share-links.htm" title="12月23日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月23日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">91</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>

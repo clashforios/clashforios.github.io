@@ -1,0 +1,215 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-51625.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>从多线程的基础，到JDK8的异步编程，再到异步框架的选择</title>
+        <meta name="description" content="文章目录        随机简历要求截图 线程与多线程： 多线程的使用场景： 多线程的编码实践：   从Future说起 CompletableFuture   1.把CompletableFutur" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-51625.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="从多线程的基础，到JDK8的异步编程，再到异步框架的选择" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/08b23ed63c524bdfee2572515b8b88ad.webp" />
+        <meta property="og:release_date" content="2025-02-05T08:20:54" />
+    <meta property="og:updated_time" content="2025-02-05T08:20:54" />
+        <meta property="og:description" content="文章目录        随机简历要求截图 线程与多线程： 多线程的使用场景： 多线程的编码实践：   从Future说起 CompletableFuture   1.把CompletableFutur" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="从多线程的基础，到JDK8的异步编程，再到异步框架的选择">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">从多线程的基础，到JDK8的异步编程，再到异步框架的选择</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <div class="toc"> <h3>文章目录</h3> <ul> <li> <ul> <li> <ul> <li> <ul> <li><a href="#_1" rel="nofollow">随机简历要求截图</a></li> <li><a href="#_15" rel="nofollow">线程与多线程：</a></li> <li><a href="#_23" rel="nofollow">多线程的使用场景：</a></li> <li><a href="#_27" rel="nofollow">多线程的编码实践：</a></li> <li> <ul> <li><a href="#Future_34" rel="nofollow">从Future说起</a></li> <li><a href="#CompletableFuture_72" rel="nofollow">CompletableFuture</a></li> <li> <ul> <li><a href="#1CompletableFutureFuture_91" rel="nofollow">1.把CompletableFuture当Future使用</a></li> <li><a href="#2_132" rel="nofollow">2.异步操作</a></li> <li><a href="#3_160" rel="nofollow">3.连续异步操作</a></li> <li><a href="#4_185" rel="nofollow">4.等待操作完成</a></li> <li><a href="#5_211" rel="nofollow">5.组合</a></li> <li><a href="#6_234" rel="nofollow">6.结果&amp;异常处理</a></li> <li><a href="#7_270" rel="nofollow">7.并行执行异步操作并统一处理结果</a></li> </ul> </li> </ul> </li> <li><a href="#_303" rel="nofollow">多线程的框架：</a></li> <li> <ul> <li><a href="#Disruptor___305" rel="nofollow">Disruptor（ 并发 ）：</a></li> <li><a href="#Netty___311" rel="nofollow">Netty（ 提供异步的、事件驱动的网络应用程序框架 ）：</a></li> <li><a href="#NodeJS_317" rel="nofollow">NodeJS（异步）：</a></li> <li><a href="#Vertx__321" rel="nofollow">Vert.x ：</a></li> </ul> </li> <li><a href="#_327" rel="nofollow">多线程的优、缺点：</a></li> </ul> </li> </ul> </li> </ul> </li> </ul> </div> <h4><a id="_1" rel="nofollow"></a>随机简历要求截图</h4> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/8c21667f45f1f128c5e9514b1232c1a8.jpg" alt="从多线程的基础，到JDK8的异步编程，再到异步框架的选择"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/339e9d28aa3052f04fa50cf40b0d61c7.jpg" alt="从多线程的基础，到JDK8的异步编程，再到异步框架的选择"></p> <p>就在网上随便找了几家招聘的，条件都是15-20K，放在武汉相当于中等偏上了，<strong>北上广深</strong>的就别看了，</p> <p>出现的一个频率非常高的词汇，多线程、多线程编程、说说你对多线程的理解等等，其实我出去面试面试官一般都是会让你自己讲一些场景，然后根据场景讲讲遇到的问题，所以这个时候加入问到的场景涉及到多线程，如果知道多线程的一些技术以及场景，没做过，能说出来也是可以的。</p> <p>所以，根据鄙人7年的编程经验，以及了解相关方面的知识，小弟不才，整理了部分多线程的代码实例以及框架，以及多线程的缺点等等。</p> <p>多线程的依赖包，基于现在用户还是比较多的JDK8提供的API来写一些实例代码。</p> <h4><a id="_15" rel="nofollow"></a>线程与多线程：</h4> <pre><code>世间万物都可以同时完成很多工作。例如，人体可以同时进行呼吸、血液循环、思考问题等活动。用户既可以使用计算机听歌，也可以编写文档和发送邮件，而这些活动的完成可以同时进行。这种同时执行多个操作的“思想”在 [Java]中被称为并发，而将并发完成的每一件事称为线程。  在 Java 中，并发机制非常重要，但并不是所有程序语言都支持线程。在以往的程序中，多以一个任务完成以后再进行下一个任务的模式进行，这样下一个任务的开始必须等待前一个任务的结束。Java 语言提供了并发机制，允许开发人员在程序中执行多个线程，每个线程完成一个功能，并与其他线程并发执行。这种机制被称为多线程。</code></pre> <h4><a id="_23" rel="nofollow"></a>多线程的使用场景：</h4> <p>我们在工作中，各种相关服务、数据库、api的调用，有返回时间的差异，这个时候必须使用多线程了。</p> <h4><a id="_27" rel="nofollow"></a>多线程的编码实践：</h4> <p><strong>异步编程的难点：</strong></p> <ul> <li>如何优雅地实现异步编程一直都是一个难题，异步编程的通常做法就是采用callback的方法，但是这种方法通常会把代码嵌套在正常流程的代码中，而且当有多层嵌套的时候代码更加难以维护。</li> <li>另外还有一点，异步编程的异常处理也是难以未维护，特别是在Java中，异步编程通常由新的线程完成，而子线程的异常是无法在父线程捕获的，那么对于异步执行结果的获取就需要付出更大的代价，比如通过：轮询、事件驱动等来完成。</li> </ul> <h5><a id="Future_34" rel="nofollow"></a>从Future说起</h5> <p>Java5之后就引入Future用于异步编程，通过get()方法来对异步执行结果的同步等待和结果获取：</p> <pre><code>Future&lt;String&gt; doSomething = Executors.newSingleThreadExecutor().submit(() -&gt; {     try {         Thread.sleep(1000 * 3);     } catch (InterruptedException e) {         e.printStackTrace();     }     return "success"; });  String result = doSomething.get();  System.out.println(result);</code></pre> <p>Future的Api比较简单，而已对异常处理不友好，如果有同时有多个异步操作需要同时进行是就不好处理了</p> <p>假设有这么一个场景，用户登录拿到登录凭证(token)，登录之后获取用户信息。</p> <pre><code>ExecutorService executors = Executors.newFixedThreadPool(10);  Future&lt;String&gt; login = executors.submit(()-&gt;login()); String token = login.get();  Future&lt;String&gt; userInfo = executors.submit(() -&gt; userInfo(token)); String userInfoResult = userInfo.get();  System.out.println(userInfoResult);</code></pre> <p>这种实现方法还是不能实现真正的异步编程或者说不是我们所期望的，我们期望的是登录后获取用户信息，但这两件事情完成后统一对结果进行处理，而这种方式是先等待登录之后再取用户信息，和同步调用类似，这就与我们的设想不符。</p> <h5><a id="CompletableFuture_72" rel="nofollow"></a>CompletableFuture</h5> <p>初识CompletableFuture</p> <p>在Java8中引入了CompletableFuture类，同时实现了Future接口和CompletionStage接口，提供了一套用于异步编程的Api接口并且提供了异步处理</p> <p>CompletableFuture提供了许多异步编程的操作，可以说是Java中.的Promise了，下面通过CompletableFuture来实现上面提到的例子:</p> <pre><code>String userInfo = CompletableFuture.supplyAsync(() -&gt; login())     .thenApplyAsync(token -&gt; userInfo(token))     .get();  System.out.println(userInfo);</code></pre> <p><strong>CompletableFuture API</strong><br /> CompletableFuture方法很多，功能也很丰富，这里不一一说明，主要可以分为这几类来使用：</p> <h6><a id="1CompletableFutureFuture_91" rel="nofollow"></a>1.把CompletableFuture当Future使用</h6> <p>CompletableFuture实现了Future接口，也就是Future能做的CompletableFuture也同样能使用，加上complete和completeExceptionally方法可以控制结果的结束</p> <pre><code>CompletableFuture&lt;String&gt; f = new CompletableFuture&lt;&gt;();  Executors.newSingleThreadExecutor().submit(()-&gt;{     f.complete("hello");     //f.completeExceptionally(new RuntimeException("error")); });  String result = f.get();  System.out.println(result);</code></pre> <p>可以通过CompletableFuture来控制多个异步操作同时执行：</p> <pre><code>CompletableFuture&lt;String&gt; f = new CompletableFuture&lt;&gt;();  new Thread(() -&gt; {     try {         System.out.println("thread1:" + f.get());     } catch (InterruptedException | ExecutionException e) {         e.printStackTrace();     } }).start();  new Thread(() -&gt; {     try {         System.out.println("thread2:" + f.get());     } catch (InterruptedException | ExecutionException e) {         e.printStackTrace();     } }).start();  f.complete("hello");</code></pre> <h6><a id="2_132" rel="nofollow"></a>2.异步操作</h6> <p>创建异步操作的方法主要是：</p> <pre><code>public static CompletableFuture&lt;Void&gt; runAsync(Runnable runnable) public static CompletableFuture&lt;Void&gt; runAsync(Runnable runnable,Executor executor) public static &lt;U&gt; CompletableFuture&lt;U&gt; supplyAsync(Supplier&lt;U&gt; supplier) public static &lt;U&gt; CompletableFuture&lt;U&gt; supplyAsync(Supplier&lt;U&gt; supplier,Executor executor)</code></pre> <p>使用如下：</p> <pre><code>CompletableFuture&lt;String&gt; f = CompletableFuture.supplyAsync(() -&gt; {     try {         Thread.sleep(3000);     } catch (InterruptedException e) {         e.printStackTrace();     }     return "hello"; });  String result = f.get();  System.out.println(result);</code></pre> <h6><a id="3_160" rel="nofollow"></a>3.连续异步操作</h6> <pre><code>public CompletableFuture&lt;Void&gt; thenRun(Runnable action) public CompletableFuture&lt;Void&gt; thenRunAsync(Runnable action) public CompletableFuture&lt;Void&gt; thenRunAsync(Runnable action,Executor executor) public &lt;U&gt; CompletableFuture&lt;U&gt; thenApply(Function&lt;? super T,? extends U&gt; fn)  public &lt;U&gt; CompletableFuture&lt;U&gt; thenApplyAsync(Function&lt;? super T,? extends U&gt; fn) public &lt;U&gt; CompletableFuture&lt;U&gt; thenApplyAsync(Function&lt;? super T,? extends U&gt; fn, Executor executor)  public CompletableFuture&lt;Void&gt; thenAccept(Consumer&lt;? super T&gt; action)  public CompletableFuture&lt;Void&gt; thenAcceptAsync(Consumer&lt;? super T&gt; action)  public CompletableFuture&lt;Void&gt; thenAcceptAsync(Consumer&lt;? super T&gt; action,Executor executor)</code></pre> <p>使用如下：</p> <pre><code>CompletableFuture&lt;Void&gt; f = CompletableFuture                 .supplyAsync(() -&gt; "hello")                 .thenApplyAsync(res -&gt; res + " world!")                 .thenAcceptAsync(System.out::println); // wait for job done f.get();</code></pre> <h6><a id="4_185" rel="nofollow"></a>4.等待操作完成</h6> <pre><code>public CompletableFuture&lt;T&gt; whenComplete(BiConsumer&lt;? super T, ? super Throwable&gt; action)  public CompletableFuture&lt;T&gt; whenCompleteAsync(BiConsumer&lt;? super T, ? super Throwable&gt; action)  public CompletableFuture&lt;T&gt; whenCompleteAsync(BiConsumer&lt;? super T, ? super Throwable&gt; action, Executor executor)</code></pre> <p>使用如下：</p> <pre><code>CompletableFuture&lt;String&gt; f = CompletableFuture         .supplyAsync(() -&gt; "hello")         .thenApplyAsync(res -&gt; res + " world!")         .whenComplete((res, err) -&gt; {             if (err != null) {                 err.printStackTrace();             } else {                 System.out.println(res);             }         });  // wait for job done f.get();</code></pre> <h6><a id="5_211" rel="nofollow"></a>5.组合</h6> <pre><code>public &lt;U&gt; CompletableFuture&lt;U&gt; thenCompose(Function&lt;? super T, ? extends CompletionStage&lt;U&gt;&gt; fn)  public &lt;U&gt; CompletableFuture&lt;U&gt; thenComposeAsync(Function&lt;? super T, ? extends CompletionStage&lt;U&gt;&gt; fn)  public &lt;U&gt; CompletableFuture&lt;U&gt; thenComposeAsync(Function&lt;? super T, ? extends CompletionStage&lt;U&gt;&gt; fn,Executor executor)  public &lt;U,V&gt; CompletableFuture&lt;V&gt; thenCombine(CompletionStage&lt;? extends U&gt; other,BiFunction&lt;? super T,? super U,? extends V&gt; fn)  public &lt;U,V&gt; CompletableFuture&lt;V&gt; thenCombineAsync(CompletionStage&lt;? extends U&gt; other,BiFunction&lt;? super T,? super U,? extends V&gt; fn)  public &lt;U,V&gt; CompletableFuture&lt;V&gt; thenCombineAsync(CompletionStage&lt;? extends U&gt; other,BiFunction&lt;? super T,? super U,? extends V&gt; fn, Executor executor)</code></pre> <p>使用如下：</p> <pre><code>CompletableFuture&lt;String&gt; f = CompletableFuture.supplyAsync(() -&gt; "Hello")         .thenCompose(res -&gt; CompletableFuture.supplyAsync(() -&gt; res + " World,"))         .thenCombine(CompletableFuture.supplyAsync(() -&gt; "CompletableFuture!"), (a, b) -&gt; a + b);  String result = f.get();  System.out.println(result);//Hello World,CompletableFuture!</code></pre> <h6><a id="6_234" rel="nofollow"></a>6.结果&amp;异常处理</h6> <pre><code>// 异常处理 CompletableFuture&lt;Object&gt; f = CompletableFuture.supplyAsync(() -&gt; "Hello")         .thenApplyAsync(res -&gt; res + "World")         .thenApplyAsync(res -&gt; {             throw new RuntimeException("error");         })         .exceptionally(e -&gt; {             //handle exception here             e.printStackTrace();             return null;         }); f.get();  // 执行结果处理 CompletableFuture&lt;Object&gt; f2 = CompletableFuture.supplyAsync(() -&gt; "Hello")         .thenApplyAsync(res -&gt; res + "World")         .thenApplyAsync(res -&gt; {             throw new RuntimeException("error");         })         .handleAsync((res, err) -&gt; {             if (err != null) {                 //handle exception here                 return null;             } else {                 return res;             }         });  Object result = f2.get();  System.out.println(result);</code></pre> <h6><a id="7_270" rel="nofollow"></a>7.并行执行异步操作并统一处理结果</h6> <pre><code>public static CompletableFuture&lt;Void&gt; allOf(CompletableFuture&lt;?&gt;... cfs)</code></pre> <p>使用如下：</p> <pre><code>CompletableFuture&lt;String&gt; f1 = CompletableFuture.supplyAsync(() -&gt; "hello"); CompletableFuture&lt;String&gt; f2 = CompletableFuture.supplyAsync(() -&gt; "world"); CompletableFuture&lt;String&gt; f3 = CompletableFuture.supplyAsync(() -&gt; "!");  // 使用allOf方法 CompletableFuture&lt;Void&gt; all = CompletableFuture.allOf(f1, f2, f3); all.get();  System.out.println(f1.get()); System.out.println(f2.get()); System.out.println(f3.get());  // 结合StreamAPI List&lt;String&gt; result = Stream.of(f1, f2, f3)         .map(CompletableFuture::join)         .collect(Collectors.toList());  System.out.println(result);</code></pre> <h4><a id="_303" rel="nofollow"></a>多线程的框架：</h4> <h5><a id="Disruptor___305" rel="nofollow"></a>Disruptor（ 并发 ）：</h5> <p>Disruptor 是一个 Java 的并发编程框架，大大的简化了并发程序开发的难度，在性能上也比 Java 本身提供的一些并发包要好。</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/bad7b4b44e48"  rel="nofollow">https://www.jianshu.com/p/bad7b4b44e48</a></p> <h5><a id="Netty___311" rel="nofollow"></a>Netty（ 提供异步的、事件驱动的网络应用程序框架 ）：</h5> <p>netty4可以说是我这些年做数据采集，TCP、UDP、MQTT等用的最多，api最丰富，性能最好而且轻量级的框架。</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/hunrry/p/9408394.html"  rel="nofollow">https://www.cnblogs.com/hunrry/p/9408394.html</a></p> <h5><a id="NodeJS_317" rel="nofollow"></a>NodeJS（异步）：</h5> <p>Node.js发布于2009年5月，由Ryan Dahl开发，是一个基于Chrome V8引擎的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://baike.baidu.com/item/JavaScript/321142"  rel="nofollow">JavaScript</a>运行环境，使用了一个<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://baike.baidu.com/item/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/9597519"  rel="nofollow">事件驱动</a>、非阻塞式I/O模型， [1] 让JavaScript 运行在<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E7%AB%AF/6492316"  rel="nofollow">服务端</a>的开发平台，它让JavaScript成为与<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://baike.baidu.com/item/PHP/9337"  rel="nofollow">PHP</a>、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://baike.baidu.com/item/Python/407313"  rel="nofollow">Python</a>、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://baike.baidu.com/item/Perl/851577"  rel="nofollow">Perl</a>、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://baike.baidu.com/item/Ruby/11419"  rel="nofollow">Ruby</a>等服务端语言平起平坐的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://baike.baidu.com/item/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80/1379708"  rel="nofollow">脚本语言</a> 。</p> <h5><a id="Vertx__321" rel="nofollow"></a>Vert.x ：</h5> <p>近年来，移动网络、社交网络和电商的兴起，使各大服务提供商的客户端请求数量激增，传统服务器架构已不堪重负，致使基于事件和异步的解决方案备受追捧，如Nginx、NodeJS。Vert.x框架基于事件和异步，依托于全异步Java服务器Netty，并扩展了很多其他特性，以其轻量、高性能、支持多语言开发而备受开发者青睐。</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/king_kgh/article/details/80772657?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~default-1.pc_relevant_without_ctrlist&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~default-1.pc_relevant_without_ctrlist&amp;utm_relevant_index=1"  rel="nofollow">https://blog.csdn.net/king_kgh/article/details/80772657?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-1.pc_relevant_without_ctrlist&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-1.pc_relevant_without_ctrlist&amp;utm_relevant_index=1</a></p> <h4><a id="_327" rel="nofollow"></a>多线程的优、缺点：</h4> <p><strong>优点：</strong></p> <ul> <li>多线程技术可以加快程序的运行速度，使程序的响应速度更快，因为用户界面可以在进行其它工作的同时一直处于活动状态</li> <li>可以把占据长时间的程序中的任务放到后台去处理，同时执行其他操作，提高效率</li> <li>当前没有进行处理的任务时可以将处理器时间让给其它任务</li> <li>可以让同一个程序的不同部分并发执行，释放一些珍贵的资源如内存占用等等</li> <li>可以随时停止任务</li> <li>可以分别设置各个任务的优先级以优化性能</li> </ul> <p><strong>缺点：</strong></p> <ul> <li>因为多线程需要开辟内存，而且线程切换需要时间因此会很消耗系统内存。</li> <li>线程的终止会对程序产生影响</li> <li>由于多个线程之间存在共享数据，因此容易出现线程死锁的情况</li> <li>对线程进行管理要求额外的 CPU开销。线程的使用会给系统带来上下文切换的额外负担。</li> </ul> <p><strong>写一句我的感受：</strong></p> <p>一般情况下我们使用到的多线程，是在该业务场景下，没得办法的选择，所以给我的感觉，多线程是一个进程在多种任务在协同工作时的解决方案，至于解决方案的具体内容那就依靠程序员的经验了，幸好现在最新版的都JDK提供的便捷易懂的API，使得编写难度降低而可读性提高了了。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-51624.htm">Python 操作HDFS</a></p>
+                                        <p>下一个：<a href="/news/article-52127.htm">动物医院实践心得500字作文大全怎么写（动物医院社会实践报告）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-31864.htm" title="Flutter实现心动的动画特效_Android">Flutter实现心动的动画特效_Android</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-clash-node.htm" title="11月6日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月6日→21.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-31294.htm" title=".NET混合开发解决方案4 WebView2的线程模型">.NET混合开发解决方案4 WebView2的线程模型</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-clash-node.htm" title="11月19日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月19日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-18868.htm" title="猫咪体外驱虫哪个牌子好（猫咪体外驱虫什么牌子）">猫咪体外驱虫哪个牌子好（猫咪体外驱虫什么牌子）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-free-node-subscribe-links.htm" title="1月24日→20M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月24日→20M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-28089.htm" title="宠福鑫动物医院怎么样知乎 宠福鑫动物医院怎么样知乎">宠福鑫动物医院怎么样知乎 宠福鑫动物医院怎么样知乎</a></li>
+                        <li class="py-2"><a href="/news/article-39082.htm" title="宠爱国际动物医疗中心地址（宠爱国际动物医院地址）">宠爱国际动物医疗中心地址（宠爱国际动物医院地址）</a></li>
+                        <li class="py-2"><a href="/news/article-27160.htm" title="延吉市安泰宠物医院电话多少（延吉 宠物医院）">延吉市安泰宠物医院电话多少（延吉 宠物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-51090.htm" title="宠物救助站领养宠物流程（宠物救助站领养宠物流程视频）">宠物救助站领养宠物流程（宠物救助站领养宠物流程视频）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">91</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
