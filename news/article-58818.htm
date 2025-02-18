@@ -1,0 +1,214 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-58818.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Django实现统一包装接口返回值数据格式</title>
+        <meta name="description" content="前言 最近实在太忙了，开始了一个新的项目，为了快速形成产品，我选择了Django来实现后端，然后又拿起了之前我封装了项目脚手架「DjangoStarter」。 由于前段时间我写了不少.NetCore的" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-58818.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="Django实现统一包装接口返回值数据格式" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/e59fbca0315447bdaf7e8f099f357c97.webp" />
+        <meta property="og:release_date" content="2025-02-18T09:46:19" />
+    <meta property="og:updated_time" content="2025-02-18T09:46:19" />
+        <meta property="og:description" content="前言 最近实在太忙了，开始了一个新的项目，为了快速形成产品，我选择了Django来实现后端，然后又拿起了之前我封装了项目脚手架「DjangoStarter」。 由于前段时间我写了不少.NetCore的" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Django实现统一包装接口返回值数据格式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Django实现统一包装接口返回值数据格式</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<h2 id="前言">前言</h2> <p>最近实在太忙了，开始了一个新的项目，为了快速形成产品，我选择了Django来实现后端，然后又拿起了之前我封装了项目脚手架<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/DjangoStarter"  target="_blank" rel="nofollow">「DjangoStarter」</a>。</p> <p>由于前段时间我写了不少.NetCore的后端代码，对CRUD的接口开发又有了一些新的理解，所以肯定也要把DjangoStarter改造一番，改得更加顺手~</p> <blockquote> <p>题外话：话说我在前端终于真正用上react，不得不说 ts + react 真好用，「前端带师」的安利可真不错啊（妙啊</p> </blockquote> <h2 id="正题">正题</h2> <p>准确来讲是搭配<code>DjangoRestFramework</code>来实现的，核心代码分为两部分，一个是错误处理包装，一个是响应包装<code>renderer</code>。</p> <p>无论请求是否报错，都会被我们自定义的<code>renderer</code>包装。</p> <h2 id="代码">代码</h2> <p>开始上代码吧~</p> <p>首先在项目里添加一个新的Python包，位置根据情况自行安排，我在<code>DjangoStarter</code>模板中的位置是<code>utils/response</code>，接下来的两个文件都会放在这个目录中</p> <p>第一个是错误处理的<code>exception.py</code>文件代码</p> <pre><code class="language-python">from typing import Dict  from rest_framework.exceptions import ValidationError from rest_framework.views import exception_handler from rest_framework.views import Response from rest_framework.utils.serializer_helpers import ReturnDict from rest_framework import status   def custom_handler(err: ValidationError, context: dict):     # 先调用REST framework默认的异常处理方法获得标准错误响应对象     response: Response = exception_handler(err, context)      if response is None:         return Response({             'message': f'服务器错误:{err}'         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR, exception=True)      else:         res = {'message': response.reason_phrase}         res.update(response.data)         return Response(res, status=response.status_code, exception=True)</code></pre> <p>然后是自定义<code>renderer.py</code>代码：</p> <pre><code class="language-python">from rest_framework.renderers import JSONRenderer   class CustomRenderer(JSONRenderer):     # 重构render方法     def render(self, data, accepted_media_type=None, renderer_context=None):         if renderer_context:             # 响应的信息，成功和错误的都是这个             # 成功和异常响应的信息，异常信息在前面自定义异常处理中已经处理为{'message': 'error'}这种格式              # 如果返回的data为字典             if isinstance(data, dict):                 # 响应信息中有message和code这两个key，则获取响应信息中的message和code，并且将原本data中的这两个key删除，放在自定义响应信息里                 # 响应信息中没有则将msg内容改为请求成功 code改为请求的状态码                 msg = data.pop('message', '请求成功')                 code = data.pop('code', renderer_context["response"].status_code)             # 如果不是字典则将msg内容改为请求成功 code改为响应的状态码             else:                 msg = '请求成功'                 code = renderer_context["response"].status_code              # 自定义返回的格式             ret = {                 'message': msg,                 'code': code,                 'data': data,             }             # 返回JSON数据             return super().render(ret, accepted_media_type, renderer_context)         else:             return super().render(data, accepted_media_type, renderer_context)</code></pre> <p>关键的地方都注释了，很容易看懂</p> <p>包装出来每个接口的返回值就都是这个样子</p> <pre><code class="language-json">{     "message": "msg",     "code": 200,     "data": {         "data1": "123"     } }</code></pre> <h2 id="配置">配置</h2> <p>为了让上面的代码发挥作用，还得配置一下RestFramework</p> <p>编辑<code>settings.py</code>文件，在<code>REST_FRAMEWORK</code>节点添加这两个配置，注意路径要和前面两个文件的路径一致。这里我是以<code>DjangoStarter</code>项目为例。</p> <pre><code class="language-python">REST_FRAMEWORK = {     # 全局配置异常模块     'EXCEPTION_HANDLER': 'utils.response.exception.custom_handler',     # 修改默认返回JSON的renderer的类     'DEFAULT_RENDERER_CLASSES': ('utils.response.renderer.CustomRenderer',), }</code></pre> <p>现在就完成了~ 就是这么简单。</p> <blockquote> <p>（比AspNetCore包装返回值简单……）</p> </blockquote> <p>完整代码可以在GitHub上查看：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/DjangoStarter"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/DjangoStarter</a></p> <h2 id="参考资料">参考资料</h2> <ul> <li>Django rest framework自定义返回数据格式：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/qq_41475058/article/details/112676908"  target="_blank" rel="nofollow">https://blog.csdn.net/qq_41475058/article/details/112676908</a></li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-58177.htm">宠物粮食品牌前十排名有哪些（宠物粮食品牌前十排名有哪些品种）</a></p>
+                                        <p>下一个：<a href="/news/article-58819.htm">哪些泳装牌子 中国10大泳衣品牌好(哪些泳装牌子 中国10大泳衣品牌最好)</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-1-free-node-subscribe-links.htm" title="1月1日→19.7M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月1日→19.7M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-39607.htm" title="宠物粮食批发市场兰州在哪里啊电话多少（兰州宠物用品批发）">宠物粮食批发市场兰州在哪里啊电话多少（兰州宠物用品批发）</a></li>
+                        <li class="py-2"><a href="/news/article-34723.htm" title="湖州宠物领养在哪里（湖州动物领养）">湖州宠物领养在哪里（湖州动物领养）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-node-share.htm" title="12月6日→21.4M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月6日→21.4M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-clash-node.htm" title="11月19日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址">11月19日→20.2M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-55920.htm" title="动物疫苗的种类和研发过程包括什么和什么（动物疫苗的种类和制备原理）">动物疫苗的种类和研发过程包括什么和什么（动物疫苗的种类和制备原理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-free-node-subscribe-links.htm" title="2月4日→23M/S|2025年最新免费节点Clash for IOS订阅链接地址">2月4日→23M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-clash-node-github.htm" title="12月15日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月15日→22.6M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址">12月17日→18.9M/S|2024年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-49505.htm" title="C语言程序设计——用户密码输入与判断">C语言程序设计——用户密码输入与判断</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">53</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">91</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
