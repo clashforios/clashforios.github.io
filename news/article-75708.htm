@@ -1,0 +1,211 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-75708.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SpringBoot测试失败并报错: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration</title>
+        <meta name="description" content="情况一： 该测试类在测试包test下的包名和类路径java下的包名不一致导致的，修改包名一致即可 由于包名自动生成的缘故导致这两个包名不一致，引发以下报错 java.lang.IllegalState" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-75708.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="SpringBoot测试失败并报错: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/e59fbca0315447bdaf7e8f099f357c97.webp" />
+        <meta property="og:release_date" content="2025-03-17T09:41:00" />
+    <meta property="og:updated_time" content="2025-03-17T09:41:00" />
+        <meta property="og:description" content="情况一： 该测试类在测试包test下的包名和类路径java下的包名不一致导致的，修改包名一致即可 由于包名自动生成的缘故导致这两个包名不一致，引发以下报错 java.lang.IllegalState" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot测试失败并报错: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">SpringBoot测试失败并报错: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="_0" rel="nofollow"></a>情况一：</h2> <p><mark>该测试类在测试包test下的包名和类路径java下的包名不一致导致的，修改包名一致即可</mark><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/4d75f0f809001f1775e0a35954232ccc.jpg" alt="SpringBoot测试失败并报错: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration"><br /> 由于包名自动生成的缘故导致这两个包名不一致，引发以下报错</p> <p><font color="red">java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=…) with your test </font></p> <p>解决：修改包名一致，如图<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/b4292e011797199a9868b8687663cdcb.jpg" alt="SpringBoot测试失败并报错: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration"><br /> 问题解决，这是最好的解决方案</p> <h2> <a id="_11" rel="nofollow"></a>情况二</h2> <p>如果不想修改包名，那么需要在注解上加上@SpringBootTest(classes = xxx.class)，来告诉springboot这是一个独立的测试类,注意xxx代表测试方法的类名，如图所示<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/e26b62a1bcc371483b551b78202ea352.jpg" alt="SpringBoot测试失败并报错: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration"><br /> 但这里会产生额外的问题，因为此时springboot已经把该类当成一个独立的测试类了，这意味着这个测试类对应独立的IOC容器，所以此时我们无法注入到main包中的组件，案例如下,main包下的路径是com.sobot.demo7,而同理，test包下com.sobot.demo7路径下测试类，可以正常装配userMapper组件</p> <p>com.sobot.demo8路径下测试类，则根本无法找到userMapper这个组件<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/a270f47863db1218806e14c375fffd64.jpg" alt="SpringBoot测试失败并报错: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration"><br /> 这种情况下测试类DemoApplicationTests中无法注入com.sobot.demo7路径下的组件userMapper</p> <h2> <a id="_22" rel="nofollow"></a>情况三</h2> <p>使用以下注解</p> <pre><code class="prism language-xml">@RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(classes = {JPAConfig.class}) </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-75046.htm">中国动物疫苗十强上市公司名单 中国动物疫苗十强上市公司名单公布</a></p>
+                                        <p>下一个：<a href="/news/article-75710.htm">动物防疫站电话咨询电话从哪里查（动物防疫站地址）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-50039.htm" title="参观动物医院实验报告模板 参观动物园兽医心得">参观动物医院实验报告模板 参观动物园兽医心得</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-node-share.htm" title="3月19日→22.7M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月19日→22.7M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-28-clash-node-github.htm" title="1月28日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月28日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-28-node-share-links.htm" title="2月28日→21.5M/S|2025年最新免费节点Clash for IOS订阅链接地址">2月28日→21.5M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-52128.htm" title="动物疫苗打多了好不好（动物打疫苗后的不良反应）">动物疫苗打多了好不好（动物打疫苗后的不良反应）</a></li>
+                        <li class="py-2"><a href="/news/article-48003.htm" title="动物疫苗的正确使用方法有哪些呢 动物疫苗的正确使用方法有哪些呢图片">动物疫苗的正确使用方法有哪些呢 动物疫苗的正确使用方法有哪些呢图片</a></li>
+                        <li class="py-2"><a href="/news/article-37612.htm" title="兽用疫苗常温下能放多久 兽用疫苗保存的适宜温度">兽用疫苗常温下能放多久 兽用疫苗保存的适宜温度</a></li>
+                        <li class="py-2"><a href="/news/article-72351.htm" title="宠物医院看猫癣贵吗（去宠物医院看猫癣）">宠物医院看猫癣贵吗（去宠物医院看猫癣）</a></li>
+                        <li class="py-2"><a href="/news/article-70375.htm" title="宠物粮商标取名大全图片（宠物粮属于哪类商标）">宠物粮商标取名大全图片（宠物粮属于哪类商标）</a></li>
+                        <li class="py-2"><a href="/news/article-77069.htm" title="宠物粮食广告（宠物粮食广告宣传语大全）">宠物粮食广告（宠物粮食广告宣传语大全）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">82</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
