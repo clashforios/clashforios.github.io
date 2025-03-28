@@ -1,0 +1,211 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-81887.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>java js 二级联动下拉列表_JS实现下拉列表的二级联动</title>
+        <meta name="description" content="这个是简单也是最基本的下拉框联动的示例，这个示例主要针对那些只有二级联动，且第一级是固定的选项，第二级的内容也比较简单，不刷新的联动，动态的联动需要检索数据库，这个对不需要更新的二级联动比较实用。这里" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-81887.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="java js 二级联动下拉列表_JS实现下拉列表的二级联动" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/2847c9095b9bf0532495525f70075bc6.webp" />
+        <meta property="og:release_date" content="2025-03-26T08:57:18" />
+    <meta property="og:updated_time" content="2025-03-26T08:57:18" />
+        <meta property="og:description" content="这个是简单也是最基本的下拉框联动的示例，这个示例主要针对那些只有二级联动，且第一级是固定的选项，第二级的内容也比较简单，不刷新的联动，动态的联动需要检索数据库，这个对不需要更新的二级联动比较实用。这里" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="java js 二级联动下拉列表_JS实现下拉列表的二级联动">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">java js 二级联动下拉列表_JS实现下拉列表的二级联动</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>这个是简单也是最基本的下拉框联动的示例，这个示例主要针对那些只有二级联动，且第一级是固定的选项，第二级的内容也比较简单，不刷新的联动，动态的联动需要检索数据库，这个对不需要更新的二级联动比较实用。这里使用了javascript来联动第二级下拉框。</p> <p>String path = request.getContextPath();</p> <p>String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";</p> <p>%&gt;</p> <p> New Document</p> <p>//定义了城市的二维数组，里面的顺序跟省份的顺序是相同的。通过selectedIndex获得省份的下标值来得到相应的城市数组</p> <p>var city=[</p> <p>["北京","天津","上海","重庆"],</p> <p>["南京","苏州","南通","常州"],</p> <p>["福州","福安","龙岩","南平"],</p> <p>["广州","潮阳","潮州","澄海"],</p> <p>["兰州","白银","定西","敦煌"]</p> <p>];</p> <p>function getCity(){<!-- --></p> <p>//获得省份下拉框的对象</p> <p>var sltProvince=document.form1.province;</p> <p>//获得城市下拉框的对象</p> <p>var sltCity=document.form1.city;</p> <p>//得到对应省份的城市数组</p> <p>var provinceCity=city[sltProvince.selectedIndex - 1];</p> <p>//清空城市下拉框，仅留提示选项</p> <p>sltCity.length=1;</p> <p>//将城市数组中的值填充到城市下拉框中</p> <p>for(var i=0;i</p> <p>sltCity[i+1]=new Option(provinceCity[i],provinceCity[i]);</p> <p>}</p> <p>}</p> <p>请选择所在省份</p> <p>直辖市</p> <p>江苏省</p> <p>福建省</p> <p>广东省</p> <p>甘肃省</p> <p>请选择所在城市</p> <p>这段代码比较简单。</p> <p>如果对js不大熟悉，可以看看下面关于js处理select对象的内容：</p> <p>1、使用selectedIndex属性获取当前选项的索引</p> <p>下拉框的选项是一个线性数组，每个选项都有一个索引，selectedIndex表示当前被选中的选项的索引号。结合options属性，可以得到被选中的option对象，从而对其做进一步的处理。当下拉框可多选时，selectedIndex属性返回第一个被选中的索引。</p> <p>selectedIndex是个只读的属性，想把通过索引指定的下拉框的项设置为选中状态，可以设置option对象的selected=true来实现。</p> <p>2、为select对象添加一个选项</p> <p>sltCity[i+1]=new&nbsp;Option(provinceCity[i],provinceCity[i]);</p> <p>new&nbsp;Option(provinceCity[i],provinceCity[i])表示创建一个值为provinceCity[i]，文本为provinceCity[i]的option对象，sltCity是页面上的city对象，i+1指定新添选项的位置。</p> <p>3、清空一个select对象</p> <p>要将下拉框的所有选项删除有两种方法，</p> <p>第一种方法就是遍历删除：</p> <p>1&nbsp;var l=myselect.length;</p> <p>2&nbsp;for(var i=0;i</p> <p>3&nbsp;myselect.options[i]=null;</p> <p>4&nbsp;}</p> <p>第二种方法比较简单，因此一般都使用此方法：</p> <p>myselect.length=0;</p> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-81197.htm">宠物猫一般多少钱一只?（宠物猫多少钱一只正常价）</a></p>
+                                        <p>下一个：<a href="/news/article-81888.htm">宠物领养有什么平台可靠点（宠物领养平台如何盈利）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-61645.htm" title="动物疫苗哪里买便宜点（动物疫苗价格查询）">动物疫苗哪里买便宜点（动物疫苗价格查询）</a></li>
+                        <li class="py-2"><a href="/news/article-54819.htm" title="动物打完疫苗需要注意什么事项和事项（动物打疫苗后多久能杀了吃）">动物打完疫苗需要注意什么事项和事项（动物打疫苗后多久能杀了吃）</a></li>
+                        <li class="py-2"><a href="/news/article-47501.htm" title="动态矩阵（指针与堆内存分配）">动态矩阵（指针与堆内存分配）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-2-node-share.htm" title="2月2日→20.2M/S|2025年最新免费节点Clash for IOS订阅链接地址">2月2日→20.2M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-free-high-speed-nodes.htm" title="3月6日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月6日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-81196.htm" title="Java两个List＜T＞ 求交集,差集,并集,去重后的并集_java">Java两个List＜T＞ 求交集,差集,并集,去重后的并集_java</a></li>
+                        <li class="py-2"><a href="/news/article-77069.htm" title="宠物粮食广告（宠物粮食广告宣传语大全）">宠物粮食广告（宠物粮食广告宣传语大全）</a></li>
+                        <li class="py-2"><a href="/news/article-50039.htm" title="参观动物医院实验报告模板 参观动物园兽医心得">参观动物医院实验报告模板 参观动物园兽医心得</a></li>
+                        <li class="py-2"><a href="/news/article-60490.htm" title="北京动物防疫站打疫苗免费吗（北京动物防疫站地址）">北京动物防疫站打疫苗免费吗（北京动物防疫站地址）</a></li>
+                        <li class="py-2"><a href="/news/article-50557.htm" title="被猫抓伤出血要吃消炎药吗（被猫抓伤出血吃药可以吗）">被猫抓伤出血要吃消炎药吗（被猫抓伤出血吃药可以吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">82</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>

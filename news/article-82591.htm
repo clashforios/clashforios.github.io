@@ -1,0 +1,211 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-82591.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Python用re模块实现简易tokenizer_在线工具</title>
+        <meta name="description" content="一个简单的tokenizer 分词（tokenization）任务是Python字符串处理中最为常见任务了。我们这里讲解用正则表达式构建简单的表达式分词器（tokenizer），它能够将表达式字符串从" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-82591.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="Python用re模块实现简易tokenizer_在线工具" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/c875c402fd48d6a3ac3d1e0ee96b8029.webp" />
+        <meta property="og:release_date" content="2025-03-27T08:15:06" />
+    <meta property="og:updated_time" content="2025-03-27T08:15:06" />
+        <meta property="og:description" content="一个简单的tokenizer 分词（tokenization）任务是Python字符串处理中最为常见任务了。我们这里讲解用正则表达式构建简单的表达式分词器（tokenizer），它能够将表达式字符串从" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Python用re模块实现简易tokenizer_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Python用re模块实现简易tokenizer_在线工具</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<h2 id="一个简单的tokenizer">一个简单的tokenizer</h2> <p>分词（tokenization）任务是Python字符串处理中最为常见任务了。我们这里讲解用正则表达式构建简单的表达式分词器（tokenizer），它能够将表达式字符串从左到右解析为标记(tokens)流。</p> <p>给定如下的表达式字符串：</p> <pre><code class="language-python">text = 'foo = 12 + 5 * 6'</code></pre> <p>我们想要将其转换为下列以序列对呈现的分词结果：</p> <pre><code class="language-python">tokens = [('NAME', 'foo'), ('EQ', '='), ('NUM', '12'), ('PLUS', '+'),\     ('NUM', '5'), ('TIMES', '*'), ('NUM', '6')]</code></pre> <p>要完成这样的分词操作，我们首先需要定义出所有可能的标记模式（所谓模式（pattern），为用来描述或者匹配/系列匹配某个句法规则的字符串，这里我们用正则表达式来做为模式），注意此处要包括空格whitespace，否则字符串中出现任何模式中没有的字符后，扫描就会停止。因为我们还需要给标记以NAME、EQ等名称，我们采用正则表达式中的命名捕获组来实现。</p> <pre><code class="language-python">import re NAME = r'(?P&lt;NAME&gt;[a-zA-Z_][a-zA-Z_0-9]*)'  # 这里?P&lt;NAME&gt;表示模式名称，()表示一个正则表达式捕获组，合在一起即一个命名捕获组 EQ = r'(?P&lt;EQ&gt;=)' NUM = r'(?P&lt;NUM&gt;\d+)' #\d表示匹配数字，+表示任意数量 PLUS = r'(?P&lt;PLUS&gt;\+)' #需要用\转义 TIMES = r'(?P&lt;TIMES&gt;\*)' #需要用\转义 WS = r'(?P&lt;WS&gt;\s+)' #\s表示匹配空格， +表示任意数量 master_pat = re.compile("|".join([NAME, EQ, NUM, PLUS, TIMES, WS]))  # | 用于选择多个模式，表示"或"</code></pre> <p>接下来我们用模式对象中的<code>scanner()</code>方法来完成分词操作，该方法创建一个扫描对象：</p> <pre><code class="language-python">scanner = master_pat.scanner(text)</code></pre> <p>然后可以用<code>match()</code>方法获取单次匹配结果，一次匹配一个模式：</p> <pre><code class="language-python">scanner = master_pat.scanner(text) m = scanner.match()  print(m.lastgroup, m.group()) # NAME foo m = scanner.match() print(m.lastgroup, m.group()) # WS</code></pre> <p>当然这样一次一次调用过于麻烦，我们可以使用迭代器来批量调用，并将单次迭代结果以具名元组形式存储</p> <pre><code class="language-python">Token = namedtuple('Token', ['type', 'value']) def generate_tokens(pat, text):     scanner = pat.scanner(text)     for m in iter(scanner.match, None):         #scanner.match做为迭代器每次调用的方法，         #None为哨兵的默认值，表示迭代到None停止         yield Token(m.lastgroup, m.group())      for tok in generate_tokens(master_pat, "foo = 42"):     print(tok)</code></pre> <p>最终显示表达式串<code>"foo = 12 + 5 * 6"</code>的tokens流为：</p> <pre><code>Token(type='NAME', value='foo') Token(type='WS', value=' ') Token(type='EQ', value='=') Token(type='WS', value=' ') Token(type='NUM', value='12') Token(type='WS', value=' ') Token(type='PLUS', value='+') Token(type='WS', value=' ') Token(type='NUM', value='5') Token(type='WS', value=' ') Token(type='TIMES', value='*') Token(type='WS', value=' ') Token(type='NUM', value='6')</code></pre> <h2 id="过滤tokens流">过滤tokens流</h2> <p>接下来我们想要过滤掉空格标记，使用生成器表达式即可：</p> <pre><code class="language-python">tokens = (tok for tok in generate_tokens(master_pat, "foo = 12 + 5 * 6")           if tok.type != 'WS') for tok in tokens:     print(tok)</code></pre> <p>可以看到空格被成功过滤：</p> <pre><code>Token(type='NAME', value='foo') Token(type='EQ', value='=') Token(type='NUM', value='12') Token(type='PLUS', value='+') Token(type='NUM', value='5') Token(type='TIMES', value='*') Token(type='NUM', value='6')</code></pre> <h2 id="注意子串匹配陷阱">注意子串匹配陷阱</h2> <p>tokens在正则表达式(即<code>"|".join([NAME, EQ, NUM, PLUS, TIMES, WS])</code>)中顺序也非常重要。因为在进行匹配时，<code>re</code>模块就会按照指定的顺序对模式做匹配。故若碰巧某个模式是另一个较长模式的子串时，必须保证较长的模式在前面优先匹配。如下面分别展示正确的和错误的匹配方法：</p> <pre><code class="language-python">LT = r'(?P&lt;LT&gt;&lt;)' LE = r'(?P&lt;LE&gt;&lt;=)' EQ = r'(?P&lt;EQ&gt;&gt;=)' master_pat = re.compile("|".join([LE, LT, EQ]))  # 正确的顺序 master_pat = re.compile("|".join([LT, LE, EQ]))  # 错误的顺序</code></pre> <p>第二种顺序的错误之处在于，这样会把<code>'&lt;='</code>文本匹配为LT(<code>'&lt;'</code>)紧跟着EQ(<code>'='</code>)，而没有匹配为单独的LE(<code>&lt;=</code>)。</p> <p>我们对于“有可能”形成子串的模式也要小心，比如下面这样：</p> <pre><code class="language-python">PRINT = r'(?P&lt;PRINT&gt;print)' NAME = r'(?P&lt;NAME&gt;[a-zA-Z_][a-zA-Z_0-9]*)'  master_pat = re.compile("|".join([PRINT, NAME]))  # 正确的顺序  for tok in generate_tokens(master_pat, "printer"):     print(tok)</code></pre> <p>可以看到被<code>print</code>实际上成了另一个模式的子串，导致另一个模式的匹配出现了问题：</p> <pre><code># Token(type='PRINT', value='print') # Token(type='NAME', value='er')</code></pre> <p>更高级的语法分词，建议采用像PyParsing或PLY这样的包。特别地，对于英文自然语言文章的分词，一般被集成到各类NLP的包中（一般分为按空格拆分、处理前后缀、去掉停用词三步骤）。对于中文自然语言处理分词也有丰富的工具（比如<code>jieba</code>分词工具包）。</p> <h2 id="引用">引用</h2> <ul> <li>[1] Martelli A, Ravenscroft A, Ascher D. Python cookbook[M]. " O'Reilly Media, Inc.", 2015.</li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-81888.htm">宠物领养有什么平台可靠点（宠物领养平台如何盈利）</a></p>
+                                        <p>下一个：<a href="/news/article-82592.htm">猫到底该不该打疫苗针（猫应该打疫苗吗）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-clash-node-github.htm" title="1月22日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月22日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-free-high-speed-nodes.htm" title="2月15日→20.6M/S|2025年最新免费节点Clash for IOS订阅链接地址">2月15日→20.6M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-47500.htm" title="Java空指针异常和解决办法">Java空指针异常和解决办法</a></li>
+                        <li class="py-2"><a href="/news/article-60490.htm" title="北京动物防疫站打疫苗免费吗（北京动物防疫站地址）">北京动物防疫站打疫苗免费吗（北京动物防疫站地址）</a></li>
+                        <li class="py-2"><a href="/news/article-52127.htm" title="动物医院实践心得500字作文大全怎么写（动物医院社会实践报告）">动物医院实践心得500字作文大全怎么写（动物医院社会实践报告）</a></li>
+                        <li class="py-2"><a href="/news/article-83306.htm" title="动物医院是干嘛的啊 动物医院是干嘛的啊">动物医院是干嘛的啊 动物医院是干嘛的啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-high-speed-nodes.htm" title="3月24日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月24日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-free-subscribe-node.htm" title="1月20日→21.1M/S|2025年最新免费节点Clash for IOS订阅链接地址">1月20日→21.1M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-44057.htm" title="给动物打疫苗的简报怎么写啊（给动物打疫苗的简报怎么写啊图片）">给动物打疫苗的简报怎么写啊（给动物打疫苗的简报怎么写啊图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-clash-node-github.htm" title="3月4日→21.5M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月4日→21.5M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">82</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
