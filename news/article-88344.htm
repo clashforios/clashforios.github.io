@@ -1,0 +1,210 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-88344.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>C++引用及其底层原理</title>
+        <meta name="description" content="文章目录        引用 引用的注意事项   引用做参数 实参传值和传引用的优劣   引用做函数返回值 传引用返回 引用的权限 引用经典笔试题 产生临时变量的情况 关于右值 引用的底层原理    " />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-88344.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="C++引用及其底层原理" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/f0146261c92882776ab6bb31fd02013b.webp" />
+        <meta property="og:release_date" content="2025-04-04T09:09:57" />
+    <meta property="og:updated_time" content="2025-04-04T09:09:57" />
+        <meta property="og:description" content="文章目录        引用 引用的注意事项   引用做参数 实参传值和传引用的优劣   引用做函数返回值 传引用返回 引用的权限 引用经典笔试题 产生临时变量的情况 关于右值 引用的底层原理    " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C++引用及其底层原理">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">C++引用及其底层原理</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>文章目录</h3> <ul> <li> <ul> <li> <ul> <li> <ul> <li><a href="#_2" rel="nofollow">引用</a></li> <li><a href="#_8" rel="nofollow">引用的注意事项</a></li> <li> <ul> <li><a href="#_42" rel="nofollow">引用做参数</a></li> <li><a href="#_57" rel="nofollow">实参传值和传引用的优劣</a></li> </ul> </li> <li><a href="#_67" rel="nofollow">引用做函数返回值</a></li> <li><a href="#_83" rel="nofollow">传引用返回</a></li> <li><a href="#_96" rel="nofollow">引用的权限</a></li> <li><a href="#_115" rel="nofollow">引用经典笔试题</a></li> <li><a href="#_126" rel="nofollow">产生临时变量的情况</a></li> <li><a href="#_141" rel="nofollow">关于右值</a></li> <li><a href="#_157" rel="nofollow">引用的底层原理</a></li> </ul> </li> </ul> </li> </ul> </li> </ul> </div> <h4> <a id="_2" rel="nofollow"></a>引用</h4> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/4cab1505d3c35b41d20d88a48f9c4ba5.jpg" alt="C++引用及其底层原理"></p> <blockquote> <p>引用不是定义一个新变量，而是给已存在的变量取了一个外号，编译器不会为引用变量开辟内存空间，它和它引用的变量共用同一块内存空间。<br /> 举个形象的例子，鲁智深又被叫做"花和尚"，这里的花和尚和鲁智深都是同一个人，花和尚就是鲁智深的引用，说白了引用其实就是取外号。</p> </blockquote> <h4> <a id="_8" rel="nofollow"></a>引用的注意事项</h4> <p><strong>1.引用必须初始化</strong></p> <blockquote> <p>int main()<br /> {<!-- --><br /> int a；<br /> int &amp;b =a;<br /> }<br /> 这时b就是a的外号。<br /> 下面的这种没有初始化的做法是错误的<br /> int main()<br /> {<!-- --><br /> int &amp;b；//引用必须初始化，这里没有进行初始化。<br /> }</p> </blockquote> <p><strong>2.一个变量可以有多个引用</strong></p> <blockquote> <p>在生活中，我们可能有多个名字，在家中父母可能叫你小名，在外面别人可能叫你的全名或者外号<br /> 其实也就是一个变量可以有多个外号，也就是可以有多个引用。<br /> int main()<br /> {<!-- --><br /> int a;<br /> int &amp;b=a;<br /> int &amp;c=a;<br /> }<br /> 这里的b和c都是a的外号，b，c，a三个变量指向的都是同一块内存空间。</p> </blockquote> <p><strong>3.引用一旦引用了一个实体就不能再引用其他的实体</strong></p> <p>形象的来说，就是你和你的亲弟弟不能用同一个名字<br /> 下图c是a的引用，那么现在他就不能做b的引用了。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/07672f5e1fb88cc6dfc41ce06ecb7dbf.jpg" alt="C++引用及其底层原理"></p> <h5> <a id="_42" rel="nofollow"></a>引用做参数</h5> <p>在讲引用做参数之前，我们先需要了解一下，参数传值和参数传引用的区别。</p> <p><strong>1.参数传值</strong><br /> 下图实参传递了a，形参b对其进行了接收并修改，但是实参a最终并没有受到影响，这又是为什么呢？<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/4562a94236b8966c658c3196bcd00c8e.jpg" alt="C++引用及其底层原理"><br /> 原来，参数传值的时候，形参会生成一份实参数据的拷贝，也就是说实参和形参指向的不是同一块空间，所以形参的修改不会影响实参。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/7bde996baa4530994c99405778d10c36.jpg" alt="C++引用及其底层原理"><br /><strong>2.引用传参</strong><br /> 下图进行了引用传参，形参的修改对实参产生了影响，我们可以大胆推测形参和实参是一块空间。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/0c2ddf5e118ae06bdc040d339278dd63.jpg" alt="C++引用及其底层原理"><br /> 原来，引用传参的时候，形参不再是实参的拷贝，而是实参的一个引用，也就是说实参和形参指向的是同一块内存空间，形参的改变会影响实参。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/24fac1d683d141ce197ff9def6a95387.jpg" alt="C++引用及其底层原理"></p> <h5> <a id="_57" rel="nofollow"></a>实参传值和传引用的优劣</h5> <p><strong>1.实参传值</strong>：</p> <blockquote> <p>缺点：形参会生成一份实参数据的拷贝，当数据量很大时，在一定程度上就会影响程序的运行速度<br /> 优点：因为形参是实参的拷贝，所以形参的操作不会影响实参，可以防止实参数据遭到污染。</p> </blockquote> <p><strong>2.实参传引用</strong></p> <blockquote> <p>缺点：形参的操作对实参会产生影响，形参的错误操作会让实参数据遭到修改。<br /> 优点：因为形参是实参的引用，一定程序上，可以提高程序的运行速度</p> </blockquote> <h4> <a id="_67" rel="nofollow"></a>引用做函数返回值</h4> <p>在了解引用做返回值时，我们还是得先了解传值返回和传引用返回的区别。其实原理和上面大致相同。<br /><strong>1.传值返回</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/6f0b0e438ecfff2ba99a062d4d0f7549.jpg" alt="C++引用及其底层原理"><img decoding="async" src="http://img.555519.xyz/uploads/20230108/2b36a9771d4855abaa786dc141b176dd.jpg" alt="C++引用及其底层原理"><br /> 在返回c的时候，返回的不是c的本体，而是将c拷贝在一块临时空间里，所以返回的其实是这块临时空间。然后ret再次拷贝一个和这块临时空间一样数据的空间。<br /> 这块有点像俄罗斯套娃，需要多画图理解。我一开始也有点懵逼。多画图就清晰了。<br /> 但是问题又来了，这块临时拷贝空间又存储在哪里呢？<br /> 当c比较小的时候（4字节或者8字节），一般是存储在寄存器中。<br /> 当c比较大的时候，临时变量放在该函数的栈帧上面。</p> <p>接下来我们通过观察代码的反汇编进行证明：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/f46262a6fecbdde31b6dc43f4dc27658.jpg" alt="C++引用及其底层原理"><br /> 分析这段代码的汇编，在进入add函数以后，先是将a的值给了eax，然后将b的值加上a，接着将eax里的值给了c。最后对c进行返回，在返回c的时候生成一个临时拷贝，c将自己的值又给到了寄存器eax中。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/c0306bc4098f44b1243271f0831404c5.jpg" alt="C++引用及其底层原理"><br /> 最后回到主函数，eax将值给了ret。</p> <h4> <a id="_83" rel="nofollow"></a>传引用返回</h4> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/4917055e4b8d08630746c58275016547.jpg" alt="C++引用及其底层原理"></p> <p>这里进行的是传引用返回，也就是说ret其实就是c的别名。传引用返回，返回的就是本体，而不是拷贝。因为这里c是一个局部变量，在函数结束以后，栈帧被销毁，局部变量的空间被系统回收了。这时ret再去访问c的内容就可能造成非法访问，并且c的值可能已经被修改了。</p> <p>形象的来说：就是你原先买了一个房子，后面你又将其卖给了别人，后面你想再次进入这个房子，但是这间房子已经不属于你了，你进房子的操作就属于非法访问了。</p> <p>所以，传引用返回时，返回的对象不能是出函数就被系统回收的。也就是说返回的变量不能是一个局部变量。</p> <h4> <a id="_96" rel="nofollow"></a>引用的权限</h4> <p><strong>1.引用的权限可以缩小</strong><br /> int main() {<!-- --><br /> int a = 10;<br /> const int &amp;b = a;//权限的缩小<br /> }<br /> 这里变量a是可读可写的，而b是a的引用，b只能对a这块内存空间进行读取，不能进行修改，这就是权限的缩小，这在C++中是可以的。</p> <p><strong>2.引用的权限不能放大</strong><br /> int main() {<!-- --><br /> const int a = 10;<br /> int &amp;b = a;//权限的缩小<br /> 这里变量a指向的空间是只能<strong>读取</strong>的，<strong>不能进行修改</strong>，而a的引用b，是可以对a指向的这块空间进行修改的，使得权限得到了放大，这种语法在C++中是错误的。<br /> }</p> <p><strong>总结：引用可以进行权限的缩小，但是不能进行权限的放大</strong></p> <h4> <a id="_115" rel="nofollow"></a>引用经典笔试题</h4> <p>下图中的代码(1)和(2)是否能够正常运行？</p> <pre><code class="prism language-c"><span class="token keyword">double</span> d<span class="token operator">=</span><span class="token number">11.1</span><span class="token punctuation">;</span> <span class="token keyword">int</span> a<span class="token operator">=</span>d<span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">int</span> <span class="token operator">&amp;</span>ret<span class="token operator">=</span>d<span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> </code></pre> <p>答案:(1)可以运行通过，(2)不行。<br /> 代码(1)是普通的隐式类型转换。<br /> 而在了解代码(2)的错误原因之前，我们需要回顾一些知识：</p> <h4> <a id="_126" rel="nofollow"></a>产生临时变量的情况</h4> <blockquote> <p>1.类型转换<br /> double d=11.1；<br /> int a=d;<br /> d的类型是double，a的类型是int，类型不同，正如下图所示，在发生隐式类型转换的时候，需要将d的值存到一个int类型的临时变量里，然后将这个临时变量的值赋予给a。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/d098018523438614202016ebc1205a9f.jpg" alt="C++引用及其底层原理"><br /> 2.整形提升<br /> int a=10<br /> char c=‘b’；<br /> if(a&gt;c){<!-- --><br /> }<br /> 这里并不是拿c直接和a进行比较，而是将c赋值到一个int的临时变量里，通过这个临时变量去和a进行比较。</p> </blockquote> <h4> <a id="_141" rel="nofollow"></a>关于右值</h4> <blockquote> <p><strong>结论：右值是具有常性的，是不可修改的。</strong><br /> 这里的右值不能通过字面意思(处于式子右边的值)进行理解，以下的几种情况一般都是属于右值。<br /> 1.表达式的计算结果： 如：5+3=8,这里的8就是右值。<br /> 2.常量：如a=5，这里的5就是右值。<br /> 3.一些隐式类型转换产生的临时变量。如<br /> int a；double d；d=a；<br /> 这里隐式类型转换产生的临时变量也是一种右值。</p> </blockquote> <p><font color="red" size="5">在明白了这些基础原理以后，我们开始学习为什么代码int &amp;ret=d;(2)是错误的。</font></p> <p><strong>这里引用的变量其实是一块临时空间，而临时空间是右值是不能修改的，这种引用的方式本质上其实就是权限的放大，因此编译不能通过。</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/2b3be6915ac1c0c96b6ef16928483411.jpg" alt="C++引用及其底层原理"></p> <h4> <a id="_157" rel="nofollow"></a>引用的底层原理</h4> <blockquote> <p>int main() {<!-- --><br /> int a;<br /> int &amp;b = a;<br /> int *p = &amp;a;<br /> }<br /> 这里通过调试模式观看这段代码的反汇编。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/e7b57fd128453be062c3494040f1c7cf.jpg" alt="C++引用及其底层原理"><br /> 这里的lea是取地址的意思。<br /> 从汇编代码可以看出，在底成实现的时候，引用和指针的实现方式是一样的，所以说：<br /><strong>引用的底层是通过指针实现的</strong></p> </blockquote></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-87596.htm">领养宠物赚钱吗现在（领养宠物赚钱的是什么盘）</a></p>
+                                        <p>下一个：<a href="/news/article-88345.htm">中农大动物医院地址（中国农大动物医院地址）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-68457.htm" title="领养宠物网站的优势分析与对策（宠物领养平台如何盈利）">领养宠物网站的优势分析与对策（宠物领养平台如何盈利）</a></li>
+                        <li class="py-2"><a href="/news/article-71705.htm" title="中国兽药公司前50名（中国兽药公司前50名排名）">中国兽药公司前50名（中国兽药公司前50名排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe-links.htm" title="3月25日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月25日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-87596.htm" title="领养宠物赚钱吗现在（领养宠物赚钱的是什么盘）">领养宠物赚钱吗现在（领养宠物赚钱的是什么盘）</a></li>
+                        <li class="py-2"><a href="/news/article-88344.htm" title="C++引用及其底层原理">C++引用及其底层原理</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-free-high-speed-nodes.htm" title="3月31日→18.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月31日→18.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-subscribe-node.htm" title="4月1日→21.9M/S|2025年最新免费节点Clash for IOS订阅链接地址">4月1日→21.9M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-71706.htm" title="宠物粮食公司人员及组织结构 宠物粮食公司人员及组织结构图">宠物粮食公司人员及组织结构 宠物粮食公司人员及组织结构图</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-node-share.htm" title="3月7日→22.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月7日→22.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-83305.htm" title="狗粮生产机器设备二手价格（狗粮机器转让）">狗粮生产机器设备二手价格（狗粮机器转让）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>

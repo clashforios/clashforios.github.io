@@ -1,0 +1,210 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-86872.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>QT学习-08-Qt连接Sqllite数据库</title>
+        <meta name="description" content="QT连接sqllite数据库  1.SQLlite简述： SQLite是一款开源轻量级的数据库软件，不需要server，可以集成在其他软件中，非常适合嵌入式系统。Qt5以上版本可以直接使用SQLite" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-86872.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="QT学习-08-Qt连接Sqllite数据库" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/7619a75e0c34e3cff335df8d42c8ac14.webp" />
+        <meta property="og:release_date" content="2025-04-02T07:44:51" />
+    <meta property="og:updated_time" content="2025-04-02T07:44:51" />
+        <meta property="og:description" content="QT连接sqllite数据库  1.SQLlite简述： SQLite是一款开源轻量级的数据库软件，不需要server，可以集成在其他软件中，非常适合嵌入式系统。Qt5以上版本可以直接使用SQLite" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="QT学习-08-Qt连接Sqllite数据库">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">QT学习-08-Qt连接Sqllite数据库</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-github-gist"> <h2> <a id="QTsqllite_0" rel="nofollow"></a>QT连接sqllite数据库</h2> <h2> <a id="1SQLlite_2" rel="nofollow"></a>1.SQLlite简述：</h2> <p>SQLite是一款开源轻量级的数据库软件，不需要server，可以集成在其他软件中，非常适合嵌入式系统。Qt5以上版本可以直接使用SQLite（Qt自带驱动）。</p> <h2> <a id="2_5" rel="nofollow"></a>2.准备:</h2> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/> 引入SQL模块</li> </ul> <p>引入SQL模块<br /> 在Qt项目文件(.pro文件)中，加入SQL模块：</p> <pre><code>QT += sql </code></pre> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/> 引用头文件</li> </ul> <p>在需要使用SQL的类定义中，引用相关头文件。例如：</p> <pre><code>#include &lt;QSqlDatabase&gt; #include &lt;QSqlError&gt; #include &lt;QSqlQuery&gt; </code></pre> <h2> <a id="3SQLite_24" rel="nofollow"></a>3.常用SQLite类介绍</h2> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/><mark>QSqlDatabase类</mark> </li> </ul> <blockquote> <p><strong>QSqlDatabase类表示到数据库的连接</strong>。QSqlDatabase类提供了一个接口，用于通过连接访问数据库。QSqlDatabase的一个实例表示连接。该连接通过受支持的数据库驱动程序之一提供对数据库的访问，该驱动程序派生自QSqlDriver。或者，您可以从QSqlDriver子类化自己的数据库驱动程序。<br /> 创建一个连接(例如。调用静态addDatabase()函数之一，在其中指定要使用的驱动程序或驱动程序类型(即)和连接名称。一个连接可以通过它自己的名称而不是它所连接的数据库的名称来识别。您可以有多个到一个数据库的连接。<code>QSqlDatabase还支持默认连接的概念</code>，即未命名连接。要创建默认连接，在<code>调用addDatabase()时不要传递连接名参数</code>。随后，当您调用任何接受连接名称参数的静态成员函数时，如果没有传递连接名称参数，则假定默认连接。下面的代码片段展示了如何创建和打开到PostgreSQL数据库的默认连接。</p> </blockquote> <pre><code>QSqlDatabase db = QSqlDatabase::addDatabase("QPSQL");             db.setHostName("acidalia");      	db.setDatabaseName("customdb");       	db.setUserName("mojito");    	db.setPassword("J0a1m8");            bool ok = db.open(); </code></pre> <blockquote> <p>创建QSqlDatabase对象之后，使用<code>setDatabaseName()</code>、<code>setUserName()</code>、<code>setPassword()</code>、<code>setHostName()</code>、<code>setPort()</code>和<code>setConnectOptions()</code>设置连接参数。然后调用open()来激活到数据库的物理连接。在打开连接之前，连接不可用。上面定义的连接将是默认连接，因为我们没有给addDatabase()指定连接名。</p> </blockquote> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/><mark>QSqlQuery类</mark> </li> </ul> <blockquote> <p><strong>QSqlQuery类提供了执&gt;行和操作SQL语句的方法</strong>。QSqlQuery封装了在QSqlDatabase上执行的SQL查询中创建、导航和检索数据所涉及的功能。它可以用来执行<code>DML</code>(数据操作语言)语句，如<code>SELECT</code>、<code>INSERT</code>、<code>UPDATE</code>和<code>DELETE</code>，以及<code>DDL</code>(数据定义语言)语句，如<code>CREATE TABLE</code>。它还可以用来执行非标准SQL的特定于数据库的命令(例如，SET DATESTYLE=ISO for PostgreSQL)。成功执行的SQL语句将查询的状态设置为active，以便isActive()返回true。否则，查询的状态被设置为非活动状态。在这两种情况下，当执行一个新的SQL语句时，查询被定位在一个无效的记录上。在检索值之前，必须将活动查询导航到有效记录(以便isValid()返回true)。对于某些数据库，如果在调用commit()或rollback()时存在一个活动查询(即SELECT语句)，则提交或回滚将失败。</p> </blockquote> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/><mark>QSqlError类</mark> </li> </ul> <blockquote> <p>QSqlError类提供SQL数据库错误信息。QSqlError对象可以提供特定于数据库的错误数据，包括<code>driverText()</code>和<code>databaseText()</code>消息(或者两者都连接为<code>text()</code>、错误号()和类型()。这些函数都有<code>setter</code>，因此您可以从自己的类(例如从自己的SQL驱动程序)创建和返回<code>QSqlError</code>对象。还请参见<code>QSqlDatabase::lastError()</code>和<code>QSqlQuery::lastError()</code>。</p> </blockquote> <h2> <a id="4_46" rel="nofollow"></a>4.数据库的使用</h2> <ol> <li><mark>建立数据库</mark></li> </ol> <p>检查连接、添加数据库驱动、设置数据库名称、数据库登录用户名、密码。检查连接、添加数据库驱动、设置数据库名称、数据库登录用户名、密码。</p> <pre><code> QSqlDatabase database; if (QSqlDatabase::contains("qt_sql_default_connection")) {     database = QSqlDatabase::database("qt_sql_default_connection"); } else {     database = QSqlDatabase::addDatabase("QSQLITE");     database.setDatabaseName("MyDataBase.db");     database.setUserName("XingYeZhiXia");     database.setPassword("123456"); } </code></pre> <p>上述代码解释：<br /> （1）第一行中，建立了一个<code>QSqlDatabase对</code>象，后续的操作要使用这个对象。<br /> （2）<code>if</code>语句用来检查指定的连接(connection)是否存在。这里指定的连接名称（connection name）是<code>qt_sql_default_connection</code>，这是Qt默认连接名称。实际使用时，这个名称可以任意取。如果判断此连接已经存在，那么<code>QSqlDatabase::contains()</code>函数返回true。此时，进入第一个分支，<code>QSqlDatabase::database()</code>返回这个连接。<br /> （3）如果这个连接不存在，则进入else分支，需要创建连接，并添加数据库。在else分支第一行，<code>addDatabase()</code>的参数<code>QSQLITE</code>是SQLite对应的驱动名，不能改。而且需要注意的是，addDatabase()的第二个参数被省略了，第二个参数的默认参数就是上面提到的Qt默认连接名称<code>qt_sql_default_connection</code>。如果需要使用自定义的连接名称（如果程序需要处理多个数据库文件的话就会这样），则应该加入第二个参数，例如</p> <pre><code>database = QSqlDatabase::addDatabase("QSQLITE", "my_sql_connection); </code></pre> <p>这个时候，如果在另一个地方需要判断my_sql_connection连接是否存在，就应该使用<br /><code>if (QSqlDatabase::contains("my_sql_connection"))</code>。<br /> （4）else分支第二行中，setDatabaseName()的参数是数据库文件名。如果这个数据库不存在，则会在后续操作时自动创建；如果已经存在，则后续的操作会在已有的数据库上进行。<br /> （5）else分支后面两行，设置用户名和密码。用户名，密码都可以随便取，也可以省略。</p> <ol start="2"> <li><mark>打开数据库</mark></li> </ol> <p>使用open()打开数据库，并判断是否成功。注意，在第一步检查连接是否存在时，如果连接存在，则在返回这个连接的时候，会默认将数据库打开。if (!database.open())使用open()打开数据库，并判断是否成功。注意，在第一步检查连接是否存在时，如果连接存在，则在返回这个连接的时候，会默认将数据库打开。</p> <pre><code>if (!database.open()) {     qDebug() &lt;&lt; "Error: Failed to connect database." &lt;&lt; database.lastError(); } else {     // do something }  </code></pre> <p>如果打开成功，则进入else分支。对数据库的操作都需要在else分支中进行。<br /> 3. <mark>关闭数据库</mark><br /> 数据库操作完成后，最好关闭。</p> <pre><code>database.close();   </code></pre> <ol start="4"> <li> <mark>操作数据库</mark><br /> 对数据库进行操作需要用到QSqlQuery类，操作前必须定义一个对象。下面举例说明操作方法。操作需要使用SQLite语句，本文中的几个例子会使用几个常用的语句，关于SQLite语句的具体信息请参考SQLite相关资料。<br /><strong>例1：创建表格</strong><br /> 创建一个名为student的表格，表格包含三列，第一列是id，第二列是名字，第三列是年龄。</li> </ol> <pre><code>QSqlQuery sqlQuery;      QString str_sql = "";      str_sql = "create table student (id int primary key,name text ,age int)";     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"创建student表失败！！";     }     else     {         qDebug()&lt;&lt;"创建student表成功";      }   </code></pre> <p><strong>例2.插入数据</strong></p> <pre><code> str_sql = "insert into student values(1,'wengmq',21)";     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"插入数据1失败！！";     }     else     {         qDebug()&lt;&lt;"插入数据1成功";      } </code></pre> <p>当要插入的参数还不固定时，可以用字符串拼接的方式拼接字符串。</p> <pre><code>//拼装字符串 方法1:sprintf函数  //拼装字符串 方法1     char text[250] ={0};     sprintf(text,"insert into student values(%d,'%s',%d)",2,"Ming",21);     qDebug()&lt;&lt;text;//控制台上打印拼接好的字符串     if(!sqlQuery.exec(text))     {         qDebug()&lt;&lt;"插入数据2失败！！";     }     else     {         qDebug()&lt;&lt;"插入数据2成功";     } </code></pre> <pre><code>//拼装字符串 方法2：QString（推荐使用）  str_sql = QString("insert into student values(%1,'%2',%3)").arg(3).arg("Qiang").arg(21);     qDebug()&lt;&lt;str_sql;//控制台上打印拼接好的字符串     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"插入数据3失败！！";     }     else     {         qDebug()&lt;&lt;"插入数据3成功";      } </code></pre> <p><strong>例3.修改数据</strong></p> <pre><code>str_sql = QString("update student set name =  '%1' where id = %2").arg("weng").arg(1);     qDebug()&lt;&lt;str_sql;     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"修改数据失败！！";     }     else     {         qDebug()&lt;&lt;"修改数据成功";     } </code></pre> <p><strong>例4.删除数据</strong></p> <pre><code>str_sql = QString("delete from student  where id = %1").arg(2);     qDebug()&lt;&lt;str_sql;//控制台上打印拼接好的字符串     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"删除id=2的数据失败！！";     }     else     {         qDebug()&lt;&lt;"删除id=2的数据成功";     } </code></pre> <p><strong>例5.查询数据</strong></p> <pre><code> str_sql = "select * from student";     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"查询失败！！";     }     else     {         qDebug()&lt;&lt;"查询结果如下：";         while(sqlQuery.next())         {             int id = sqlQuery.value(0).toInt();             QString str_name = sqlQuery.value(1).toString();             int age = sqlQuery.value(2).toInt();             qDebug()&lt;&lt;QString("id: %1   name: %2    age: %3").arg(id).arg(str_name).arg(age);         }     } </code></pre> <p><mark>心得体会：</mark> 这一节的内容其实很重要了，数据库连接QT，到后面数据的存储对做项目至关重要，这节课老师讲的都是QT连接数据都是基础，后面我们还要把这些操作包装成类，一些数据库增删改查的操作封装成函数。课上的时候按着老师的代码敲着打发现总是数据插入失败，后面用qDebug打印出来看发现，拼接完的字符串少了单引号，所以数据库无法识别我们要插入的字符串类型的数据，导致了插入失败！！至于老师的代码为什么可以成功我也不太懂，可能跟编译器有关吧。<strong>下次有类似问题可以把要执行的SQL语句打印出来看看</strong>。</p> <p>完整代码如下：</p> <p>main.cpp</p> <pre><code>#include &lt;QtGui/QApplication&gt; #include "SQLlite.h" #include &lt;QDebug&gt; #include &lt;QTextCodec&gt;  #include &lt;QString&gt; #include &lt;QVariant&gt;  //添加数据库头文件 #include &lt;QSqlQuery&gt; #include &lt;QSqlDatabase&gt; #include &lt;QSqlError&gt;  //在Qt项目文件(.pro文件)中，加入SQL模块：QT += sql int main(int argc, char *argv[]) {     QApplication a(argc, argv);     //设置本地编码 头文件 #include &lt;QTextCodec&gt; //编码     QTextCodec *codec = QTextCodec::codecForLocale();     QTextCodec::setCodecForLocale(codec);     QTextCodec::setCodecForCStrings(codec);     QTextCodec::setCodecForTr(codec);      //打印数据库的驱动的模块     qDebug()&lt;&lt;":::::::::驱动::::::::::"&lt;&lt;QSqlDatabase::drivers();      QSqlDatabase database;     if (QSqlDatabase::contains("qt_sql_default_connection"))     {         database = QSqlDatabase::database("qt_sql_default_connection");     }     else     {         database = QSqlDatabase::addDatabase("QSQLITE");         database.setDatabaseName("MyDataBase.db");         database.setUserName("admin");         database.setPassword("123456");     }      //打开数据库     if(!database.open())     {         qDebug()&lt;&lt;"打开数据库失败！！"&lt;&lt;database.lastError();     }     else     {         qDebug()&lt;&lt;"打开数据库成功！！";     }      //创建数据表     QSqlQuery sqlQuery;      QString str_sql = "";      str_sql = "create table student (id int primary key,name text ,age int)";     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"创建student表失败！！";     }     else     {         qDebug()&lt;&lt;"创建student表成功";      }      //插入数据     str_sql = "insert into student values(1,'wengmq',21)";     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"插入数据1失败！！";     }     else     {         qDebug()&lt;&lt;"插入数据1成功";      }      //拼装字符串 方法1     char text[250] ={0};     sprintf(text,"insert into student values(%d,'%s',%d)",2,"Ming",21);     qDebug()&lt;&lt;text;//控制台上打印拼接好的字符串     if(!sqlQuery.exec(text))     {         qDebug()&lt;&lt;"插入数据2失败！！";     }     else     {         qDebug()&lt;&lt;"插入数据2成功";      }      //拼装字符串 方法2     str_sql = QString("insert into student values(%1,'%2',%3)").arg(3).arg("Qiang").arg(21);     qDebug()&lt;&lt;str_sql;//控制台上打印拼接好的字符串     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"插入数据3失败！！";     }     else     {         qDebug()&lt;&lt;"插入数据3成功";      }      //修改数据     str_sql = QString("update student set name =  '%1' where id = %2").arg("weng").arg(1);     qDebug()&lt;&lt;str_sql;     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"修改数据失败！！";     }     else     {         qDebug()&lt;&lt;"修改数据成功";     }      //删除数据     str_sql = QString("delete from student  where id = %1").arg(2);     qDebug()&lt;&lt;str_sql;//控制台上打印拼接好的字符串     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"删除id=2的数据失败！！";     }     else     {         qDebug()&lt;&lt;"删除id=2的数据成功";     }          //查询数据     str_sql = "select * from student";     if(!sqlQuery.exec(str_sql))     {         qDebug()&lt;&lt;"查询失败！！";     }     else     {         qDebug()&lt;&lt;"查询结果如下：";         while(sqlQuery.next())         {             int id = sqlQuery.value(0).toInt();             QString str_name = sqlQuery.value(1).toString();             int age = sqlQuery.value(2).toInt();             qDebug()&lt;&lt;QString("id: %1   name: %2    age: %3").arg(id).arg(str_name).arg(age);         }     }     database.close();     SQLlite w;    w.show();      return a.exec(); }  </code></pre> <p>.pro文件：</p> <pre><code>QT       += core gui sql  TARGET = SQL_test TEMPLATE = app   SOURCES += main.cpp\         SQLlite.cpp  HEADERS  += SQLlite.h  FORMS    += SQLlite.ui </code></pre> <p>SQLlite.cpp文件：</p> <pre><code>#include "SQLlite.h" #include "ui_SQLlite.h"  SQLlite::SQLlite(QWidget *parent) :     QWidget(parent),     ui(new Ui::SQLlite) {     ui-&gt;setupUi(this); }  SQLlite::~SQLlite() {     delete ui; }  </code></pre> <p>SQLlite.h文件<br /> #ifndef SQLLITE_H<br /> #define SQLLITE_H</p> <p>#include </p> <p>namespace Ui {<!-- --><br /> class SQLlite;<br /> }</p> <p>class SQLlite : public QWidget<br /> {<!-- --><br /> Q_OBJECT</p> <p>public:<br /> explicit SQLlite(QWidget *parent = 0);<br /> ~SQLlite();</p> <p>private:<br /> Ui::SQLlite *ui;<br /> };</p> <p>#endif // SQLLITE_H</p> <p>运行控制台截图：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230224/fcef17da164118262f17e1946bcf17eb.jpg" alt="QT学习-08-Qt连接Sqllite数据库">数据库显示：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230224/a8dc2764c8505f0bec7c7c3e8356b6fb.jpg" alt="QT学习-08-Qt连接Sqllite数据库"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-86163.htm">猫体外驱虫药被猫舔到会怎样?（体外驱虫药被猫咪舔舐了怎么办）</a></p>
+                                        <p>下一个：<a href="/news/article-86873.htm">openssl 3.0 和 1.1.x 区别</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-87595.htm" title="河南省动物防疫条例（河南省动物防疫补助经费管理办法）">河南省动物防疫条例（河南省动物防疫补助经费管理办法）</a></li>
+                        <li class="py-2"><a href="/news/article-74338.htm" title="三国杀已出武将排行榜（三国杀2021武将排行）">三国杀已出武将排行榜（三国杀2021武将排行）</a></li>
+                        <li class="py-2"><a href="/news/article-67165.htm" title="南京宠物寄养一般怎么收费 南京宠物寄养一般怎么收费呢">南京宠物寄养一般怎么收费 南京宠物寄养一般怎么收费呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-clash-node-daily-updates.htm" title="3月17日→20.6M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月17日→20.6M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-node-share-links.htm" title="3月5日→22.9M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月5日→22.9M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-77068.htm" title="Prometheus TSDB存储原理">Prometheus TSDB存储原理</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe-links.htm" title="3月25日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月25日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67775.htm" title="猫如何做驱虫（猫怎么做驱虫 知乎）">猫如何做驱虫（猫怎么做驱虫 知乎）</a></li>
+                        <li class="py-2"><a href="/news/article-70371.htm" title="iOS全埋点解决方案-界面预览事件">iOS全埋点解决方案-界面预览事件</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-node-share-links.htm" title="3月10日→18.3M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月10日→18.3M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
