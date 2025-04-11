@@ -1,0 +1,210 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-89772.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题</title>
+        <meta name="description" content="关于AOP切面导致WebSocket的@ServerEndPoint无法注入的问题  前言 原因和解决方案     今天给我的毕业设计加上了AOP 日志拦截，结果导致了WebSocket 的报错。，错" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-89772.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/a20f654a363bade37fe772c4f150cdf4.webp" />
+        <meta property="og:release_date" content="2025-04-06T10:08:42" />
+    <meta property="og:updated_time" content="2025-04-06T10:08:42" />
+        <meta property="og:description" content="关于AOP切面导致WebSocket的@ServerEndPoint无法注入的问题  前言 原因和解决方案     今天给我的毕业设计加上了AOP 日志拦截，结果导致了WebSocket 的报错。，错" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>关于AOP切面导致WebSocket的@ServerEndPoint无法注入的问题</h3> <ul> <li><a href="#_5" rel="nofollow">前言</a></li> <li><a href="#_17" rel="nofollow">原因和解决方案</a></li> </ul> </div> <hr color="#000000" size="1&quot;"/> </h1> <p><font color="#999AAA">今天给我的毕业设计加上了<code>AOP</code> 日志拦截，结果导致了<code>WebSocket</code> 的报错。，错误信息为：</font></p> <pre><code class="prism language-bash">Failed to register @ServerEndpoint class: class pers.xuyijie.communityinteractionsystem.websocket.MyWebSocket<span class="token variable">$$</span>EnhancerBySpringCGLIB Caused by: javax.websocket.DeploymentException: Cannot deploy POJO class<span class="token punctuation">[</span>pers.xuyijie.communityinteractionsystem.websocket.MyWebSocket<span class="token variable">$$</span>EnhancerBySpringCGLIB</code></pre> <hr color="#000000" size="1&quot;"/> </h1> <p><font color="#999AAA">原因是因为<code>WebServerContainer</code> 里面的<code>addEndPoint</code> 方法里的<code>annotation</code> 为 null。<img decoding="async" src="http://img.555519.xyz/uploads3/20220721/a22897de83725957806f3edec5dabe03.jpg" alt="关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题"><font color="#999AAA">感谢 华阳余文乐https://blog.csdn.net/qq_15807785/article/details/83547978 ，上图是他的调试截图。</font></font></p> <p><font color="#999AAA">导致为 null 的原因是因为 aop 的<code>@PointCut</code> 注解和 Aop 自定义的<code>@Log</code> 注解，总之，aop 不能作用到 websocket 的文件，否则就会导致问题。</font></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220721/c02e07c76fe321910a9636984fe270db.jpg" alt="关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220721/179c3df2ce4218d84a68486c048b44b2.jpg" alt="关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题"><br /><font color="#999AAA">去掉 WebSocket 上的<code>@Log</code>，并确保<code>@PointCut 的 execution 中的包路径不包含</code> WebSocket 的文件就可以了。</font></p> <p>启动成功<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220721/6d7cb713143b622b089be86f34f92581.jpg" alt="关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题"></p> <hr color="#000000" size="1&quot;"/></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89771.htm">基于springBoot动态配置定时任务</a></p>
+                                        <p>下一个：<a href="/news/article-90524.htm">广州宠物饲料批发市场地址查询（广州宠物饲料加工厂）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-76402.htm" title="穷人养什么宠物拉不拉（适合穷人养的10种狗）">穷人养什么宠物拉不拉（适合穷人养的10种狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-clash-node.htm" title="3月9日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月9日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-free-node-subscribe.htm" title="4月7日→20.1M/S|2025年最新免费节点Clash for IOS订阅链接地址">4月7日→20.1M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-77764.htm" title="动物疫苗的作用有哪些方面（动物接种疫苗的好处）">动物疫苗的作用有哪些方面（动物接种疫苗的好处）</a></li>
+                        <li class="py-2"><a href="/news/article-71038.htm" title="动物疫苗能放冰箱吗能放多久 动物疫苗能放冰箱吗能放多久啊">动物疫苗能放冰箱吗能放多久 动物疫苗能放冰箱吗能放多久啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-clash-node.htm" title="3月15日→19.5M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月15日→19.5M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-78442.htm" title="宠物粮食创业计划书怎么写（宠物粮行业环境分析）">宠物粮食创业计划书怎么写（宠物粮行业环境分析）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-node-subscribe.htm" title="3月11日→19.6M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月11日→19.6M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-free-node-subscribe-links.htm" title="3月3日→19.9M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月3日→19.9M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-clash-node-github.htm" title="3月22日→21.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月22日→21.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
