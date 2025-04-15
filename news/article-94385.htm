@@ -1,0 +1,210 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-94385.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Django + Taro 前后端分离项目实现企业微信登录</title>
+        <meta name="description" content="前言 还是最近在做的一个小项目，后端用的是Django搭配RestFramework做接口，前端第一次尝试用京东开源的Taro框架来做多端（目前需要做用于企业微信的H5端和微信小程序） 本文记录一下企" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-94385.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="Django + Taro 前后端分离项目实现企业微信登录" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/1220af49365955a86004bd0581a3744a.webp" />
+        <meta property="og:release_date" content="2025-04-12T08:58:52" />
+    <meta property="og:updated_time" content="2025-04-12T08:58:52" />
+        <meta property="og:description" content="前言 还是最近在做的一个小项目，后端用的是Django搭配RestFramework做接口，前端第一次尝试用京东开源的Taro框架来做多端（目前需要做用于企业微信的H5端和微信小程序） 本文记录一下企" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Django + Taro 前后端分离项目实现企业微信登录">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Django + Taro 前后端分离项目实现企业微信登录</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<h2 id="前言">前言</h2> <p>还是最近在做的一个小项目，后端用的是Django搭配RestFramework做接口，前端第一次尝试用京东开源的Taro框架来做多端（目前需要做用于企业微信的H5端和微信小程序）</p> <p>本文记录一下企业微信登录的流程，上周看文档看得头晕晕的，其实很简单，封装好了就几行代码的事~</p> <h2 id="两种方式">两种方式</h2> <ul> <li>一种是先拼接好登录要用的地址<code>authorize_url</code>，回调地址设置成h5应用的网页入口，然后把<code>authorize_url</code>设置为企业微信里的应用主页就行，然后直接提取链接里的code</li> <li>另一种是在应用里拼接<code>authorize_url</code>地址，回调地址同样设置成h5应用的网页入口，然后应用里去请求<code>authorize_url</code>，然后提取链接里的code用来登录就行</li> </ul> <p>说是两种，其实流程都是一样的，只不过第一种少去了前端拼接<code>authorize_url</code>以及首次请求的操作，为了方便起见，本文推荐使用第一种</p> <h2 id="思路">思路</h2> <p>假设前端地址是<code>http://xxx.com</code>，那么我们用后端生成的企业微信登录地址中会把前端地址作为回调地址传入，在企业微信中访问登录地址之后，回跳转到我们的前端地址，并在路径中附上参数code，形式如下：</p> <pre><code>http://xxx.com?code=dkwawen123j13bk1</code></pre> <p>所以前端要做的就是拿到这串code，并提交给后端，让后端拿code去微信服务器换用户信息，就这样~</p> <h2 id="后端代码">后端代码</h2> <p>企业微信登录的接口已经集成在我的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/DjangoStarter"  target="_blank" rel="nofollow">「DjangoStarter」</a>项目模板中，可以直接食用~</p> <p>后端使用的是wechatpy这个库，非常好用，封装了微信开发的常用功能~</p> <p>下面写一下两个关键的方法</p> <pre><code class="language-python">from django.conf import settings from django.contrib.auth import login from django.contrib.auth.models import User from rest_framework.authtoken.models import Token from drf_yasg2.utils import swagger_auto_schema from drf_yasg2 import openapi from rest_framework.exceptions import APIException from rest_framework import viewsets from rest_framework.response import Response from rest_framework.request import HttpRequest from rest_framework.decorators import action from wechatpy.enterprise import WeChatClient from apps.core.serializers import UserSerializer  class WechatWork(viewsets.ViewSet):     """微信企业号相关认证服务"""     client = WeChatClient(         settings.WECHAT_WORK_CONFIG['CORP_ID'],         settings.WECHAT_WORK_CONFIG['SECRET'],     )      @swagger_auto_schema(operation_summary='获取微信企业号登录链接')     @action(detail=False)     def get_authorize_url(self, request):         return Response({             # todo 这里要写上前端应用入口地址             'url': self.client.oauth.authorize_url('http://xxx.com')         })      @swagger_auto_schema(         operation_summary='通过code登录',         manual_parameters=[             openapi.Parameter(                 name='code', in_=openapi.IN_QUERY,                 description='从微信企业号服务器获取到的code',                 type=openapi.TYPE_STRING)         ])     @action(detail=False, methods=['POST'])     def login_by_code(self, request: HttpRequest):         code = request.GET.get('code', None)         try:             user_info = self.client.oauth.get_user_info(code)         except Exception as e:             raise APIException(detail=e)          phone = user_info['UserId']         is_created_user = False          if User.objects.filter(username=phone).exists():             user_obj: User = User.objects.get(username=phone)         else:             is_created_user = True             user_obj: User = User.objects.create_user(username=phone, password=phone)          # 记录Django登录状态         login(request, user_obj)         # 生成drf token         token, created = Token.objects.get_or_create(user=user_obj)          return Response({             'user': UserSerializer(user_obj).data,             'user_info': user_info,             'successful': True,             'is_created_user': is_created_user,             'token': token.key,             'message': '企业微信登录成功',         })</code></pre> <p>写完接口配置一下路由（这里就不重复了）</p> <p>然后请求这个<code>get_authorize_url</code>接口，得到一个地址</p> <pre><code class="language-json">{   "message": "请求成功",   "code": 200,   "data": {     "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx386...&amp;redirect_uri=http%3A%2F%2Fxxx.com&amp;response_type=code&amp;scope=snsapi_base#wechat_redirect"   } }</code></pre> <p>比如我上面写的应用入口地址是<code>http://xxx.com</code>，那么得到的企业微信登录地址就是</p> <pre><code>https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx386...&amp;redirect_uri=http%3A%2F%2Fxxx.com&amp;response_type=code&amp;scope=snsapi_base#wechat_redirect</code></pre> <p>各个参数的意义看企业微信官方文档就行，我们不用细究</p> <h2 id="企业微信应用配置">企业微信应用配置</h2> <p>接下来我们把这个地址设置成企业微信应用的主页</p> <p>如图</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/db4ab4b5d7b6f8e15a2f2aa41d6d001f.jpg" alt="Django + Taro 前后端分离项目实现企业微信登录"></p> <p>同时还得设置一下「可信域名」，在同个页面的最下方「开发者接口」处，把前端应用部署所在的服务器域名和端口（80就不用）填上去就行~</p> <p>这样应用配置就好了</p> <h2 id="前端代码">前端代码</h2> <p>前端用的是京东开源的Taro框架，我前一篇文章写到我终于用上了React，说的就是在Taro开发里用React+TypeScript，开发体验非常好<s>（除了这个框架有一些让人无语的坑之外）</s></p> <p>前端要实现的就是从路径参数里取出code</p> <p>我们看到，Taro官方文档就有关于路由参数的处理</p> <p>所以可以这样写来获取code（函数式组件写法）</p> <pre><code class="language-typescript">import { getCurrentInstance } from '@tarojs/taro' let code getCurrentInstance().router?.params['code']</code></pre> <p>然而！这样在普通页面跳转是可以的</p> <p>比如这种形式</p> <pre><code>http://xxx.com/#/pages/index/index?code=abc</code></pre> <p>但人家微信登录回调跳转的地址形式是这样</p> <pre><code>http://xxx.com?code=abc&amp;state=#/pages/index/index</code></pre> <p>这根本就拿不到code啊 o(´^｀)o</p> <p>所以得自己用js封装一个</p> <p>直接上代码了</p> <pre><code class="language-js">// 解析微信redirect_uri地址中的code export const getCodeFromUrl = (url: string) =&gt; {   let code = ''   let index = url.indexOf('?')   let paramStr = url.substring(index + 1, url.length);   let params = paramStr.split('&amp;')   params.forEach(element =&gt; {     if (element.indexOf('code') &gt;= 0) {       code = element.substring(element.indexOf('=') + 1, element.length)     }   });   return code }</code></pre> <p>使用的时候</p> <pre><code class="language-js">let code = getCodeFromUrl(window.location.href)</code></pre> <p>就可以拿到code了</p> <p>code都有了，后面就不用多说了~</p> <h2 id="参考资料">参考资料</h2> <ul> <li>wechatpy库文档：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://docs.wechatpy.org/zh_CN/stable/oauth.html#id4"  target="_blank" rel="nofollow">http://docs.wechatpy.org/zh_CN/stable/oauth.html#id4</a></li> <li>企业微信文档：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://developer.work.weixin.qq.com/document/path/91335"  target="_blank" rel="nofollow">https://developer.work.weixin.qq.com/document/path/91335</a></li> <li>Taro框架文档：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://taro-docs.jd.com/taro/docs/router"  target="_blank" rel="nofollow">https://taro-docs.jd.com/taro/docs/router</a></li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-93519.htm">厦门领养宠物猫的地方（厦门领养宠物猫中心）</a></p>
+                                        <p>下一个：<a href="/news/article-94386.htm">Docker 安装 Jenkins_在线工具</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-90527.htm" title="济南宠物狗领养中心电话 济南宠物狗领养中心电话号码">济南宠物狗领养中心电话 济南宠物狗领养中心电话号码</a></li>
+                        <li class="py-2"><a href="/news/article-89771.htm" title="基于springBoot动态配置定时任务">基于springBoot动态配置定时任务</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-free-node-subscribe.htm" title="3月2日→20.1M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月2日→20.1M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-free-high-speed-nodes.htm" title="3月6日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月6日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-81197.htm" title="宠物猫一般多少钱一只?（宠物猫多少钱一只正常价）">宠物猫一般多少钱一只?（宠物猫多少钱一只正常价）</a></li>
+                        <li class="py-2"><a href="/news/article-87595.htm" title="河南省动物防疫条例（河南省动物防疫补助经费管理办法）">河南省动物防疫条例（河南省动物防疫补助经费管理办法）</a></li>
+                        <li class="py-2"><a href="/news/article-86162.htm" title="南京有没有领养宠物的地方啊电话（南京领养狗狗的地方）">南京有没有领养宠物的地方啊电话（南京领养狗狗的地方）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-clash-node.htm" title="3月9日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月9日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-92763.htm" title="医院的动物实验室是什么（动物医院仪器有哪些）">医院的动物实验室是什么（动物医院仪器有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-free-node-subscribe-links.htm" title="3月3日→19.9M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月3日→19.9M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
