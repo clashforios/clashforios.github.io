@@ -1,0 +1,210 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-97206.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vue 列表渲染中的key</title>
+        <meta name="description" content="首先看一下官网的论述：   1 当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序， " />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-97206.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="Vue 列表渲染中的key" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/356d629cd87fa9098075d1c33e32211d.webp" />
+        <meta property="og:release_date" content="2025-04-16T08:40:26" />
+    <meta property="og:updated_time" content="2025-04-16T08:40:26" />
+        <meta property="og:description" content="首先看一下官网的论述：   1 当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序， " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue 列表渲染中的key">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">Vue 列表渲染中的key</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> <p>首先看一下官网的论述：</p> <div class="cnblogs_code"> <pre><span style="color:#008080;"> 1</span> 当 Vue.js 用 v-<span style="color:#0000ff;">for</span> 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序， 而是简单复用此处每个元素，<br/>   并且确保它在特定索引下显示已被渲染过的每个元素。这个类似 Vue 1.x 的 track-by="$index"<span style="color:#000000;"> 。 </span><span style="color:#008080;"> 2</span>  <span style="color:#008080;"> 3</span> <span style="color:#000000;">这个默认的模式是高效的，但是只适用于不依赖子组件状态或临时 DOM 状态 (例如：表单输入值) 的列表渲染输出。 </span><span style="color:#008080;"> 4</span>  <span style="color:#008080;"> 5</span> 为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key 属性。理想的 key 值是每项都有的且唯一的 id。这个特殊的属性<br/>   相当于 Vue 1.x 的 track-by ，但它的工作方式类似于一个属性，所以你需要用 v-<span style="color:#000000;">bind 来绑定动态值 (在这里使用简写)： </span><span style="color:#008080;"> 6</span>  <span style="color:#008080;"> 7</span> &lt;div v-<span style="color:#0000ff;">for</span>="item in items" :key="item.id"&gt; <span style="color:#008080;"> 8</span>   &lt;!-- 内容 --&gt; <span style="color:#008080;"> 9</span> &lt;/div&gt; <span style="color:#008080;">10</span> 建议尽可能在使用 v-<span style="color:#0000ff;">for</span><span style="color:#000000;"> 时提供 key，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。 </span><span style="color:#008080;">11</span>  <span style="color:#008080;">12</span> 因为它是 Vue 识别节点的一个通用机制，key 并不与 v-<span style="color:#0000ff;">for</span> 特别关联，key 还具有其他用途，我们将在后面的指南中看到其他用途。</pre> </p></div> <p>为了了解为什么需要key我们看下以下内容（标注:以下内容是从知乎上看到的）</p> <div>   </p> <div> <p>要解释key的作用，不得不先介绍一下虚拟DOM的Diff算法了。</p> <p>我们知道，vue和react都实现了一套虚拟DOM，使我们可以不直接操作DOM元素，只操作数据便可以重新渲染页面。而隐藏在背后的原理便是其高效的Diff算法。</p> <p>vue和react的虚拟DOM的Diff算法大致相同，其核心是基于两个简单的假设：</p> <p><strong>1. 两个相同的组件产生类似的DOM结构，不同的组件产生不同的DOM结构。</strong></p> <p><strong>2. 同一层级的一组节点，他们可以通过唯一的id进行区分。</strong></p> <p>基于以上这两点假设，使得虚拟DOM的Diff算法的复杂度从<strong>O(n^3)</strong>降到了<strong>O(n)</strong>。</p> <p>这里我们借用<a class="wrap external" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://link.zhihu.com/?target=https%3A//calendar.perfplanet.com/2013/diff/"  rel="nofollow">React’s diff algorithm</a>中的一张图来简单说明一下：</p> <p>&amp;amp;lt;img src="https://pic2.zhimg.com/50/v2-73120ff4c30dd81a128cd422e325786a_hd.jpg" alt="Vue 列表渲染中的key" data-rawwidth="377" data-rawheight="199" class="content_image" width="377"&amp;amp;gt;<br />    <img decoding="async" class="content_image lazy" src="http://img.555519.xyz/uploads/20230204/f9f0af0b54debac9315f5fb5395829a9.jpg" alt="Vue 列表渲染中的key"></p> <p>当页面的数据发生变化时，Diff算法只会比较同一层级的节点：</p> <p><strong>如果节点类型不同，直接干掉前面的节点，再创建并插入新的节点，不会再比较这个节点以后的子节点了。</strong></p> <p><strong>如果节点类型相同，则会重新设置该节点的属性，从而实现节点的更新。</strong></p> <p>当某一层有很多相同的节点时，也就是列表节点时，Diff算法的更新过程默认情况下也是遵循以上原则。</p> <p>比如一下这个情况：</p> <p> &amp;amp;lt;img src="https://pic1.zhimg.com/50/v2-6e88cc53a7e427f0ae8340cf930ac30d_hd.jpg" alt="Vue 列表渲染中的key" data-rawwidth="477" data-rawheight="191" class="origin_image zh-lightbox-thumb" width="477" data-original="https://pic1.zhimg.com/v2-6e88cc53a7e427f0ae8340cf930ac30d_r.jpg"&amp;amp;gt;<br />    <img decoding="async" class="origin_image zh-lightbox-thumb lazy" src="http://img.555519.xyz/uploads/20230204/61514f459b8e4225eb4cf129e27b3e99.jpg" alt="Vue 列表渲染中的key"></p> <p>我们希望可以在B和C之间加一个F，Diff算法默认执行起来是这样的：</p> <p> &amp;amp;lt;img src="https://pic3.zhimg.com/50/v2-bf76311258f100b789226ccbb2600071_hd.jpg" alt="Vue 列表渲染中的key" data-rawwidth="572" data-rawheight="215" class="origin_image zh-lightbox-thumb" width="572" data-original="https://pic3.zhimg.com/v2-bf76311258f100b789226ccbb2600071_r.jpg"&amp;amp;gt;<br />    <img decoding="async" class="origin_image zh-lightbox-thumb lazy" src="http://img.555519.xyz/uploads/20230204/044e7806c10e458e9b1a5a1dc2220208.jpg" alt="Vue 列表渲染中的key"></p> <p>即把C更新成F，D更新成C，E更新成D，最后再插入E，是不是很没有效率？</p> <p>所以我们需要使用key来给每个节点做一个唯一标识，Diff算法就可以正确的识别此节点，找到正确的位置区插入新的节点。</p> <p> &amp;amp;lt;img src="https://pic1.zhimg.com/50/v2-bb1147af7c458f0b09d6a3c2f74b0100_hd.jpg" alt="Vue 列表渲染中的key" data-rawwidth="452" data-rawheight="130" class="origin_image zh-lightbox-thumb" width="452" data-original="https://pic1.zhimg.com/v2-bb1147af7c458f0b09d6a3c2f74b0100_r.jpg"&amp;amp;gt;<br />    <img decoding="async" class="origin_image zh-lightbox-thumb lazy" src="http://img.555519.xyz/uploads/20230204/f5432f4e1e0ead94ddf0657ab2200e8f.jpg" alt="Vue 列表渲染中的key"></p> <p>所以一句话，<strong>key的作用主要是为了高效的更新虚拟DOM。</strong>另外vue中在使用<strong>相同标签名元素的过渡切换</strong>时，也会使用到key属性，其目的也是为了让vue可以区分它们，否则vue只会替换其内部属性而不会触发过渡效果。</p> </p></div> </p></div> </div> <p>转载于:https://www.cnblogs.com/qjuly/p/8514513.html</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-96538.htm">宠物粮食批发市场在哪里进货便宜（宠物粮从哪里进货便宜）</a></p>
+                                        <p>下一个：<a href="/news/article-97207.htm">厂家货源服装批发（厂家衣服货源批发）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-70371.htm" title="iOS全埋点解决方案-界面预览事件">iOS全埋点解决方案-界面预览事件</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-high-speed-nodes.htm" title="3月23日→20.4M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月23日→20.4M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-free-high-speed-nodes.htm" title="3月31日→18.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月31日→18.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-92763.htm" title="医院的动物实验室是什么（动物医院仪器有哪些）">医院的动物实验室是什么（动物医院仪器有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-81887.htm" title="java js 二级联动下拉列表_JS实现下拉列表的二级联动">java js 二级联动下拉列表_JS实现下拉列表的二级联动</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-11-free-subscribe-node.htm" title="4月11日→22.3M/S|2025年最新免费节点Clash for IOS订阅链接地址">4月11日→22.3M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-node-share-links.htm" title="3月27日→21.3M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月27日→21.3M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-69090.htm" title="宠物粮食品牌前十名排行榜有哪些名字（宠物粮生产厂家排名）">宠物粮食品牌前十名排行榜有哪些名字（宠物粮生产厂家排名）</a></li>
+                        <li class="py-2"><a href="/news/article-86873.htm" title="openssl 3.0 和 1.1.x 区别">openssl 3.0 和 1.1.x 区别</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-clash-node-daily-updates.htm" title="3月18日→19M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月18日→19M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
