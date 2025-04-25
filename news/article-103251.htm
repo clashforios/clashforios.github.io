@@ -1,0 +1,213 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-103251.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>【java算法】二分查找算法详解</title>
+        <meta name="description" content="hello，大家好！我是磨磨唧唧小蘑菇~ 最近在努力的复习一些基本的算法，本期就以java的二分查找算法进行详细的概述（之前面试的时候，手写算法被坑过，一把泪啊）。进入正题吧~  目录 一、二分查找算" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-103251.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="【java算法】二分查找算法详解" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/00185899b2187070469714b47e3ff255.webp" />
+        <meta property="og:release_date" content="2025-04-24T09:17:41" />
+    <meta property="og:updated_time" content="2025-04-24T09:17:41" />
+        <meta property="og:description" content="hello，大家好！我是磨磨唧唧小蘑菇~ 最近在努力的复习一些基本的算法，本期就以java的二分查找算法进行详细的概述（之前面试的时候，手写算法被坑过，一把泪啊）。进入正题吧~  目录 一、二分查找算" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="【java算法】二分查找算法详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">【java算法】二分查找算法详解</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>hello，大家好！我是磨磨唧唧小蘑菇~</p> <p>最近在努力的复习一些基本的算法，本期就以java的二分查找算法进行详细的概述（之前面试的时候，手写算法被坑过，一把泪啊）。进入正题吧~</p> <blockquote> <p id="main-toc"><strong>目录</strong></p> <p id="%E4%B8%80%E3%80%81%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9A%84%E4%BB%8B%E7%BB%8D-toc" style="margin-left:80px;">一、二分查找算法的介绍</p> <p id="%E4%BA%8C%E3%80%81%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90-toc" style="margin-left:80px;">二、二分查找算法的思路分析</p> <p id="%E4%B8%89%E3%80%81%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E4%BE%8B-toc" style="margin-left:80px;">三、二分查找算法的实例</p> </blockquote> <h3 id="%E4%B8%80%E3%80%81%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9A%84%E4%BB%8B%E7%BB%8D"><strong>一、二分查找算法的介绍</strong></h3> <p>二分查找，又名折半查找。顾名思义，一半一半去找目标值~</p> <p>对于一个<span style="color:#fe2c24;"><strong>有序的升序</strong></span>列表，将目标值与表中间的值进行对比：</p> <p>1）如果目标值与表中间的值相等，则直接返回表中间的值即可</p> <p>2）如果目标值与表中间的值不相等，则将两者进行大小比较，从而分成两个表：</p> <p>（1）如果目标值小于中间值，说明目标值在中间值往左的表中，故舍弃中间值往右的表，重新二分查找中间值往左的表</p> <p>（2）如果目标值大于中间值，说明目标值在中间值往右的表中，故舍弃中间值往左的表，重新二分查找中间值往右的表</p> <p>最后，重复以上过程，直到找到目标值为止；或直到子表不存在为止，此时为查找不成功</p> <h3 id="%E4%BA%8C%E3%80%81%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90">二、二分查找算法的思路分析</h3> <p>1）首先确定有序的升序列表的中间值是多少</p> <p>即：mid = （left+right）/2&nbsp; &nbsp; &nbsp; &nbsp; //中间值的下标</p> <p>2）将目标值target与表中间的值arr[mid]进行比较：</p> <p>即：如果target = arr[mid]，说明目标值与arr[mid]相等，找到了目标值</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;如果target &lt; arr[mid]，说明目标值在arr[mid]的左边，因此需要接着二分查找左边的表</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;如果target &gt; arr[mid]，说明目标值在arr[mid]的右边，因此需要接着二分查找右边的表</p> <p><span style="color:#fe2c24;">Attention：什么时候需要结束呢？</span></p> <p>1）找到目标值就结束</p> <p>2）查找完整个数组，如果依然没有找到目标值，也需要结束</p> <p>3）当left &gt; right，则直接退出</p> <h3 id="%E4%B8%89%E3%80%81%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E4%BE%8B">三、二分查找算法的实例</h3> <p>eg：给你一个有序的升序数组，再给你一个目标值，请在数组中找到对应的目标值并返回它的下标</p> <p>1、非递归算法实现：</p> <pre><code>package com.java.basic.array;  /**  * @Author wangchuanmin  * @Date 2021/9/1 17:35  */  import java.util.Arrays; /**  * 二分查找算法  */ public class BinarySearch {     /**      * 二分查找算法第一种：有序数组中没有重复的目标值（目标值是唯一的）---非递归      * @param target      * @param nums      * @return      */     // 非递归实现     public int binarySearch1(int target, int[] nums) {         int left = 0;         int right = nums.length-1;  //取最后一个下标         int mid = 0;         if (left &gt; right || nums.length == 0 || nums == null) { //左下标大于右下标，直接返回-1             return -1;         }         while (left &lt;= right) { //初始化 right 的赋值是 nums.length - 1，即最后一个元素的索引，而不是 nums.length             mid = (left + right)/2; //如果下标之和除以2有小数，则直接去掉0.5             if (target == nums[mid]) {                 return mid; //找到目标值，然后返回             } else if (target &gt; nums[mid]) {    //目标值大于中间值，向右遍历                 left = mid + 1; //所以向右遍历的第一个下标是：中间下标+1             } else if (target &lt; nums[mid]) {    //目标值小于中间值，向左遍历                 right = mid - 1;    //所以向左遍历的最后一个下标是：中间下标-1             }         }         return -1;  //找不到对应目标值，直接返回-1     }       public static void main(String[] args) {         BinarySearch bSearch = new BinarySearch();         int target = 9;         int[] nums = new int[]{9,3,4,6,8};         Arrays.sort(nums);         System.out.println("排序后的nums为：" + Arrays.toString(nums));         int result = bSearch.binarySearch1(target,nuns);         System.out.println("非递归算法，目标" + target + "的下标是：" + result);     } } </code></pre> <p>运行结果如下：</p> <pre><code>排序后的nums为：[3, 4, 6, 8, 9] 非递归算法，目标9的下标是：4  Process finished with exit code 0</code></pre> <p>2、递归算法实现：</p> <pre><code>package com.java.basic.array;  /**  * @Author wangchuanmin  * @Date 2021/9/1 17:35  */  import java.util.Arrays; /**  * 二分查找算法  */ public class BinarySearch {     /**      * 二分查找算法第二种：有序数组中没有重复的目标值（目标值是唯一的）---递归      * @param target      * @param nums      * @param left      * @param right      * @return      */     public int binarySearch2(int target, int[] nums, int left, int right) {         int mid = (left + right)/2;         if (nums.length == 0 || nums == null || left &gt; right) {             return -1;         }         while (left &lt;= right) {             if (target == nums[mid]) {                 return mid;             } else if (target &lt; nums[mid]) {                 return binarySearch2(target, nums, left, mid - 1);             } else if (target &gt; nums[mid]) {                 return binarySearch2(target, nums, mid + 1, right);             }         }         return -1;     }        public static void main(String[] args) {         BinarySearch bSearch = new BinarySearch();         int target = 8;         int[] nums = new int[]{9,3,4,6,8};         Arrays.sort(nums);         System.out.println("排序后的nums为：" + Arrays.toString(nums));         int result1 = bSearch.binarySearch2(target, nums, 0, nums.length-1 );         System.out.println("递归算法，目标" + target + "的下标是：" + result1);     } } </code></pre> <p>运行结果如下：</p> <pre><code>排序后的nums为：[3, 4, 6, 8, 9] 递归算法，目标8的下标是：3  Process finished with exit code 0</code></pre> <p>以上的两种方法，仅适用于“目标值是唯一”。如果相同目标值有多个的话，就不适用啦~（目前还没想明白，如果有多个目标值的时候，该怎么办？）哎，真是苦恼呢QAQ</p> <p>好啦，到这里java的二分查找算法就结束啦~欢迎交流;-)</p> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-102415.htm">宠物寄养店成本（宠物寄养店怎么收费）</a></p>
+                                        <p>下一个：<a href="/news/article-103252.htm">ubuntu 14.04 ndk 编译 openssl</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-77069.htm" title="宠物粮食广告（宠物粮食广告宣传语大全）">宠物粮食广告（宠物粮食广告宣传语大全）</a></li>
+                        <li class="py-2"><a href="/news/article-92763.htm" title="医院的动物实验室是什么（动物医院仪器有哪些）">医院的动物实验室是什么（动物医院仪器有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-79125.htm" title="三国杀台词彩蛋（三国杀台词鉴赏）">三国杀台词彩蛋（三国杀台词鉴赏）</a></li>
+                        <li class="py-2"><a href="/news/article-100240.htm" title="动物疫苗新规定有哪些品种名称和图片（动物疫苗新法案）">动物疫苗新规定有哪些品种名称和图片（动物疫苗新法案）</a></li>
+                        <li class="py-2"><a href="/news/article-99462.htm" title="宠物领养网免费平台有哪些呢知乎 宠物领养网免费平台有哪些呢知乎">宠物领养网免费平台有哪些呢知乎 宠物领养网免费平台有哪些呢知乎</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-clash-node.htm" title="3月21日→19.4M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月21日→19.4M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-95812.htm" title="100ms的SQL把服务器搞崩溃了_在线工具">100ms的SQL把服务器搞崩溃了_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-18-free-node-subscribe-links.htm" title="4月18日→20.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">4月18日→20.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-66525.htm" title="动物疫苗管理法律法规内容有哪些要求呢（动物防疫疫苗管理）">动物疫苗管理法律法规内容有哪些要求呢（动物防疫疫苗管理）</a></li>
+                        <li class="py-2"><a href="/news/article-101609.htm" title="Linux网络服务之NFS共享服务">Linux网络服务之NFS共享服务</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">74</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
