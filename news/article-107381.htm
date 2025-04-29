@@ -1,0 +1,212 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashforios.github.io/news/article-107381.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口</title>
+        <meta name="description" content="序列化多表操作 请求与相应 视图组件   1、序列化多表操作 模型类 models.py中 # 新建django项目 # 创建表 模型类models.py中： from django.db impor" />
+        <link rel="icon" href="/assets/website/img/clashforios/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash for IOS免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashforios.github.io/news/article-107381.htm" />
+    <meta property="og:site_name" content="Clash for IOS免费机场订阅节点官网" />
+    <meta property="og:title" content="序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口" />
+    <meta property="og:image" content="https://clashforios.github.io/uploads/20240922-1/ecccfa3dd5d74e627effdc07ff2899bf.webp" />
+        <meta property="og:release_date" content="2025-04-29T08:03:40" />
+    <meta property="og:updated_time" content="2025-04-29T08:03:40" />
+        <meta property="og:description" content="序列化多表操作 请求与相应 视图组件   1、序列化多表操作 模型类 models.py中 # 新建django项目 # 创建表 模型类models.py中： from django.db impor" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/bootstrap.min.css">
+    <!-- Slick Silder CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/slick.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/fontawesome.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/style.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsivemenu.css">
+    <!-- Theme Element CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/elements.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashforios/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-547GV0YTCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-547GV0YTCL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <!-- Main Wrapper Start -->
+    <div class="main-wrapper">
+                <header id="header-1" class="header-2">
+            <div class="sticky-header">
+                <div class="container">
+                                        <a href="/" class="logo float-left">
+                        <span>
+                            Clash for IOS                        </span>
+                    </a>
+                                        <!-- /.logo End -->
+                    <div class="navigation-wrap float-right">
+                        <div class="menu-holder">
+                            <div class="mobile-menu"></div>
+                            <!-- /.mobile-menu End -->
+                            <div class="main-menu navigation">
+                                <nav>
+                                    <ul>
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                            <!-- /.navigation End -->
+                        </div>
+                        <!-- /.menu-holder End -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header-2 End -->
+        <!-- Sub Banner Start -->
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-right">
+                    <h1 class="title">序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口</h1>
+                </div>
+                <nav class="breadcrumb-outer" aria-label="breadcrumb">
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Sub Banner End -->
+        <!-- Main Content Start -->
+        <div class="main-content">
+            <!-- About us Section Start -->
+            <section class="about-us mb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				</h1> <ul> <li>序列化多表操作</li> <li>请求与相应</li> <li>视图组件</li> </ul> </h1> <h2 id="1序列化多表操作">1、序列化多表操作</h2> <h3 id="模型类-modelspy中">模型类 models.py中</h3> <pre><code class="language-python"># 新建django项目 # 创建表 模型类models.py中： from django.db import models  # 4张表 class Book(models.Model):     name = models.CharField(max_length=32)     price = models.DecimalField(max_digits=5, decimal_places=2)     publish = models.ForeignKey(to='Publish', on_delete=models.CASCADE)  # to='Publish' 自动关联publish表主键 // on_delete=models.CASCADE 级联删除     authors = models.ManyToManyField(to='Author')      def __str__(self):         return self.name      @property     def publish_detail(self):  # 定制字段         return {'name': self.publish.name, 'addr': self.publish.city}      @property     def author_list(self):  # 定制字段         l = []         # print(self.authors.all())         for author in self.authors.all():             # print(author.author_detail)             l.append({'name': author.name, 'age': author.age, 'addr': author.author_detail.addr})         return l           class Author(models.Model):     name = models.CharField(max_length=32)     age = models.IntegerField()     author_detail = models.OneToOneField(to='AuthorDatail', on_delete=models.CASCADE)     # OneToOneField 就是 ForeignKey + unique=True   class AuthorDatail(models.Model):     telephone = models.BigIntegerField()     addr = models.CharField(max_length=64)   class Publish(models.Model):     name = models.CharField(max_length=32)     city = models.CharField(max_length=32)     email = models.EmailField()           """ 在每个表中写入数据一一对应 第五个自动创建的关联表 也写入数据 """</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/59d6df5e6c9cff493280271451d184a7.jpg" alt="序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口"></p> <h3 id="创建序列化类-serializerpy">创建序列化类 serializer.py</h3> <pre><code class="language-python">from .models import * from rest_framework import serializers   class BookSerializer(serializers.ModelSerializer):     class Meta:         model = Book         # fields = '__all__'         fields = ['id', 'name', 'price', 'authors', 'publish', 'publish_detail', 'author_list']          # 由于前端的publish与authors会显示为：id 所以需要定制序列化字段         # depth=1  # 等同于定制序列化的字段（2种方案） 但是尽量不要用，因为它是关联表一层全部取出来         # 定制序列化的字段（2种方案）选择表模型中： 显示出版社名、地址；作者名年龄地址         extra_kwargs = {             'publish': {'write_only': True},  # 原有的字段就不需要再显示             'authors': {'write_only': True},         }   class AuthorSerializer(serializers.ModelSerializer):     class Meta:         model = Author         fields = '__all__'   class AuthorDetailSerialzier(serializers.ModelSerializer):     class Meta:         model = AuthorDatail         fields = '__all__'   class PublishSerialzier(serializers.ModelSerializer):     class Meta:         model = Publish         fields = '__all__'</code></pre> <h3 id="视图类-viewspy中">视图类 views.py中：</h3> <pre><code class="language-python">from .serializer import * from rest_framework.response import Response from rest_framework.views import APIView from app01.models import Book   class BookView(APIView):     # 查询所有图书     def get(self, request):         book_list = Book.objects.all()         ser = BookSerializer(instance=book_list, many=True)         return Response(ser.data)      # 新增图书数据     def post(self, request):         ser = BookSerializer(data=request.data)         if ser.is_valid():             ser.save()             return Response({"code": 100, 'msg': '新增成功', 'data': ser.data})         return Response({"code": 101, 'msg': '新增失败', 'err': ser.errors})   class BookDetailView(APIView):      # 查询单条数据     def get(self, request, pk):         book = Book.objects.all().filter(pk=pk).first()         ser = BookSerializer(instance=book)         return Response(ser.data)      # 修改数据     def put(self, request, pk):         book = Book.objects.all().filter(pk=pk).first()         ser = BookSerializer(instance=book, data=request.data)         if ser.is_valid():             ser.save()             return Response({"code": 100, 'msg': '修改成功', 'data': ser.data})         return Response({"code": 101, 'msg': '修改出错', 'err': ser.errors})      # 删除数据     def delete(self, request, pk):         Book.objects.filter(pk=pk).delete()         return Response({"code": 100, 'msg': '删除成功'})</code></pre> <h3 id="路由-urlspy中">路由 urls.py中：</h3> <pre><code class="language-python">from django.contrib import admin from django.urls import path  from app01 import views  urlpatterns = [     path('admin/', admin.site.urls),      path('books/', views.BookView.as_view()),     path('books/&lt;int:pk&gt;', views.BookView.as_view()), ]</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b0ed0e99ee6aa8ebc3081fad10f1bf3b.jpg" alt="序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口"></p> <h2 id="2请求与相应">2、请求与相应</h2> <h3 id="21-请求">2.1 请求</h3> <pre><code class="language-python"># 请求就是指：Request 类的对象 	&gt;&gt;&gt; 新的request对象      # 导入： 	from rest_framework.request import Request  # 需要记住的源码： 	__getattr__ 	request.data 	request.query_parmas---&gt;self._request.GET 		restful规范里，请求地址中带过滤(查询)条件 		get请求地址中提交的数据在GET中， 		query_parmas：查询参数                   # 了解 	默认情况下，可以解析 urlencoded，formdata，json           # 案例： 	如果我们写了一个接口，想只能处理json格式，或者只能处理formdata      1.局部配置 在views.py中： from rest_framework.parsers import JSONParser, FormParser, MultiPartParser  class PublishView(APIView):     # 局部使用，只针对当前视图类有效     # 只想处理json格式     # parser_classes = [JSONParser,FormParser,MultiPartParser]  # 默认下 是处理三种格式数据     parser_classes = [JSONParser]  # 只允许处理 JSONParser格式      def post(self, request):         print(request.data)         return Response('post---publish') 	    2.全局配置--&gt;要在配置文件中添加： # REST_FRAMEWORK  以后是drf的配置 # 所有接口都只能解析json格式 REST_FRAMEWORK = {     'DEFAULT_PARSER_CLASSES': [         'rest_framework.parsers.JSONParser',     ], }  3.全局配置解析json，局部某个视图函数想能解析formdata格式 	视图类中配置一下即可 就是局部配置(按照使用顺序)           # 如果局部配置如下，会怎么样 	parser_classes = []  # 所有格式都补不能解析了  # 使用顺序： 	即使我们没有配置局部或者全局，也有默认配置：3个数据模式都能解析      	视图类中配的(优先用) 	项目配置文件的配置(其次) 	drf有默认配置(最后) 	 	drf的默认配置：from rest_framework import settings     # 总结： 	一般情况下，都使用默认即可，不用配置(三种格式数据都能解析)</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/91e11563d90ffd3e9324ef79bfe6b7b0.jpg" alt="序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口"></p> <h3 id="22-响应">2.2 响应</h3> <pre><code class="language-python"># 其实就是：Respone 返回给前端的  # 导入： 	from rest_framework.response import Response      # 源码分析 1.属性： 	data=None,  # 返回给前端的数据：可以是 字符串，字典，列表 就是给http响应body体中内容--&gt;也可以是response对象中取出数据并 处理      	status=None,  # 响应状态码：1xx，2xx，3xx，默认是200  	headers=None,      # 响应头 字典    	了解： 		template_name=None,  # 模板名字(不用)，用浏览器访问时，可以改 		exception=False,    # 异常处理 		content_type=None   # 响应编码格式               	from rest_framework.status import HTTP_201_CREATED 	Response(ser.data,status=HTTP_201_CREATED)      2.响应格式 跟解析数据格式类似 # 局部配置 在视图类 views.py中配置： from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer class BookDetailView(APIView):     renderer_classes = [JSONRenderer, ]  # 全局设置 在配置文件中配置： REST_FRAMEWORK = {     'DEFAULT_RENDERER_CLASSES': (  # 默认响应渲染类         'rest_framework.renderers.JSONRenderer',  # json渲染器         'rest_framework.renderers.BrowsableAPIRenderer',  # 浏览API渲染器     ) }</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/c77066588dea163e18c2fc7272687015.jpg" alt="序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口"></p> <h2 id="3视图组件">3、视图组件</h2> <pre><code class="language-python"># APIView   	from rest_framework.views import APIView      	类属性 renderer_classes,parser_classes... 	get方法，post方法，delete方法 写法跟之前的View一样，只不过request对象变成了新的request 	比之前的View多了三大认证和全局异常处理       # GenericAPIView  继承了APIView 但是多了属性和方法 	from rest_framework.generics import GenericAPIView      	属性(先记两个)： 		queryset = None 		serializer_class = None          	方法： 		get_queryset 		get_object 		get_serializer                # 5个视图扩展类(不是视图类，没有集成APIView，需要配合GenericAPIView) 	from rest_framework.mixins import  		CreateModelMixin, 		ListModelMixin, 		DestroyModelMixin, 		RetrieveModelMixin, 		UpdateModelMixin          # 9个视图子类  	from rest_framework.generics import  		CreateAPIView, 		ListAPIView, 		DestroyAPIView, 		RetrieveAPIView, 		UpdateAPIView, 		ListCreateAPIView, 		RetrieveUpdateAPIView, 		RetrieveUpdateDestroyAPIView, 		RetrieveDestroyAPIView   # 视图集 	from rest_framework.viewsets import  		# 两个视图类 		ModelViewSet, ReadOnlyModelViewSet, 		# 视图类 		ViewSet, GenericViewSet, 		# 魔法类 		ViewSetMixin</code></pre> <h3 id="继承genericapiview-重写视图类">继承GenericAPIView 重写视图类</h3> <pre><code class="language-python"># 添加路由：     path('publishs/&lt;int:pk&gt;', views.PublishDetailView.as_view()),           # 视图类复制过来并做修改： # 第一层：继承APIView写视图类  # 第二层：继承GenericAPIView写视图类 from rest_framework.generics import GenericAPIView  class PublishView(GenericAPIView):     queryset = Publish.objects.all()     serializer_class = PublishSerialzier      # 查询所有图书     def get(self, request):         # obj = self.queryset         obj = self.get_queryset()  # 等同于上面，obj = self.queryset 并且更好一些          # ser = self.serializers(instance=obj, many=True)         # ser=self.get_serializer_class()(instance=obj,many=True) # 等同于上面         ser = self.get_serializer(instance=obj, many=True)  # 等同于上面         return Response(ser.data)      # 新增图书数据     def post(self, request):         # ser = BookSerializer(data=request.data)         ser = self.get_serializer(data=request.data)  # 等同于上面         if ser.is_valid():             ser.save()             return Response({"code": 100, 'msg': '新增成功', 'data': ser.data})         return Response({"code": 101, 'msg': '新增失败', 'err': ser.errors})   class PublishDetailView(GenericAPIView):     queryset = Publish.objects.all()     serializer_class = PublishSerialzier      # 查询单条数据     def get(self, request, *args, **kwargs):         # book = Book.objects.all().filter(pk=pk).first()         obj = self.get_object()  # 等同于上面          # ser = BookSerializer(instance=book)         ser = self.get_serializer(instance=obj)  # 等同于上面         return Response(ser.data)      # 修改数据     def put(self, request, *args, **kwargs):         # book = Book.objects.all().filter(pk=pk).first()         obj = self.get_object()  # 等同于上面          # ser = BookSerializer(instance=book, data=request.data)         ser = self.get_serializer(instance=obj, data=request.data)  # 等同于上面         if ser.is_valid():             ser.save()             return Response({"code": 100, 'msg': '修改成功', 'data': ser.data})         return Response({"code": 101, 'msg': '修改出错', 'err': ser.errors})      # 删除数据     def delete(self, request, *args, **kwargs):         # Book.objects.filter(pk=pk).delete()         self.get_object().delete()         return Response({"code": 100, 'msg': '删除成功'})</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/39a58dff511a008e38f3402660d60445.jpg" alt="序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口"></p> <h2 id="4通过genericapiview--5个视图扩展类-重写视图类">4、通过GenericAPIView + 5个视图扩展类 重写视图类</h2> <pre><code class="language-python"># 第三层：GenericAPIView+5个视图扩展类 重写视图类 from rest_framework.generics import GenericAPIView from rest_framework.mixins import CreateModelMixin, ListModelMixin, DestroyModelMixin, RetrieveModelMixin, UpdateModelMixin  class PublishView(GenericAPIView, CreateModelMixin, ListModelMixin):     queryset = Publish.objects.all()     serializer_class = PublishSerialzier      # 查询所有图书     def get(self, request):         return super().list(request)  # list(request)ListModelMixin的方法      # 新增图书数据     def post(self, request):         return super().list(request)  # create(request)ListModelMixin的方法   class PublishDetailView(GenericAPIView, UpdateModelMixin, RetrieveModelMixin, DestroyModelMixin):     queryset = Publish.objects.all()     serializer_class = PublishSerialzier      # 查询单条数据     def get(self, request, *args, **kwargs):         return super().retrieve(request, *args, **kwargs)      # 修改数据     def put(self, request, *args, **kwargs):         return super().update(request, *args, **kwargs)      # 删除数据     def delete(self, request, *args, **kwargs):         return super().destroy(request, *args, **kwargs)</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3fc6fc44712d8e4f4f3c0cbf870fa12e.jpg" alt="序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口"></p> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-107380.htm">我们可以作为参数传递给MySQL UNIX_TIMESTAMP函数的日期时间值的范围是多少？</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-75045.htm" title="宠物医院坑人怎么投诉举报（宠物医院坑人怎么投诉举报的）">宠物医院坑人怎么投诉举报（宠物医院坑人怎么投诉举报的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-28-node-share.htm" title="3月28日→22.8M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月28日→22.8M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="3月20日→22.4M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月20日→22.4M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-free-node-subscribe-links.htm" title="3月3日→19.9M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月3日→19.9M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-high-speed-nodes.htm" title="3月24日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址">3月24日→22.2M/S|2025年最新免费节点Clash for IOS订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-87595.htm" title="河南省动物防疫条例（河南省动物防疫补助经费管理办法）">河南省动物防疫条例（河南省动物防疫补助经费管理办法）</a></li>
+                        <li class="py-2"><a href="/news/article-89772.htm" title="关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题">关于 AOP 切面导致 WebSocket 的 @ServerEndPoint 无法注入的问题</a></li>
+                        <li class="py-2"><a href="/news/article-69091.htm" title="宠物医院价格表 宠物医院价格表图片大全">宠物医院价格表 宠物医院价格表图片大全</a></li>
+                        <li class="py-2"><a href="/news/article-72351.htm" title="宠物医院看猫癣贵吗（去宠物医院看猫癣）">宠物医院看猫癣贵吗（去宠物医院看猫癣）</a></li>
+                        <li class="py-2"><a href="/news/article-89024.htm" title="给自己的宠物打针犯法吗判几年（自己给宠物打疫苗）">给自己的宠物打针犯法吗判几年（自己给宠物打疫苗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">86</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About us Section End -->
+        </div>
+        <!-- Main Content End -->
+                <!-- Copyright Start -->
+        <div class="copyright">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>
+                <a href="/">Clash for IOS免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+            </p>
+        </div>
+        <!-- Copyright End -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="/assets/website/js/frontend/clashforios/jquery.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/responsivemenu.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/slick.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/masonry.min.js"></script>
+        <script src="/assets/website/js/frontend/clashforios/custom.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- Main Wrapper End -->
+</body>
+
+</html>
