@@ -1,4 +1,4 @@
-# 3月19日→20.4M/S|2025年最新免费节点Clash for IOS订阅链接地址  更新时间 2026-03-19 07:37:40
+# 3月27日→19.8M/S|2025年最新免费节点Clash for IOS订阅链接地址  更新时间 2026-03-27 16:57:43
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashforios.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashforios.github.io/uploads/2026/03/0-20260319.yaml
-- https://clashforios.github.io/uploads/2026/03/1-20260319.yaml
-- https://clashforios.github.io/uploads/2026/03/2-20260319.yaml
-- https://clashforios.github.io/uploads/2026/03/3-20260319.yaml
-- https://clashforios.github.io/uploads/2026/03/4-20260319.yaml
+- https://clashforios.github.io/uploads/2026/03/0-20260327.yaml
+- https://clashforios.github.io/uploads/2026/03/1-20260327.yaml
+- https://clashforios.github.io/uploads/2026/03/2-20260327.yaml
+- https://clashforios.github.io/uploads/2026/03/3-20260327.yaml
+- https://clashforios.github.io/uploads/2026/03/4-20260327.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashforios.github.io/uploads/2026/03/0-20260319.txt
-- https://clashforios.github.io/uploads/2026/03/1-20260319.txt
-- https://clashforios.github.io/uploads/2026/03/2-20260319.txt
-- https://clashforios.github.io/uploads/2026/03/3-20260319.txt
-- https://clashforios.github.io/uploads/2026/03/4-20260319.txt
+- https://clashforios.github.io/uploads/2026/03/0-20260327.txt
+- https://clashforios.github.io/uploads/2026/03/1-20260327.txt
+- https://clashforios.github.io/uploads/2026/03/2-20260327.txt
+- https://clashforios.github.io/uploads/2026/03/3-20260327.txt
+- https://clashforios.github.io/uploads/2026/03/4-20260327.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashforios.github.io/uploads/2026/03/20260319.json
+- https://clashforios.github.io/uploads/2026/03/20260327.json
 
 ## 更多Clash节点订阅 ：
 
